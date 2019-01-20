@@ -1,40 +1,69 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import Browser exposing (element)
-import Flags exposing (decodeFlags)
-import Model exposing (Model)
-import Ports exposing (setTitle)
-import Update exposing (Msg, update)
+import Browser exposing (application)
+import Browser.Navigation exposing (Key)
+import Data.Profile.Fetch exposing (fetchProfile)
+import Helper exposing (fetchFromUrlPath, isPageUrl)
+import Model exposing (Model, initialModel)
+import Msg exposing (Msg(..))
+import Update exposing (update)
+import Url exposing (Url)
 import View exposing (view)
 
 
-init : String -> ( Model, Cmd Msg )
-init value =
-    let
-        decoded =
-            decodeFlags value
-
-        message =
-            case decoded of
-                Ok flags ->
-                    flags.message
-
-                Err _ ->
-                    ""
-    in
-        ( message, setTitle "" )
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
-
-
-main : Program String Model Msg
+main : Program () Model Msg
 main =
-    element
+    Browser.application
         { init = init
         , view = view
         , update = update
-        , subscriptions = subscriptions
+        , subscriptions = always Sub.none
+        , onUrlRequest = LinkClicked
+        , onUrlChange = \url -> updateUrl url |> UrlChanged
         }
+
+
+init : () -> Url -> Key -> ( Model, Cmd Msg )
+init () url key =
+    let
+        initialUrl =
+            updateUrl url
+    in
+    ( initialModel key initialUrl
+    , Cmd.batch [ fetchFromUrlPath initialUrl, fetchProfile ]
+    )
+
+
+
+-- Routing
+
+
+updateUrl : Url -> Url
+updateUrl url =
+    pathFromFragment url
+        |> fixPathAndQuery
+
+
+pathFromFragment : Url -> Url
+pathFromFragment url =
+    { url
+        | path = Maybe.withDefault "/" url.fragment
+        , fragment = Nothing
+    }
+
+
+fixPathAndQuery : Url -> Url
+fixPathAndQuery url =
+    let
+        ( path, query ) =
+            case String.split "?" url.path of
+                p :: q :: [] ->
+                    ( p, Just q )
+
+                _ ->
+                    ( url.path, url.query )
+    in
+    { url
+        | path = path
+        , query = query
+    }

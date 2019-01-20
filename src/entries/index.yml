@@ -1,0 +1,12 @@
+---
+entry:
+  title: "Calmery.moe"
+  description:
+    - "Dummy"
+    - "Dummy"
+  thumbnail: ""
+  cards:
+    - description: "Dummy"
+      thumbnail: "/assets/dummy.png"
+      title: "Dummy"
+      url: "/#/entry/dummy"
