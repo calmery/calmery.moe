@@ -2,7 +2,7 @@
   "scripts": {
     "build": "rimraf build && webpack",
     "build:production": "NODE_ENV=production npm run build",
-    "lint": "eslint --fix src/ tests/ && elm-format --yes src/elm",
+    "lint": "eslint --fix src/ tests/ && elm-format --yes src/elm && yamllint --schema=CORE_SCHEMA src/**/*.yml",
     "start": "webpack-dev-server --port 3000",
     "test": "jest --bail --coverage --detectOpenHandles --env=jsdom --forceExit && elm-test"
   },
@@ -45,7 +45,8 @@
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14",
-    "write-file-webpack-plugin": "4.5.0"
+    "write-file-webpack-plugin": "4.5.0",
+    "yaml-lint": "1.2.4"
   },
   "engine": {
     "node": "10.15.0",
