@@ -1,7 +1,7 @@
 module Part.Cards exposing (viewCards)
 
 import Html exposing (Html, a, div, img, text)
-import Html.Attributes exposing (alt, class, href, src)
+import Html.Attributes exposing (alt, class, href, src, style)
 import Model exposing (Card, Model)
 import Msg exposing (Msg)
 import Part.Flex exposing (flex, flexSpaceBetween)
@@ -47,8 +47,7 @@ viewCard isTopPage card =
     div [ class "card" ]
         (if isTopPage then
             [ text card.title
-            , div [ class "thumbnail" ]
-                []
+            , createThumbnail card.thumbnail
             , div [ class "description" ]
                 [ text card.description ]
             , a [ href card.url ]
@@ -65,6 +64,16 @@ viewCard isTopPage card =
                         []
                     ]
                 ]
-            , div [ class "thumbnail" ] []
+            , createThumbnail card.thumbnail
             ]
         )
+
+
+createThumbnail : String -> Html Msg
+createThumbnail url =
+    div
+        [ class "thumbnail"
+        , style "background" ("url(" ++ url ++ ")")
+        , style "background-size" "cover"
+        ]
+        []
