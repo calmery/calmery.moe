@@ -49,7 +49,8 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: `${__dirname}/src/assets`, to: `${__dirname}/build/assets` }
+      { from: `${__dirname}/src/assets`, to: `${__dirname}/build/assets` },
+      { from: `${__dirname}/src/CNAME`, to: `${__dirname}/build` },
     ]),
     new WriteFilePlugin()
   ]
