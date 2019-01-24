@@ -73,7 +73,6 @@ createThumbnail : String -> Html Msg
 createThumbnail url =
     div
         [ class "thumbnail"
-        , style "background" ("url(" ++ url ++ ")")
-        , style "background-size" "cover"
+        , style "background" ("url(" ++ url ++ ") 0% 0% / cover")
         ]
         []
