@@ -203,6 +203,10 @@ a {
       .card {
         height: 192px - $margin-16 * 2 - $border-outline-size * 2;
 
+        .title {
+          width: 192px - $border-outline-size * 2 - 13px;
+        }
+
         .description, .more {
           display: none;
         }
@@ -232,6 +236,10 @@ a {
 
       &:last-child {
         margin-right: 0;
+      }
+
+      .title {
+        width: 100%;
       }
 
       .thumbnail {

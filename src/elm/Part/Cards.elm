@@ -46,7 +46,7 @@ viewCard : Bool -> Card -> Html Msg
 viewCard isTopPage card =
     div [ class "card" ]
         (if isTopPage then
-            [ text card.title
+            [ div [ class "title" ] [ text card.title ]
             , createThumbnail card.thumbnail
             , div [ class "description" ]
                 [ text card.description ]
@@ -58,7 +58,7 @@ viewCard isTopPage card =
 
          else
             [ flexSpaceBetween
-                [ text card.title
+                [ div [ class "title" ] [ text card.title ]
                 , a [ href card.url ]
                     [ img [ src "/assets/images/more.svg", alt "External Link", class "link" ]
                         []
