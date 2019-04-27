@@ -1,0 +1,32 @@
+{
+  "baseBranches": [
+    "master"
+  ],
+  "labels": [
+    "renovate"
+  ],
+  "major": {
+    "labels": [
+      "renovate",
+      "major"
+    ]
+  },
+  "minor": {
+    "labels": [
+      "renovate",
+      "minor"
+    ]
+  },
+  "patch": {
+    "labels": [
+      "renovate",
+      "patch"
+    ]
+  },
+  "vulnerabilityAlerts": {
+    "labels": [
+      "renovate",
+      "security"
+    ]
+  }
+}
