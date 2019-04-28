@@ -7,12 +7,8 @@ import { Elm } from "./Main.elm";
 
 register();
 
-export const flags = {
-  message: "Hello World"
-};
-
 Elm.Main.init({
-  flags: JSON.stringify(flags),
+  flags: JSON.stringify(process.env),
   node: document.body
 });
 
