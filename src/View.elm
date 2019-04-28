@@ -1,7 +1,8 @@
 module View exposing (view)
 
 import Browser exposing (Document)
-import Html exposing (Html, div, text)
+import Html exposing (Html, div, h1, p, text)
+import Html.Attributes exposing (class, id)
 import Model exposing (Model)
 import Pages.Example as Example
 import Pages.NotFound as NotFound
@@ -14,7 +15,7 @@ view : Model -> Document Msg
 view model =
     { title = "Elm App"
     , body =
-        [ viewPage model
+        [ fullPage
         ]
     }
 
@@ -32,3 +33,21 @@ viewPage model =
 
         Nothing ->
             NotFound.view
+
+
+fullPage : Html Msg
+fullPage =
+    let
+        section =
+            div
+                [ class "section" ]
+                ([ h1 [] [ text "Section" ] ]
+                    ++ List.repeat 30 (p [] [ text "Hello World" ])
+                )
+    in
+    div
+        [ id "fullPage" ]
+        [ section
+        , section
+        , section
+        ]
