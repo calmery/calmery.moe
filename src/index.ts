@@ -25,7 +25,6 @@ const app = Elm.Main.init({
 const ports = app.ports as {
   fullPage: Elm.Ports.Subscribable;
   fullPageSectionChanged: Elm.Ports.Sendable;
-  onUrlChanged: Elm.Ports.Subscribable;
 };
 
 ports.fullPage.subscribe((section: number) => {
