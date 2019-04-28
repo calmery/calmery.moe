@@ -5,6 +5,7 @@ import Browser.Navigation exposing (Key)
 import Flags exposing (decodeFlags)
 import Html exposing (text)
 import Model exposing (Model, initialModel)
+import Ports exposing (fullPage, fullPageSectionChanged)
 import Route exposing (parseUrl)
 import Tuple exposing (first, second)
 import Update exposing (Msg(..), update)
@@ -19,26 +20,28 @@ main =
         , view = view
         , update = update
         , subscriptions = subscriptions
-        , onUrlRequest = LinkClicked
-        , onUrlChange = \url -> updateUrl url |> UrlChanged
+        , onUrlRequest = OnUrlRequest
+        , onUrlChange = \url -> updateUrl url |> OnUrlChange
         }
 
 
 init : String -> Url -> Key -> ( Model, Cmd Msg )
 init flags url key =
     let
-        route =
+        updatedUrl =
             updateUrl url
-                |> parseUrl
+
+        route =
+            parseUrl updatedUrl
     in
     ( initialModel (decodeFlags flags) key route
-    , Cmd.none
+    , fullPage updatedUrl.path
     )
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    fullPageSectionChanged FullPageSectionChanged
 
 
 
