@@ -1,3 +1,6 @@
+import fullPage from "fullpage.js";
+import "fullpage.js/vendors/scrolloverflow";
+import "fullpage.js/dist/fullpage.css";
 import "./index.scss";
 import { register } from "./serviceWorker";
 import { Elm } from "./Main.elm";
@@ -13,5 +16,11 @@ Elm.Main.init({
   node: document.body
 });
 
-// eslint-disable-next-line no-console
-console.log(process.env.NODE_ENV);
+requestAnimationFrame(() => {
+  new fullPage("#fullPage", {
+    scrollOverflow: true,
+    scrollOverflowOptions: {
+      scrollbars: false
+    }
+  });
+});
