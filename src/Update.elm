@@ -3,6 +3,7 @@ module Update exposing (Msg(..), update)
 import Browser exposing (UrlRequest(..))
 import Browser.Navigation exposing (load, pushUrl)
 import Data.EnvironmentVariables exposing (get)
+import Data.FullPage exposing (sectionToPath, sectionToRoute)
 import Model exposing (Model)
 import Route exposing (parseUrl)
 import Url exposing (Url)
@@ -19,7 +20,7 @@ update msg model =
     case msg of
         FullPageSectionChanged section ->
             ( model
-            , pushUrl model.key ("/#/" ++ String.fromInt section)
+            , pushUrl model.key ("/#/" ++ sectionToPath section)
             )
 
         OnUrlRequest urlRequest ->
@@ -39,6 +40,4 @@ update msg model =
                 route =
                     parseUrl url
             in
-            ( { model | route = route }
-            , Cmd.none
-            )
+            ( { model | route = route }, Cmd.none )

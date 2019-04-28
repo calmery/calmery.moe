@@ -1,7 +1,7 @@
 module Route exposing (Route(..), parseUrl)
 
 import Url exposing (Url)
-import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
+import Url.Parser exposing ((</>), Parser, int, map, oneOf, parse, s, top)
 
 
 parseUrl : Url -> Maybe Route
@@ -15,12 +15,20 @@ parseUrl =
 
 type Route
     = Top
-    | Example
+    | Profile
+    | Article Int
+    | Articles
+    | Good Int
+    | Goods
 
 
 route : Parser (Route -> Route) Route
 route =
     oneOf
         [ map Top top
-        , map Example (s "example")
+        , map Profile (s "profile")
+        , map Article (s "articles" </> int)
+        , map Articles (s "articles")
+        , map Good (s "goods" </> int)
+        , map Goods (s "goods")
         ]

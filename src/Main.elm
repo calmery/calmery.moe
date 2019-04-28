@@ -2,8 +2,10 @@ module Main exposing (main)
 
 import Browser exposing (application)
 import Browser.Navigation exposing (Key)
+import Data.FullPage exposing (routeToSection)
 import Flags exposing (decodeFlags)
 import Html exposing (text)
+import Maybe exposing (andThen)
 import Model exposing (Model, initialModel)
 import Ports exposing (fullPage, fullPageSectionChanged)
 import Route exposing (parseUrl)
@@ -28,14 +30,21 @@ main =
 init : String -> Url -> Key -> ( Model, Cmd Msg )
 init flags url key =
     let
-        updatedUrl =
-            updateUrl url
-
         route =
-            parseUrl updatedUrl
+            updateUrl url
+                |> parseUrl
     in
     ( initialModel (decodeFlags flags) key route
-    , fullPage updatedUrl.path
+    , case
+        route
+            |> andThen routeToSection
+            |> andThen (\section -> Just <| fullPage section)
+      of
+        Just cmd ->
+            cmd
+
+        Nothing ->
+            Cmd.none
     )
 
 
