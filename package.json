@@ -3,6 +3,9 @@
     "node": "10.15.3",
     "npm": "6.9.0"
   },
+  "dependencies": {
+    "fullpage.js": "3.0.5"
+  },
   "devDependencies": {
     "@types/autoprefixer": "9.4.0",
     "@types/copy-webpack-plugin": "5.0.0",
