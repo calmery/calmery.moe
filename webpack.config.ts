@@ -89,7 +89,7 @@ const common: Configuration = {
     }),
     new DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify(NODE_ENV)
+        NODE_ENV: JSON.stringify(NODE_ENV || "development")
       }
     })
   ],
