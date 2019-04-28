@@ -2,28 +2,39 @@ module Update exposing (Msg(..), update)
 
 import Browser exposing (UrlRequest(..))
 import Browser.Navigation exposing (load, pushUrl)
+import Data.EnvironmentVariables exposing (get)
 import Model exposing (Model)
 import Route exposing (parseUrl)
 import Url exposing (Url)
 
 
 type Msg
-    = LinkClicked UrlRequest
-    | UrlChanged Url
+    = OnUrlRequest UrlRequest
+    | OnUrlChange Url
+    | FullPageSectionChanged Int
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        LinkClicked urlRequest ->
+        FullPageSectionChanged section ->
+            ( model
+            , pushUrl model.key ("/#/" ++ String.fromInt section)
+            )
+
+        OnUrlRequest urlRequest ->
             case urlRequest of
                 Internal url ->
-                    ( model, pushUrl model.key (Url.toString url) )
+                    ( model
+                    , Cmd.batch
+                        [ pushUrl model.key (Url.toString url)
+                        ]
+                    )
 
                 External href ->
                     ( model, load href )
 
-        UrlChanged url ->
+        OnUrlChange url ->
             let
                 route =
                     parseUrl url
