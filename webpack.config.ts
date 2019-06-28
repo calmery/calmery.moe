@@ -172,4 +172,4 @@ const production: Configuration = merge(common, {
   ]
 });
 
-export default (NODE_ENV === "production" ? production : development);
+export default NODE_ENV === "production" ? production : development;
