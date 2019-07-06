@@ -1,10 +1,26 @@
 @import 'variables';
 
 @font-face {
+  font-family: Quicksand;
+  src: url(assets/fonts/Quicksand.woff2) format('woff2'),
+       url(assets/fonts/Quicksand.woff) format('woff'),
+       url(assets/fonts/Quicksand.ttf) format('truetype');
+}
+
+@font-face {
   font-family: SmartPhoneUI;
   src: url(assets/fonts/SmartFontUI.woff2) format('woff2'),
        url(assets/fonts/SmartFontUI.woff) format('woff'),
        url(assets/fonts/SmartFontUI.ttf) format('truetype');
+}
+
+img {
+  vertical-align: bottom;
+}
+
+h1, p {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -29,9 +45,9 @@ main {
 }
 
 #container {
-  width: $container-width - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
-  height: $container-height - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
-  padding: $margin-extra-large - $border-width;
+  width: $container-width - $border-width * 2 - (($margin-extra-large + $margin * 3) - $border-width) * 2;
+  height: $container-height - $border-width * 2 - (($margin-extra-large + $margin * 3) - $border-width) * 2;
+  padding: ($margin-extra-large + $margin * 3) - $border-width;
   background: radial-gradient(circle at top left, $container-background-color-start, $container-background-color-end);
   border: $border-width solid $border-color;
   border-radius: $border-radius;
@@ -42,8 +58,6 @@ header {
   h1 {
     height: $logo-height;
     line-height: $logo-height;
-    padding: 0;
-    margin: 0;
     margin-left: $margin-large;
 
     img {
@@ -59,9 +73,59 @@ header {
   }
 
   p {
-    padding: 0;
-    margin: 0;
     margin-left: $margin-large;
     white-space: pre;
+  }
+}
+
+section#articles {
+  height: $articles-height;
+  margin: $margin-extra-large 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  #profile {
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    background: $color-white;
+    padding: $margin-medium - $border-width;
+    display: flex;
+
+    img {
+      height: $footer-profile-icon-height - $border-width * 2 * 2;
+      border: $footer-profile-icon-border-width solid $border-color;
+      border-radius: 100%;
+    }
+
+    #self-introduction {
+      margin-left: $margin-small;
+
+      #name {
+        font-family: Quicksand;
+      }
+
+      #description {
+        width: 350px;
+        font-size: 10px;
+        line-height: 11px;
+        margin-top: $margin;
+      }
+    }
+  }
+
+  #share-and-copyright {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    flex-direction: column;
+  }
+
+  #copyright {
+    font-family: Quicksand;
+    font-size: $footer-copyright-font-size;
+    line-height: $footer-copyright-font-size;
   }
 }
