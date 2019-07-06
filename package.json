@@ -94,7 +94,7 @@
     "prettify": "npm run prettify:typescript && npm run prettify:elm",
     "prettify:elm": "elm-format --yes .",
     "prettify:typescript": "eslint --fix . --ext .ts",
-    "start": "webpack-dev-server --port 3000",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 3000",
     "test": "jest --coverage && elm-test"
   }
 }
