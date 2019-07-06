@@ -1,4 +1,63 @@
+@import 'variables';
+
+@font-face {
+  font-family: SmartPhoneUI;
+  src: url(assets/fonts/SmartFontUI.woff) format('woff'),
+       url(assets/fonts/SmartFontUI.ttf) format('truetype');
+}
+
 body {
   padding: 0;
   margin: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background: $main-background-color;
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: $container-width - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
+  height: $container-height - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
+  padding: $margin-extra-large - $border-width;
+  background: radial-gradient(circle at top left, $container-background-color-start, $container-background-color-end);
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 16px $container-box-shadow-color;
+}
+
+header {
+  h1 {
+    height: $logo-height;
+    line-height: $logo-height;
+    padding: 0;
+    margin: 0;
+    margin-left: $margin-large;
+
+    img {
+      height: $logo-height;
+    }
+  }
+
+  #border {
+    width: 100%;
+    height: $container-header-border-width;
+    background: $border-color;
+    margin: $margin-medium 0;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-left: $margin-large;
+    white-space: pre;
+  }
 }

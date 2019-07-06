@@ -4,7 +4,7 @@
     "npm": "6.9.0"
   },
   "dependencies": {
-    "fullpage.js": "3.0.5"
+    "normalize.css": "8.0.1"
   },
   "devDependencies": {
     "@types/autoprefixer": "9.5.0",
