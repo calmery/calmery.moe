@@ -23,6 +23,12 @@ h1, p {
   margin: 0;
 }
 
+a {
+  outline: 0;
+  text-decoration: none;
+  color: $color;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -55,6 +61,11 @@ main {
 }
 
 header {
+  #logo-and-back-button {
+    display: flex;
+    justify-content: space-between;
+  }
+
   h1 {
     height: $logo-height;
     line-height: $logo-height;
@@ -63,6 +74,15 @@ header {
     img {
       height: $logo-height;
     }
+  }
+
+  #back-button {
+    height: $logo-height - $margin-small * 2;
+    border: $border-width solid $border-color;
+    background: $color-white;
+    border-radius: $border-radius;
+    padding: $margin-small - $border-width;
+    font-family: Quicksand;
   }
 
   #border {
@@ -136,11 +156,6 @@ footer {
 .tweet {
   font: normal normal normal 11px / 18px 'Helvetica Neue', Arial, sans-serif;
   color: #333;
-
-  a {
-    outline: 0;
-    text-decoration: none;
-  }
 
   .button, .button .label {
     vertical-align: top;
