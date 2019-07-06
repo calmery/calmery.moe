@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: SmartPhoneUI;
-  src: url(assets/fonts/SmartFontUI.woff) format('woff'),
+  src: url(assets/fonts/SmartFontUI.woff2) format('woff2'),
+       url(assets/fonts/SmartFontUI.woff) format('woff'),
        url(assets/fonts/SmartFontUI.ttf) format('truetype');
 }
 
