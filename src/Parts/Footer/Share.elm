@@ -16,7 +16,7 @@ view _ =
 
 tweetButton : Html Msg
 tweetButton =
-    div [ class "tweet" ]
+    div [ class "tweet-button" ]
         [ a [ class "button", href "https://twitter.com/intent/tweet?url=https%3A%2F%2Fcalmery.moe&text=Calmery.moe" ]
             [ i [] []
             , span
