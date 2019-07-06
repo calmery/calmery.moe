@@ -3,7 +3,6 @@ module Update exposing (Msg(..), update)
 import Browser exposing (UrlRequest(..))
 import Browser.Navigation exposing (load, pushUrl)
 import Data.EnvironmentVariables exposing (get)
-import Data.FullPage exposing (sectionToPath, sectionToRoute)
 import Model exposing (Model)
 import Route exposing (parseUrl)
 import Url exposing (Url)
@@ -12,17 +11,11 @@ import Url exposing (Url)
 type Msg
     = OnUrlRequest UrlRequest
     | OnUrlChange Url
-    | FullPageSectionChanged Int
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        FullPageSectionChanged section ->
-            ( model
-            , pushUrl model.key ("/#/" ++ sectionToPath section)
-            )
-
         OnUrlRequest urlRequest ->
             case urlRequest of
                 Internal url ->

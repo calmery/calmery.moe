@@ -2,12 +2,10 @@ module Main exposing (main)
 
 import Browser exposing (application)
 import Browser.Navigation exposing (Key)
-import Data.FullPage exposing (routeToSection)
 import Flags exposing (decodeFlags)
 import Html exposing (text)
 import Maybe exposing (andThen)
 import Model exposing (Model, initialModel)
-import Ports exposing (fullPage, fullPageSectionChanged)
 import Route exposing (parseUrl)
 import Tuple exposing (first, second)
 import Update exposing (Msg(..), update)
@@ -35,22 +33,13 @@ init flags url key =
                 |> parseUrl
     in
     ( initialModel (decodeFlags flags) key route
-    , case
-        route
-            |> andThen routeToSection
-            |> andThen (\section -> Just <| fullPage section)
-      of
-        Just cmd ->
-            cmd
-
-        Nothing ->
-            Cmd.none
+    , Cmd.none
     )
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
-    fullPageSectionChanged FullPageSectionChanged
+subscriptions _ =
+    Sub.none
 
 
 
