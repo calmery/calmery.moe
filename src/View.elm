@@ -4,6 +4,8 @@ import Browser exposing (Document)
 import Html exposing (Html, a, div, h1, header, img, node, p, text)
 import Html.Attributes exposing (alt, class, href, id, src)
 import Model exposing (Model)
+import Parts.Articles as Articles
+import Parts.Footer as Footer
 import Parts.Header as Header
 import Route exposing (Route(..))
 import Update exposing (Msg(..))
@@ -18,6 +20,8 @@ view model =
             [ div
                 [ id "container" ]
                 [ Header.view model
+                , Articles.view model
+                , Footer.view model
                 ]
             ]
         ]
