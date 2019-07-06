@@ -13,7 +13,10 @@ body {
   font-size: $font-size;
   font-family: $font-family;
   line-height: $line-height;
-  background: $main-background-color;
+  background: url(assets/background.jpg), $main-background-color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 main {
