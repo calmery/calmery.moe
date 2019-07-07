@@ -62,8 +62,8 @@ main {
 
 #container {
   width: $container-width - $border-width * 2 - (($margin-extra-large + $margin * 3) - $border-width) * 2;
-  height: $container-height - $border-width * 2 - (($margin-extra-large + $margin * 3) - $border-width) * 2;
-  padding: ($margin-extra-large + $margin * 3) - $border-width;
+  height: $container-height - $border-width * 2 - (($margin-extra-large + $margin * 3 - $margin / 2) - $border-width) * 2;
+  padding: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
   background: radial-gradient(circle at top left, $container-background-color-start, $container-background-color-end);
   border: $border-width solid $border-color;
   border-radius: $border-radius;
@@ -73,6 +73,7 @@ main {
 header {
   #logo-and-links {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     h1 {
@@ -86,6 +87,7 @@ header {
     }
 
     #links {
+      height: $logo-height - $margin;
       display: flex;
       margin-right: $margin-medium;
 
@@ -93,7 +95,7 @@ header {
         margin-right: $margin-small;
 
         div {
-          height: $logo-height - $margin-small * 2;
+          height: $logo-height - $margin - $margin-small * 2;
           border: $border-width solid $border-color;
           background: $color-white;
           border-radius: $border-radius;
