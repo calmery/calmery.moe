@@ -61,9 +61,12 @@ main {
 }
 
 #container {
-  width: $container-width - $border-width * 2 - (($margin-extra-large + $margin * 3) - $border-width) * 2;
+  width: $container-width - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
   height: $container-height - $border-width * 2 - (($margin-extra-large + $margin * 3 - $margin / 2) - $border-width) * 2;
-  padding: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
+  padding-top: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
+  padding-bottom: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
+  padding-left: $margin-extra-large - $border-width;
+  padding-right: $margin-extra-large - $border-width;
   background: radial-gradient(circle at top left, $container-background-color-start, $container-background-color-end);
   border: $border-width solid $border-color;
   border-radius: $border-radius;
