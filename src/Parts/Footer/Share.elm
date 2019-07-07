@@ -3,7 +3,7 @@ module Parts.Footer.Share exposing (view)
 import Html exposing (Html, a, div, i, span, text)
 import Html.Attributes exposing (class, href)
 import Model exposing (Model)
-import Update exposing (Msg)
+import Msg exposing (Msg)
 
 
 view : Model -> Html Msg

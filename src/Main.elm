@@ -2,13 +2,16 @@ module Main exposing (main)
 
 import Browser exposing (application)
 import Browser.Navigation exposing (Key)
+import Data.Entries.Fetch exposing (fetchEntries)
 import Flags exposing (decodeFlags)
+import Helper exposing (fetchFromUrlPath, isPageUrl)
 import Html exposing (text)
 import Maybe exposing (andThen)
 import Model exposing (Model, initialModel)
+import Msg exposing (Msg(..))
 import Route exposing (parseUrl)
 import Tuple exposing (first, second)
-import Update exposing (Msg(..), update)
+import Update exposing (update)
 import Url exposing (Url)
 import View exposing (view)
 
@@ -30,10 +33,9 @@ init flags url key =
     let
         route =
             updateUrl url
-                |> parseUrl
     in
-    ( initialModel (decodeFlags flags) key route
-    , Cmd.none
+    ( initialModel (decodeFlags flags) key (route |> parseUrl)
+    , Cmd.batch [ fetchFromUrlPath route, fetchEntries ]
     )
 
 
