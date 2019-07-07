@@ -71,7 +71,7 @@ main {
 }
 
 header {
-  #logo-and-about-me {
+  #logo-and-links {
     display: flex;
     justify-content: space-between;
 
@@ -85,17 +85,30 @@ header {
       }
     }
 
-    #about-me {
-      height: $logo-height - $margin-small * 2;
-      border: $border-width solid $border-color;
-      background: $color-white;
-      border-radius: $border-radius;
-      padding: $margin-small - $border-width;
-      font-family: Quicksand;
+    #links {
+      display: flex;
+      margin-right: $margin-medium;
 
-      &:hover {
-        transition: 0.25s ease;
-        background: $color-gray;
+      a {
+        margin-right: $margin-small;
+
+        div {
+          height: $logo-height - $margin-small * 2;
+          border: $border-width solid $border-color;
+          background: $color-white;
+          border-radius: $border-radius;
+          padding: $margin-small - $border-width;
+          font-family: Quicksand;
+
+          &:hover {
+            transition: 0.25s ease;
+            background: $color-gray;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
