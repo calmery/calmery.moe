@@ -141,7 +141,14 @@ section#articles {
 
   height: $article-size;
   margin: $margin-extra-large 0;
+  overflow-x: scroll;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   display: flex;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .article {
     width: $article-size - $margin-medium * 2;

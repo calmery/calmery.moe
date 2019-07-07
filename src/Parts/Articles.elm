@@ -10,7 +10,7 @@ view : Model -> Html Msg
 view model =
     section
         [ id "articles" ]
-        [ article, article, article ]
+        [ article, article, article, article ]
 
 
 article =
