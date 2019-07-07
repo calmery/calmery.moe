@@ -64,7 +64,7 @@ main {
 }
 
 #container {
-  $top-and-bottom-margin: $margin-extra-large + $margin * 3 - $margin / 2;
+  $top-and-bottom-margin: $margin-extra-large + $margin * 3 - $margin;
   $left-and-right-margin: $margin-extra-large;
 
   width: $container-width - $left-and-right-margin * 2;
@@ -137,8 +137,59 @@ header {
 }
 
 section#articles {
-  height: 220px;
+  $article-size: 224px;
+
+  height: $article-size;
   margin: $margin-extra-large 0;
+  display: flex;
+
+  .article {
+    width: $article-size - $margin-medium * 2;
+    height: $article-size - $margin-medium * 2;
+    border: $border-width solid $border-color;
+    padding: $margin-medium - $border-width;
+    border-radius: $border-radius;
+    background: $color-white;
+    margin-right: $margin-medium;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .date {
+      color: $color-dark-gray;
+      font-size: 10px;
+      line-height: 10px;
+      margin-top: $margin;
+    }
+
+    .thumbnail {
+      $thumbnail-width: 192px;
+
+      width: $thumbnail-width - $border-width * 2;
+      height: ($thumbnail-width / 16 * 9) - $border-width * 2;
+      margin-top: $margin * 3;
+      margin-bottom: $margin * 3;
+      border: $border-width solid $border-color;
+      border-radius: $border-radius;
+    }
+
+    .description {
+      font-size: 10px;
+      line-height: 10px;
+      color: $color-dark-gray;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .readmore {
+      font-size: 10px;
+      text-align: right;
+      line-height: 10px;
+      margin-top: $margin-small;
+    }
+  }
 }
 
 footer {
