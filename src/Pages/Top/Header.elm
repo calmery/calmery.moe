@@ -1,9 +1,9 @@
-module Parts.Header exposing (view)
+module Pages.Top.Header exposing (view)
 
 import Html exposing (Html, a, div, h1, header, img, node, p, text)
 import Html.Attributes exposing (alt, href, id, src)
 import Model exposing (Model)
-import Update exposing (Msg)
+import Msg exposing (Msg)
 
 
 view : Model -> Html Msg
@@ -12,7 +12,7 @@ view model =
         []
         [ div [ id "logo-and-links" ] [ logo, links ]
         , border
-        , introduction
+        , introduction model
         ]
 
 
@@ -33,8 +33,8 @@ border =
         []
 
 
-introduction : Html Msg
-introduction =
+introduction : Model -> Html Msg
+introduction model =
     p
         []
         [ text "一次創作と同人音楽が好き！\nオタク的な活動とか好きなものはここにまとめていくよ．" ]

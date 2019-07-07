@@ -3,7 +3,7 @@ module Parts.Footer.Profile exposing (view)
 import Html exposing (Html, div, img, p, text)
 import Html.Attributes exposing (alt, id, src)
 import Model exposing (Model)
-import Update exposing (Msg)
+import Msg exposing (Msg)
 
 
 view : Model -> Html Msg

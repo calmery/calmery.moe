@@ -3,9 +3,9 @@ module Parts.Footer exposing (view)
 import Html exposing (Html, div, footer, p, text)
 import Html.Attributes exposing (id)
 import Model exposing (Model)
+import Msg exposing (Msg)
 import Parts.Footer.Profile as Profile
 import Parts.Footer.Share as Share
-import Update exposing (Msg)
 
 
 view : Model -> Html Msg
