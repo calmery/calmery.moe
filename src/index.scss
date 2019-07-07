@@ -34,21 +34,24 @@ h1, p {
 a {
   outline: 0;
   text-decoration: none;
-  color: $color;
+  color: $color-black;
 }
 
 body {
   padding: 0;
   margin: 0;
-  color: $color;
-  font-size: $font-size;
-  font-family: $font-family;
-  line-height: $line-height;
-  background: url(assets/background.jpg), $main-background-color;
+  color: $color-black;
+  font-size: 12px;
+  font-family: SmartPhoneUI, sans-serif;
+  line-height: 14px;
+  background: url(assets/background.jpg), #F5F5F5;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+$container-width: 800px;
+$container-height: 600px;
 
 main {
   top: 50%;
@@ -61,16 +64,19 @@ main {
 }
 
 #container {
-  width: $container-width - $border-width * 2 - ($margin-extra-large - $border-width) * 2;
-  height: $container-height - $border-width * 2 - (($margin-extra-large + $margin * 3 - $margin / 2) - $border-width) * 2;
-  padding-top: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
-  padding-bottom: ($margin-extra-large + $margin * 3 - $margin / 2) - $border-width;
-  padding-left: $margin-extra-large - $border-width;
-  padding-right: $margin-extra-large - $border-width;
-  background: radial-gradient(circle at top left, $container-background-color-start, $container-background-color-end);
+  $top-and-bottom-margin: $margin-extra-large + $margin * 3 - $margin / 2;
+  $left-and-right-margin: $margin-extra-large;
+
+  width: $container-width - $left-and-right-margin * 2;
+  height: $container-height - $top-and-bottom-margin * 2;
+  padding-top: $top-and-bottom-margin - $border-width;
+  padding-bottom: $top-and-bottom-margin - $border-width;
+  padding-left: $left-and-right-margin - $border-width;
+  padding-right: $left-and-right-margin - $border-width;
+  background: radial-gradient(circle at top left, #FFFFFF, #FAFAFA);
   border: $border-width solid $border-color;
   border-radius: $border-radius;
-  box-shadow: 0px 4px 16px $container-box-shadow-color;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, .12);
 }
 
 header {
@@ -80,17 +86,16 @@ header {
     justify-content: space-between;
 
     h1 {
-      height: $logo-height;
-      line-height: $logo-height;
+      height: 34px;
       margin-left: $margin-large;
 
       img {
-        height: $logo-height;
+        height: 100%;
       }
     }
 
     #links {
-      height: $logo-height - $margin;
+      height: 30px;
       display: flex;
       margin-right: $margin-medium;
 
@@ -98,7 +103,7 @@ header {
         margin-right: $margin-small;
 
         div {
-          height: $logo-height - $margin - $margin-small * 2;
+          height: 30px - $margin-small * 2;
           border: $border-width solid $border-color;
           background: $color-white;
           border-radius: $border-radius;
@@ -120,7 +125,7 @@ header {
 
   #border {
     width: 100%;
-    height: $container-header-border-width;
+    height: 2px;
     background: $border-color;
     margin: $margin-medium 0;
   }
@@ -132,7 +137,7 @@ header {
 }
 
 section#articles {
-  height: $articles-height;
+  height: 220px;
   margin: $margin-extra-large 0;
 }
 
@@ -148,8 +153,8 @@ footer {
     display: flex;
 
     img {
-      height: $footer-profile-icon-height - $border-width * 2 * 2;
-      border: $footer-profile-icon-border-width solid $border-color;
+      height: 40px - $border-width * 2 * 2;
+      border: 2px solid $border-color;
       border-radius: 100%;
     }
 
@@ -177,8 +182,8 @@ footer {
 
     #copyright {
       font-family: Quicksand;
-      font-size: $footer-copyright-font-size;
-      line-height: $footer-copyright-font-size;
+      font-size: 10px;
+      line-height: 10px;
     }
   }
 }
