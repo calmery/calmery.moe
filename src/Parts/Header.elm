@@ -10,7 +10,7 @@ view : Model -> Html Msg
 view model =
     header
         []
-        [ div [ id "logo-and-about-me" ] [ logo, aboutMe ]
+        [ div [ id "logo-and-links" ] [ logo, links ]
         , border
         , introduction
         ]
@@ -40,11 +40,26 @@ introduction =
         [ text "一次創作と同人音楽が好き！\nオタク的な活動とか好きなものはここにまとめていくよ．" ]
 
 
+links : Html Msg
+links =
+    div [ id "links" ] [ booth, aboutMe ]
+
+
+booth : Html Msg
+booth =
+    a
+        [ href "https://calmery.booth.pm" ]
+        [ div
+            []
+            [ text "BOOTH" ]
+        ]
+
+
 aboutMe : Html Msg
 aboutMe =
     a
         [ href "https://calmery.me" ]
         [ div
-            [ id "about-me" ]
+            []
             [ text "About me" ]
         ]
