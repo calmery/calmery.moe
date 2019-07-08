@@ -213,7 +213,8 @@ $article-top-and-bottom-margin: $margin-extra-large;
 section#articles {
   height: $article-size;
   margin: $margin-extra-large 0;
-  overflow-x: scroll;
+  // 現状記事数が 3 未満だし，Edge と IE で変にスクロールバーが表示されてしまうので消しておく
+  // overflow-x: scroll;
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
   display: flex;
