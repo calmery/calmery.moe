@@ -1,8 +1,10 @@
 module Pages.Entry exposing (view)
 
-import Html exposing (Html, div, text)
+import Html exposing (Html, article, div, text)
 import Model exposing (Model)
 import Msg exposing (Msg)
+import Pages.Entry.Body as Body
+import Pages.Entry.Header as Header
 import Pages.Loading as LoadingPage
 import Pages.NotFound as NotFoundPage
 
@@ -15,7 +17,10 @@ view model =
     else
         case model.entry.data of
             Just entry ->
-                text "Entry"
+                article []
+                    [ Header.view entry
+                    , Body.view entry
+                    ]
 
             Nothing ->
                 NotFoundPage.view
