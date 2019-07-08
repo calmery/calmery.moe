@@ -225,6 +225,10 @@ section#articles {
     display: none;
   }
 
+  #not-found, #loading {
+    height: $article-size - $margin-medium * 2;
+  }
+
   .article {
     width: $article-size - $margin-medium * 2;
     height: $article-size - $margin-medium * 2;
