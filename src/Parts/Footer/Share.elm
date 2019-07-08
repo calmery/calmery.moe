@@ -1,9 +1,10 @@
 module Parts.Footer.Share exposing (view)
 
-import Html exposing (Html, a, div, i, span, text)
+import Html exposing (Html, a, div, text)
 import Html.Attributes exposing (class, href)
 import Model exposing (Model)
 import Msg exposing (Msg)
+import Parts.Footer.TweetButton as TweetButton
 import Route exposing (Route(..))
 import Url exposing (percentEncode)
 
@@ -59,10 +60,7 @@ tweetButton model =
                 )
     in
     div [ class "tweet-button" ]
-        [ a [ class "button", href ("https://twitter.com/intent/tweet?url=" ++ shareUrl ++ "&text=" ++ shareText) ]
-            [ i [] []
-            , span
-                [ class "label" ]
-                [ text "Tweet" ]
+        [ a [ href ("https://twitter.com/intent/tweet?url=" ++ shareUrl ++ "&text=" ++ shareText) ]
+            [ TweetButton.view
             ]
         ]
