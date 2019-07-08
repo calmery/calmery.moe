@@ -8,6 +8,6 @@ fetchEntries : Cmd Msg
 fetchEntries =
     Http.get
         { url =
-            "/assets/entries.yml"
+            "/assets/entries.json"
         , expect = Http.expectString UpdateEntries
         }

@@ -1,13 +1,13 @@
 module Data.Entry.Decoder exposing (decodeEntry, entryDecoder)
 
 import Data.Attachment.Decoder exposing (attachmentDecoder)
+import Json.Decode exposing (Decoder, Error, decodeString, field, list, map5, string)
 import Model exposing (Entry)
-import Yaml.Decode exposing (Decoder, Error, field, fromString, list, map5, string)
 
 
 decodeEntry : String -> Result Error Entry
 decodeEntry =
-    fromString entryDecoder
+    decodeString entryDecoder
 
 
 entryDecoder : Decoder Entry
