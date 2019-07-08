@@ -1,4 +1,4 @@
-module Model exposing (Entry, Model, SimpleEntry, initialModel)
+module Model exposing (Attachment, Entry, Model, SimpleEntry, initialModel)
 
 import Browser.Navigation exposing (Key)
 import Data.EnvironmentVariables exposing (EnvironmentVariables)
@@ -37,10 +37,18 @@ type alias Model =
 
 
 type alias Entry =
-    { body : String
+    { attachments : List Attachment
+    , body : String
     , date : String
     , thumbnail : String
     , title : String
+    }
+
+
+type alias Attachment =
+    { thumbnail : String
+    , title : String
+    , url : String
     }
 
 
