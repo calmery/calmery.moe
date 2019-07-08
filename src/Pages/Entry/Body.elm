@@ -21,12 +21,36 @@ attachmentsView attachments =
     div [ id "attachments" ] (List.map attachmentView attachments)
 
 
+linkWrap : String -> Html Msg -> Html Msg
+linkWrap url html =
+    a [ href url ] [ html ]
+
+
 attachmentView : Attachment -> Html Msg
 attachmentView attachment =
-    a [ href attachment.url ]
-        [ div
-            [ class "attachment" ]
-            [ p [ class "attachment-title" ] [ text attachment.title ]
-            , div [ class "attachment-image", style "background" ("url(" ++ attachment.thumbnail ++ ") center / cover") ] []
-            ]
-        ]
+    let
+        content =
+            div
+                [ class "attachment" ]
+                [ div
+                    [ class "attachment-title-and-link" ]
+                    [ p
+                        [ class "attachment-title" ]
+                        [ text attachment.title ]
+                    , img
+                        [ src "assets/link.svg", alt "リンク" ]
+                        []
+                    ]
+                , div
+                    [ class "attachment-image"
+                    , style "background" ("url(" ++ attachment.thumbnail ++ ") center / cover")
+                    ]
+                    []
+                ]
+    in
+    case attachment.url of
+        Just url ->
+            linkWrap url content
+
+        Nothing ->
+            content
