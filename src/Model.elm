@@ -48,7 +48,7 @@ type alias Entry =
 type alias Attachment =
     { thumbnail : String
     , title : String
-    , url : String
+    , url : Maybe String
     }
 
 
