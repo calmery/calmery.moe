@@ -23,4 +23,4 @@ view model =
                     ]
 
             Nothing ->
-                NotFoundPage.view
+                NotFoundPage.view True
