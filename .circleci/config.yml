@@ -25,6 +25,32 @@ jobs:
           root: ~/
           paths: ./*
 
+  lint:
+    docker:
+      - image: circleci/node:10.16.0
+
+    working_directory: ~/elm
+
+    steps:
+      - attach_workspace:
+          at: ~/
+
+      - restore_cache:
+          keys:
+          - elm-0.19-dependencies-{{ checksum "elm.json" }}
+
+      - run: npm run prettify
+
+      - save_cache:
+          paths:
+            - elm-stuff
+            - ~/.elm
+          key: elm-0.19-dependencies-{{ checksum "elm.json" }}
+
+      - persist_to_workspace:
+          root: ~/
+          paths: ./*
+
   test:
     docker:
       - image: circleci/node:10.16.0
@@ -61,6 +87,18 @@ jobs:
       - attach_workspace:
           at: ~/
 
+      - run: npm run build
+
+  build-production:
+    docker:
+      - image: circleci/node:10.16.0
+
+    working_directory: ~/elm
+
+    steps:
+      - attach_workspace:
+          at: ~/
+
       - run: npm run build:production
 
       - persist_to_workspace:
@@ -84,21 +122,30 @@ jobs:
 workflows:
   version: 2
 
-  test-build-and-deploy:
+  lint-test-build-and-deploy:
     jobs:
       - setup
 
-      - test:
+      - lint:
           requires:
             - setup
 
+      - test:
+          requires:
+            - lint
+
       - build:
+          requires:
+            - test
+
+      - build-production:
           requires:
             - test
 
       - deploy:
           requires:
             - build
+            - build-production
 
           filters:
             branches:

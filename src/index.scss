@@ -1,0 +1,409 @@
+@import 'variables';
+
+// Fonts
+
+@font-face {
+  font-family: Quicksand;
+  src: url(assets/fonts/Quicksand.woff2) format('woff2'),
+       url(assets/fonts/Quicksand.woff) format('woff'),
+       url(assets/fonts/Quicksand.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: SmartFontUI;
+  src: url(assets/fonts/SmartFontUI.woff2) format('woff2'),
+       url(assets/fonts/SmartFontUI.woff) format('woff'),
+       url(assets/fonts/SmartFontUI.ttf) format('truetype');
+}
+
+// Animation
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+.fadeIn {
+  animation: .3s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: .3s fadeOut forwards;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+h1, p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: $color-black;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: $color-black;
+  font-size: 12px;
+  font-family: SmartFontUI, sans-serif;
+  line-height: 14px;
+  background: url(assets/background.jpg), #F5F5F5;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+$container-width: 800px;
+$container-height: 600px;
+
+main {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: 0 - $container-height / 2;
+  margin-left: 0 - $container-width / 2;
+  opacity: 0;
+  animation: .5s fadeIn forwards;
+}
+
+#container {
+  $top-and-bottom-margin: $margin-extra-large + $margin * 3 - $margin;
+  $left-and-right-margin: $margin-extra-large;
+
+  width: $container-width - $left-and-right-margin * 2;
+  height: $container-height - $top-and-bottom-margin * 2;
+  padding-top: $top-and-bottom-margin - $border-width;
+  padding-bottom: $top-and-bottom-margin - $border-width;
+  padding-left: $left-and-right-margin - $border-width;
+  padding-right: $left-and-right-margin - $border-width;
+  background: radial-gradient(circle at top left, #FFFFFF, #FAFAFA);
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, .12);
+}
+
+header {
+  #logo-and-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      height: 34px;
+      line-height: 34px;
+      margin-left: $margin-large;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    #links {
+      height: 30px;
+      display: flex;
+      margin-right: $margin-medium;
+
+      a {
+        margin-right: $margin-small;
+
+        div {
+          height: 30px - $margin-small * 2;
+          border: $border-width solid $border-color;
+          background: $color-white;
+          border-radius: $border-radius;
+          padding: $margin-small - $border-width;
+          font-family: Quicksand;
+
+          &:hover {
+            transition: 0.25s ease;
+            background: $color-gray;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  #border {
+    width: 100%;
+    height: 2px;
+    background: $border-color;
+    margin: $margin-medium 0;
+  }
+
+  p {
+    margin-left: $margin-large;
+    margin-right: $margin-large;
+    white-space: pre-wrap;
+  }
+}
+
+#body {
+  margin-left: $margin-large;
+  margin-right: $margin-large;
+  white-space: pre-wrap;
+  height: 14px * 6;
+
+  p {
+    a {
+      text-decoration: underline;
+
+      &::before {
+        // content: "";
+      }
+    }
+  }
+}
+
+#attachments {
+  $article-size: 224px;
+
+  margin: $margin-extra-large 0;
+  display: flex;
+
+  a {
+    margin-right: $margin-medium;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .attachment {
+    width: 224px - $margin-medium * 2;
+    height: 168px - $margin-medium * 2;
+    border: $border-width solid $border-color;
+    padding: $margin-medium - $border-width;
+    border-radius: $border-radius;
+    background: $color-white;
+
+    &:hover {
+      transition: 0.25s ease;
+      background: $border-color;
+    }
+
+    // 168 - 95 => 73
+
+    .attachment-image {
+      margin-top: $margin-small;
+      width: 192px - $border-width * 2;
+      height: 114px - $border-width * 2;
+      border: $border-width solid $border-color;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+$article-size: 224px;
+$article-top-and-bottom-margin: $margin-extra-large;
+
+section#articles {
+  height: $article-size;
+  margin: $margin-extra-large 0;
+  // 現状記事数が 3 未満だし，Edge と IE で変にスクロールバーが表示されてしまうので消しておく
+  // overflow-x: scroll;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .article {
+    width: $article-size - $margin-medium * 2;
+    height: $article-size - $margin-medium * 2;
+    border: $border-width solid $border-color;
+    padding: $margin-medium - $border-width;
+    border-radius: $border-radius;
+    background: $color-white;
+    margin-right: $margin-medium;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .date {
+      color: $color-dark-gray;
+      font-size: 10px;
+      line-height: 10px;
+      margin-top: $margin;
+    }
+
+    .thumbnail {
+      $thumbnail-width: 192px;
+
+      width: $thumbnail-width - $border-width * 2;
+      height: ($thumbnail-width / 16 * 9) - $border-width * 2;
+      margin-top: $margin * 3;
+      margin-bottom: $margin * 3;
+      border: $border-width solid $border-color;
+      border-radius: $border-radius;
+    }
+
+    .description {
+      font-size: 10px;
+      line-height: 10px;
+      color: $color-dark-gray;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .readmore {
+      font-size: 10px;
+      text-align: right;
+      line-height: 10px;
+      margin-top: $margin-small;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  #profile {
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    background: $color-white;
+    padding: $margin-medium - $border-width;
+    display: flex;
+
+    img {
+      height: 40px - $border-width * 2 * 2;
+      border: 2px solid $border-color;
+      border-radius: 100%;
+    }
+
+    #self-introduction {
+      margin-left: $margin-small;
+
+      #name {
+        font-family: Quicksand;
+      }
+
+      #description {
+        width: 350px;
+        font-size: 10px;
+        line-height: 11px;
+        margin-top: $margin;
+      }
+    }
+  }
+
+  #share-and-copyright {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    flex-direction: column;
+
+    #copyright {
+      font-family: Quicksand;
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+}
+
+// Twitter Share Button
+// https://publish.twitter.com/
+
+.tweet-button {
+  font: normal normal normal 11px / 18px 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+
+  .button, .button .label {
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  .button {
+    height: 20px;
+    box-sizing: border-box;
+    padding: 1px 8px 1px 6px;
+    background: #1b95e0;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.25s ease;
+      background: #0c7abf;
+    }
+
+    .label{
+      margin-left: 3px;
+      white-space: nowrap;
+    }
+
+    i {
+      width: 14px;
+      height: 14px;
+      top: 2px;
+      position: relative;
+      display: inline-block;
+      background: transparent 0 0 no-repeat;
+      background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
+    }
+  }
+}
+
+// Parts
+
+#not-found, #loading {
+  width: 100%;
+  height: 416px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  &>div {
+    margin: 0 auto;
+  }
+
+  img {
+    height: 100px;
+  }
+
+  p {
+    margin-top: $margin-medium;
+  }
+
+  #return-to-top {
+    height: 30px - $margin-small * 2;
+    border: $border-width solid $border-color;
+    background: $color-white;
+    border-radius: $border-radius;
+    padding: $margin-small - $border-width;
+    font-family: Quicksand;
+    display: inline-block;
+    margin-top: $margin-medium;
+
+    &:hover {
+      transition: 0.25s ease;
+      background: $color-gray;
+    }
+  }
+}
+
+#loading {
+  p {
+    margin-top: 0;
+  }
+}

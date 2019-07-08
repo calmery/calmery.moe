@@ -1,7 +1,7 @@
 {
     "type": "application",
     "source-directories": [
-        "src/elm"
+        "src"
     ],
     "elm-version": "0.19.0",
     "dependencies": {
@@ -9,13 +9,15 @@
             "elm/browser": "1.0.1",
             "elm/core": "1.0.2",
             "elm/html": "1.0.0",
-            "elm/http": "1.0.0",
-            "elm/json": "1.0.0",
+            "elm/http": "2.0.0",
+            "elm/json": "1.1.2",
             "elm/url": "1.0.0",
-            "mthadley/elm-hash-routing": "1.0.1",
+            "elm-explorations/markdown": "1.0.0",
             "terezka/yaml": "1.0.0"
         },
         "indirect": {
+            "elm/bytes": "1.0.8",
+            "elm/file": "1.0.5",
             "elm/parser": "1.1.0",
             "elm/time": "1.0.0",
             "elm/virtual-dom": "1.0.2"
@@ -23,7 +25,7 @@
     },
     "test-dependencies": {
         "direct": {
-            "elm-explorations/test": "1.0.0"
+            "elm-explorations/test": "1.2.1"
         },
         "indirect": {
             "elm/random": "1.0.0"
