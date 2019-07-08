@@ -100,6 +100,7 @@ header {
 
     h1 {
       height: 34px;
+      line-height: 34px;
       margin-left: $margin-large;
 
       img {
@@ -142,10 +143,17 @@ header {
     background: $border-color;
     margin: $margin-medium 0;
   }
+}
 
+#body {
   p {
     margin-left: $margin-large;
-    white-space: pre;
+    margin-right: $margin-large;
+    white-space: pre-wrap;
+
+    // a::before {
+    //   content: "Link ";
+    // }
   }
 }
 
