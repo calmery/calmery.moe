@@ -4,6 +4,7 @@
 
 @font-face {
   font-family: Quicksand;
+  font-display: swap;
   src: url(assets/fonts/Quicksand.woff2) format('woff2'),
        url(assets/fonts/Quicksand.woff) format('woff'),
        url(assets/fonts/Quicksand.ttf) format('truetype');
@@ -11,6 +12,7 @@
 
 @font-face {
   font-family: SmartFontUI;
+  font-display: swap;
   src: url(assets/fonts/SmartFontUI.woff2) format('woff2'),
        url(assets/fonts/SmartFontUI.woff) format('woff'),
        url(assets/fonts/SmartFontUI.ttf) format('truetype');
@@ -237,7 +239,6 @@ section#articles {
     }
 
     .date {
-      color: $color-dark-gray;
       font-size: 10px;
       line-height: 10px;
       margin-top: $margin;
@@ -257,7 +258,6 @@ section#articles {
     .description {
       font-size: 10px;
       line-height: 10px;
-      color: $color-dark-gray;
       overflow-x: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
