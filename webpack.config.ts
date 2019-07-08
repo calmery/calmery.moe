@@ -161,7 +161,7 @@ const production: Configuration = merge(common, {
     // https://github.com/facebook/create-react-app/blob/caf0a30e38d0cb9bbd2aab733efa0dd1aa6a9cb6/packages/react-scripts/config/webpack.config.js#L609-L621
     new WorkboxWebpackPlugin.GenerateSW({
       clientsClaim: true,
-      exclude: [/\.map$/],
+      exclude: [/\.map$/, /CNAME$/],
       importWorkboxFrom: "cdn",
       navigateFallback: "/index.html",
       navigateFallbackBlacklist: [
