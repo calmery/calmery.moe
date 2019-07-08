@@ -10,6 +10,6 @@ fetchEntry name =
         { url =
             "/assets/entries/"
                 ++ name
-                ++ ".yml"
+                ++ ".json"
         , expect = Http.expectString UpdateEntry
         }

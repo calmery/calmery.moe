@@ -1,12 +1,12 @@
 module Data.Entries.Decoder exposing (decodeEntries)
 
+import Json.Decode exposing (Decoder, Error, decodeString, field, list, map5, string)
 import Model exposing (SimpleEntry)
-import Yaml.Decode exposing (Decoder, Error, field, fromString, list, map5, string)
 
 
 decodeEntries : String -> Result Error (List SimpleEntry)
 decodeEntries =
-    fromString entriesDecoder
+    decodeString entriesDecoder
 
 
 entriesDecoder : Decoder (List SimpleEntry)
