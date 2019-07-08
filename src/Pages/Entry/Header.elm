@@ -11,7 +11,7 @@ view : Entry -> Html Msg
 view entry =
     header
         []
-        [ div [ id "logo-and-links" ] [ title entry ]
+        [ div [ id "logo-and-links" ] [ title entry, returnToTop ]
         , border
         ]
 
@@ -29,3 +29,15 @@ border =
     div
         [ id "border" ]
         []
+
+
+returnToTop : Html Msg
+returnToTop =
+    div [ id "links" ]
+        [ a
+            [ href "#/" ]
+            [ div
+                []
+                [ text "トップに戻る" ]
+            ]
+        ]
