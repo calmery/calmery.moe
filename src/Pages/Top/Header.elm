@@ -42,7 +42,7 @@ introduction model =
 
 links : Html Msg
 links =
-    div [ id "links" ] [ booth, aboutMe ]
+    div [ id "links" ] [ aboutMe, booth ]
 
 
 booth : Html Msg
@@ -61,5 +61,5 @@ aboutMe =
         [ href "https://calmery.me" ]
         [ div
             []
-            [ text "About me" ]
+            [ text "プロフィール" ]
         ]
