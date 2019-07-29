@@ -54,7 +54,7 @@
     "webpack-manifest-plugin": "2.0.4",
     "webpack-merge": "4.2.1",
     "workbox-webpack-plugin": "4.3.1",
-    "write-file-webpack-plugin": "4.5.0"
+    "write-file-webpack-plugin": "4.5.1"
   },
   "husky": {
     "hooks": {
