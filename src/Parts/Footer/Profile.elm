@@ -44,4 +44,4 @@ description : Html Msg
 description =
     p
         [ id "description" ]
-        [ text "田舎の大学院生．JavaScript，Elm とか好き．イラストを投稿するサービスの会社でエンジニアしてます．" ]
+        [ text "JavaScript と Elm、銀髪赤眼の女の子が好き。イラスト SNS の会社でソフトウェアエンジニアしてます。" ]
