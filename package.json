@@ -1,0 +1,166 @@
+{
+  "dependencies": {
+    "connected-react-router": "6.6.1",
+    "history": "4.10.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.1.3",
+    "react-router-dom": "5.1.2",
+    "redux": "4.0.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "5.0.0",
+    "@types/autoprefixer": "9.6.1",
+    "@types/copy-webpack-plugin": "5.0.0",
+    "@types/history": "4.7.3",
+    "@types/html-webpack-plugin": "3.2.1",
+    "@types/jest": "24.0.25",
+    "@types/mini-css-extract-plugin": "0.9.0",
+    "@types/node": "13.1.1",
+    "@types/optimize-css-assets-webpack-plugin": "5.0.1",
+    "@types/react": "16.9.17",
+    "@types/react-dom": "16.9.4",
+    "@types/react-redux": "7.1.5",
+    "@types/react-router-dom": "5.1.3",
+    "@types/redux-logger": "3.0.7",
+    "@types/terser-webpack-plugin": "2.2.0",
+    "@types/webpack-merge": "4.1.5",
+    "@types/workbox-webpack-plugin": "4.1.0",
+    "@typescript-eslint/eslint-plugin": "2.13.0",
+    "@typescript-eslint/parser": "2.13.0",
+    "autoprefixer": "9.7.3",
+    "copy-webpack-plugin": "5.1.1",
+    "css-loader": "3.4.0",
+    "css-modules-typescript-loader": "4.0.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react-hooks": "2.3.0",
+    "file-loader": "5.0.2",
+    "html-webpack-plugin": "4.0.0-beta.11",
+    "husky": "3.1.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "4.13.0",
+    "npm-run-all": "4.1.5",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss-loader": "3.0.0",
+    "prettier": "1.19.1",
+    "redux-logger": "3.0.6",
+    "rimraf": "3.0.0",
+    "run-script-os": "1.0.7",
+    "sass-loader": "8.0.0",
+    "style-loader": "1.1.2",
+    "terser-webpack-plugin": "2.3.1",
+    "ts-jest": "24.2.0",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.4",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.1",
+    "webpack-merge": "4.2.2",
+    "workbox-webpack-plugin": "4.3.1"
+  },
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.13.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended"
+    ],
+    "ignorePatterns": [
+      "*.scss.d.ts"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "react",
+      "react-hooks"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": 0
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      "\\.scss$": "identity-obj-proxy",
+      "\\.svg$": "@svgr/webpack"
+    },
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
+    ]
+  },
+  "lint-staged": {
+    "**/*.(html|json|md|yml)": [
+      "npm run prettify:static",
+      "git add"
+    ],
+    "**/*.(ts|tsx)": [
+      "npm run prettify:typescript",
+      "git add"
+    ]
+  },
+  "name": "react-boilerplate",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && run-script-os",
+    "build:default": "NODE_ENV=production webpack",
+    "build:win32": "set NODE_ENV=production webpack",
+    "clean": "rimraf build",
+    "prettify": "npm-run-all prettify:*",
+    "prettify:static": "prettier --ignore-path .gitignore --write \"**/*.{html,json,md,scss}\"",
+    "prettify:typescript": "eslint --ignore-path .gitignore --fix . --ext .ts --ext .tsx",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 3000",
+    "test": "jest"
+  },
+  "version": "0.1.0"
+}
