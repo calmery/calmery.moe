@@ -1,6 +1,6 @@
-# React Boilerplate
+# Calmery.moe
 
-A frontend boilerplate with React, TypeScript and webpack.
+[![GitHub Actions](https://github.com/calmery/Calmery.moe/workflows/GitHub%20Actions/badge.svg)](https://github.com/calmery/Calmery.moe/actions)
 
 ## Usage
 
