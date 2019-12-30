@@ -34,6 +34,7 @@ const production: Configuration = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
+        extractComments: false,
         terserOptions: {
           parse: {
             ecma: 8
@@ -52,7 +53,8 @@ const production: Configuration = {
           keep_fnames: false,
           output: {
             ecma: 5,
-            comments: false,
+            // `For license information please see ...` というライセンスに関連したコメントだけは残すようにする
+            comments: /^(.+)[^@]license/i,
             // eslint-disable-next-line @typescript-eslint/camelcase
             ascii_only: true
           }
@@ -70,7 +72,16 @@ const production: Configuration = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: "[contenthash].css"
+      filename: "[hash].css"
+    }),
+    new (require("license-webpack-plugin").LicenseWebpackPlugin)({
+      addBanner: true,
+      // package.json の devDependencies に含まれるパッケージは除外する
+      excludedPackageTest: (name: string) =>
+        Object.keys(require("./package.json").devDependencies).includes(name),
+      outputFilename: "bundle.[hash].js.LICENSE",
+      renderBanner: (filename: string) =>
+        `/* For license information please see ${filename} */`
     })
   ]
 };
@@ -120,7 +131,7 @@ export default merge(
           test: [/\.jpe?g$/, /\.png$/],
           loader: "file-loader",
           options: {
-            name: "[name].[hash:8].[ext]"
+            name: "[name].[hash].[ext]"
           }
         },
         {
@@ -130,7 +141,7 @@ export default merge(
             {
               loader: "file-loader",
               options: {
-                name: "[name].[hash:8].[ext]"
+                name: "[name].[hash].[ext]"
               }
             }
           ]
@@ -140,7 +151,7 @@ export default merge(
     output: {
       path: path.resolve(__dirname, "build"),
       pathinfo: !isEnvProduction,
-      filename: isEnvProduction ? "[name].[contenthash:8].js" : "bundle.js",
+      filename: isEnvProduction ? "bundle.[hash].js" : "bundle.js",
       futureEmitAssets: true,
       devtoolModuleFilenameTemplate: isEnvProduction
         ? undefined
