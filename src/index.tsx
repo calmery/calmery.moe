@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import ReactGA from "react-ga";
-import { Provider } from "react-redux";
 import * as Sentry from "@sentry/browser";
-import { store } from "./modules";
 import "./index.scss";
 import Top from "./pages/Top";
 
@@ -17,9 +15,4 @@ ReactGA.initialize("UA-153119606-2", {
   debug: process.env.NODE_ENV !== "production"
 });
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Top />
-  </Provider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Top />, document.getElementById("root"));
