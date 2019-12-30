@@ -4,6 +4,8 @@
 
 ## Usage
 
+Install Node.js v12.14.0 and npm 6.13.4.
+
 ```bash
 $ npm ci
 ```
