@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@sentry/browser": "5.10.2",
     "connected-react-router": "6.6.1",
     "history": "4.10.1",
     "react": "16.12.0",
