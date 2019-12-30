@@ -16,3 +16,11 @@ $ npm run lint
 $ npm start
 $ npm test
 ```
+
+## Alias Paths
+
+[Resolve | webpack](https://webpack.js.org/configuration/resolve/#resolvealias)
+
+| Alias Path | Original Path |                   Example                   |
+| :--------: | :-----------: | :-----------------------------------------: |
+|     ~/     |     src/      | `~/pages/Top`, `~/helpers/google-analytics` |

@@ -4,7 +4,7 @@ import {
   sendToGoogleAnalytics,
   GOOGLE_ANALYTICS,
   GOOGLE_ANALYTICS_ACTION
-} from "../../helpers/google-analytics";
+} from "~/helpers/google-analytics";
 
 const Counter: React.FC<{}> = () => {
   const [count, setCount] = useState(0);
