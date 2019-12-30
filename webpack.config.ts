@@ -13,7 +13,6 @@ import {
   Configuration
 } from "webpack";
 import merge from "webpack-merge";
-import WorkboxWebpackPlugin from "workbox-webpack-plugin";
 
 if (process.env.NODE_ENV === undefined) {
   process.env.NODE_ENV = "development";
@@ -72,16 +71,6 @@ const production: Configuration = {
     }),
     new MiniCssExtractPlugin({
       filename: "[contenthash].css"
-    }),
-    new WorkboxWebpackPlugin.GenerateSW({
-      clientsClaim: true,
-      exclude: [/\.map$/],
-      importWorkboxFrom: "cdn",
-      navigateFallback: "/index.html",
-      navigateFallbackBlacklist: [
-        new RegExp("^/_"),
-        new RegExp("/[^/?]+\\.[^/]+$")
-      ]
     })
   ]
 };
