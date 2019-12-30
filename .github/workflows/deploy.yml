@@ -1,0 +1,25 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        node-version: [12.13.1]
+        npm-version: [6.13.4]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i npm@${{ matrix.npm-version }} -g
+      - run: npm ci
+      - run: npm run deploy

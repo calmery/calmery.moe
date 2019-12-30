@@ -180,3 +180,4 @@ dist
 # Others
 
 build/
+.firebase/
