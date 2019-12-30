@@ -4,11 +4,8 @@ import ReactGA from "react-ga";
 import { Provider } from "react-redux";
 import * as Sentry from "@sentry/browser";
 import { store } from "./modules";
-import * as serviceWorker from "./serviceWorker";
 import "./index.scss";
 import Top from "./pages/Top";
-
-serviceWorker.register();
 
 if (process.env.NODE_ENV === "production") {
   Sentry.init({
