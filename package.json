@@ -114,6 +114,7 @@
       "tsx"
     ],
     "moduleNameMapper": {
+      "^~/(.+)": "<rootDir>/src/$1",
       "\\.scss$": "identity-obj-proxy",
       "\\.svg$": "@svgr/webpack"
     },

@@ -179,8 +179,11 @@ export default merge(
       })
     ],
     resolve: {
-      modules: ["node_modules"],
-      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"]
+      alias: {
+        "~": path.resolve(__dirname, "src")
+      },
+      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+      modules: ["node_modules"]
     }
   },
   isEnvProduction ? production : development
