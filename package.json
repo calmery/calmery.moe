@@ -9,7 +9,7 @@
     "redux": "4.0.5"
   },
   "devDependencies": {
-    "@svgr/webpack": "5.0.0",
+    "@svgr/webpack": "5.0.1",
     "@types/autoprefixer": "9.6.1",
     "@types/copy-webpack-plugin": "5.0.0",
     "@types/history": "4.7.3",
