@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Route, Switch, Redirect } from "react-router-dom";
+import ReactGA from "react-ga";
 import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "connected-react-router";
 import * as Sentry from "@sentry/browser";
@@ -16,6 +17,10 @@ if (process.env.NODE_ENV === "production") {
     dsn: "https://35c3c6bfa928420a80d0c15d8a7a1a34@sentry.io/1868485"
   });
 }
+
+ReactGA.initialize("UA-153119606-2", {
+  debug: process.env.NODE_ENV !== "production"
+});
 
 const Routes = () => (
   <Switch>
