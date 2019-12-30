@@ -22,4 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i npm@${{ matrix.npm-version }} -g
       - run: npm ci
-      - run: npm run deploy
+      - run: npm run build
+      - run: npx firebase deploy --token "$FIREBASE_TOKEN"

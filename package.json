@@ -137,25 +137,23 @@
   },
   "lint-staged": {
     "**/*.(html|json|md|yml)": [
-      "npm run prettify:static",
+      "npm run lint:static",
       "git add"
     ],
     "**/*.(ts|tsx)": [
-      "npm run prettify:typescript",
+      "npm run lint:typescript",
       "git add"
     ]
   },
   "name": "react-boilerplate",
   "private": true,
   "scripts": {
-    "build": "npm run clean && run-script-os",
+    "build": "rimraf build && run-script-os",
     "build:default": "NODE_ENV=production webpack",
     "build:win32": "set NODE_ENV=production webpack",
-    "clean": "rimraf build",
-    "deploy": "npm run build && firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "prettify": "npm-run-all prettify:*",
-    "prettify:static": "prettier --ignore-path .gitignore --write \"**/*.{html,json,md,scss}\"",
-    "prettify:typescript": "eslint --ignore-path .gitignore --fix . --ext .ts --ext .tsx",
+    "lint": "npm-run-all lint:*",
+    "lint:static": "prettier --ignore-path .gitignore --write \"**/*.{html,json,md,scss}\"",
+    "lint:typescript": "eslint --ignore-path .gitignore --fix . --ext .ts --ext .tsx",
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000",
     "test": "jest"
   },
