@@ -63,14 +63,7 @@ const production: Configuration = {
     ]
   },
   plugins: [
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: {
-        map: {
-          annotation: true,
-          inline: false
-        }
-      }
-    }),
+    new OptimizeCSSAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[hash].css"
     }),
