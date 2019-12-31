@@ -53,7 +53,7 @@ const production: Configuration = {
           keep_fnames: false,
           output: {
             ecma: 5,
-            // `For license information please see ...` というライセンスに関連したコメントだけは残すようにする
+            // license-webpack-plugin で生成したライセンスファイルに関係するコメントだけは残すようにする
             comments: /^(.+)[^@]license/i,
             // eslint-disable-next-line @typescript-eslint/camelcase
             ascii_only: true
