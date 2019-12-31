@@ -17,6 +17,10 @@ $ npm start
 $ npm test
 ```
 
+## Design
+
+![Design](https://user-images.githubusercontent.com/12670155/71620998-347e1b00-2c10-11ea-91cc-bf64fff0b97d.png)
+
 ## Alias Paths
 
 [Resolve | webpack](https://webpack.js.org/configuration/resolve/#resolvealias)
