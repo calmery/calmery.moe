@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import ReactGA from "react-ga";
+import "webp-in-css/polyfill";
 import * as Sentry from "@sentry/browser";
 import "./index.scss";
 import { Top } from "./pages/Top";
