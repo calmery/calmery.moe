@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Counter from "./Counter";
+import { Counter } from "./Counter";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");

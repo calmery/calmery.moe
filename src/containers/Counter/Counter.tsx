@@ -6,7 +6,7 @@ import {
   GOOGLE_ANALYTICS_ACTION
 } from "~/helpers/google-analytics";
 
-const Counter: React.FC<{}> = () => {
+export const Counter: React.FC<{}> = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -37,5 +37,3 @@ const Counter: React.FC<{}> = () => {
     </>
   );
 };
-
-export default Counter;

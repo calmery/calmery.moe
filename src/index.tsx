@@ -3,7 +3,7 @@ import * as ReactDOM from "react-dom";
 import ReactGA from "react-ga";
 import * as Sentry from "@sentry/browser";
 import "./index.scss";
-import Top from "./pages/Top";
+import { Top } from "./pages/Top";
 
 if (process.env.NODE_ENV === "production") {
   Sentry.init({
