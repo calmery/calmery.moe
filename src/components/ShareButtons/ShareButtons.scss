@@ -1,0 +1,18 @@
+@import "../../constants";
+
+.container {
+  width: 100%;
+  display: flex;
+
+  img {
+    margin-left: $Spacing-S;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}

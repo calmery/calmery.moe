@@ -2,6 +2,7 @@ import * as React from "react";
 import { Counter } from "~/containers/Counter";
 import { Header } from "~/components/Header";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
+import { ShareButtons } from "~/components/ShareButtons";
 
 export const Top: React.FC = () => (
   <React.Fragment>
@@ -9,5 +10,6 @@ export const Top: React.FC = () => (
     <HorizontalScrollView>
       <Counter />
     </HorizontalScrollView>
+    <ShareButtons />
   </React.Fragment>
 );
