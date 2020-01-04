@@ -30,6 +30,6 @@ export const Card: React.FC<CardProps> = ({
     )}
   >
     {thumbnail && <img src={thumbnail} className={styles.thumbnail} />}
-    <div className={styles.contents}>{children}</div>
+    {children && <div className={styles.contents}>{children}</div>}
   </div>
 );
