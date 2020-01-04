@@ -3,6 +3,9 @@
 interface CssExports {
   'article': string;
   'articles': string;
+  'biography': string;
+  'text': string;
+  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

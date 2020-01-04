@@ -10,6 +10,38 @@
   }
 }
 
+.biography {
+  @include device(pc) {
+    margin: $Spacing-XL;
+  }
+
+  @include device(sp) {
+    margin: $Spacing-XL $Spacing-L;
+  }
+
+  .title {
+    @include device(pc) {
+      @include Typography-L;
+      margin-bottom: $Spacing-M;
+    }
+
+    @include device(sp) {
+      @include Typography-M;
+      margin-bottom: $Spacing-S;
+    }
+  }
+
+  .text {
+    @include device(pc) {
+      @include Typography-M;
+    }
+
+    @include device(sp) {
+      @include Typography-S;
+    }
+  }
+}
+
 .article {
   width: 256px;
   min-width: 256px;
