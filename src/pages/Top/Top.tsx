@@ -12,7 +12,7 @@ export const Top: React.FC = () => (
     <Card
       direction={CardDirection.ROW}
       className={styles.biography}
-      thumbnail="public/images/ogp.jpg"
+      thumbnail="images/ogp.jpg"
     >
       <div className={styles.title}>かるめりちゃんとは？</div>
       <div className={styles.text}>
@@ -23,11 +23,7 @@ export const Top: React.FC = () => (
     <Logo service={LogoService.BOOTH} />
     <HorizontalScrollView className={styles.articles}>
       {["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"].map((text, index) => (
-        <Card
-          className={styles.article}
-          key={index}
-          thumbnail="public/images/ogp.jpg"
-        >
+        <Card className={styles.article} key={index} thumbnail="images/ogp.jpg">
           {text}
         </Card>
       ))}
@@ -35,11 +31,7 @@ export const Top: React.FC = () => (
     <Logo service={LogoService.FANBOX} />
     <HorizontalScrollView className={styles.articles}>
       {["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"].map((text, index) => (
-        <Card
-          className={styles.article}
-          key={index}
-          thumbnail="public/images/ogp.jpg"
-        >
+        <Card className={styles.article} key={index} thumbnail="images/ogp.jpg">
           {text}
         </Card>
       ))}
