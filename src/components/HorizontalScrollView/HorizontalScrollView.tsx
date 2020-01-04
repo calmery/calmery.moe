@@ -3,7 +3,6 @@ import classNames from "classnames";
 import styles from "./HorizontalScrollView.scss";
 
 type HorizontalScrollViewProps = {
-  children: React.ReactNode;
   className?: string;
 };
 
