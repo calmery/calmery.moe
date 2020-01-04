@@ -2,11 +2,11 @@
 
 .articles {
   @include device(pc) {
-    padding: $Spacing-L 0;
+    padding: $Spacing-L 0 $Spacing-XL 0;
   }
 
   @include device(sp) {
-    padding: $Spacing-M 0;
+    padding: $Spacing-M 0 $Spacing-XL 0;
   }
 }
 

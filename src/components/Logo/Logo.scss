@@ -1,0 +1,23 @@
+@import "../../constants";
+
+.container {
+  height: 28px;
+  display: flex;
+  align-items: center;
+
+  @include device(pc) {
+    margin-left: $Spacing-XL;
+  }
+
+  @include device(sp) {
+    margin-left: $Spacing-L;
+  }
+
+  picture {
+    height: 28px;
+
+    img {
+      height: 28px;
+    }
+  }
+}
