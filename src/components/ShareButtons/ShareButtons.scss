@@ -11,8 +11,10 @@
       margin-left: 0;
     }
 
-    &:last-child {
-      margin-left: auto;
+    @include device(sp) {
+      &:last-child {
+        margin-left: auto;
+      }
     }
   }
 }

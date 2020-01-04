@@ -1,15 +1,18 @@
+@import "../../constants";
+
 @mixin background($url) {
   background: url(images/header/#{$url}) center center / cover no-repeat;
 }
 
 .container {
-  @include background("sp.webp");
   width: 100vw;
-  height: calc(100vw / (3 / 2));
-}
 
-@media screen and (min-width: 960px) {
-  .container {
+  @include device(sp) {
+    @include background("sp.webp");
+    height: calc(100vw / (3 / 2));
+  }
+
+  @include device(pc) {
     @include background("pc.webp");
     height: calc(100vw / (16 / 9));
   }
@@ -21,11 +24,11 @@
   body.no-webp {
     :local {
       .container {
-        @include background("sp.jpg");
-      }
+        @include device(sp) {
+          @include background("sp.jpg");
+        }
 
-      @media screen and (min-width: 960px) {
-        .container {
+        @include device(pc) {
           @include background("pc.jpg");
         }
       }

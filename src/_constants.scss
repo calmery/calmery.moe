@@ -42,3 +42,17 @@ $Spacing-XL: 48px;
 @mixin Box-Shadow {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
+
+// Media Queries
+
+// 横幅が 960px 以上のデバイスは PC として、960px 未満のデバイスはスマートフォンとして扱う
+$devices: (
+  "pc": "screen and (min-width: 960px)",
+  "sp": "screen and (max-width: 959px)"
+) !default;
+
+@mixin device($device: pc) {
+  @media #{map-get($devices, $device)} {
+    @content;
+  }
+}
