@@ -17,16 +17,24 @@
   @include device(pc) {
     margin-left: $Spacing-L;
 
+    &:first-child {
+      margin-left: $Spacing-XL;
+    }
+
     &:last-child {
-      margin-right: $Spacing-L;
+      margin-right: $Spacing-XL;
     }
   }
 
   @include device(sp) {
     margin-left: $Spacing-M;
 
+    &:first-child {
+      margin-left: $Spacing-L;
+    }
+
     &:last-child {
-      margin-right: $Spacing-M;
+      margin-right: $Spacing-L;
     }
   }
 }
