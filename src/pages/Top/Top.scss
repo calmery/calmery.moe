@@ -1,0 +1,32 @@
+@import "../../constants";
+
+.articles {
+  @include device(pc) {
+    padding: $Spacing-L 0;
+  }
+
+  @include device(sp) {
+    padding: $Spacing-M 0;
+  }
+}
+
+.article {
+  width: 256px;
+  min-width: 256px;
+
+  @include device(pc) {
+    margin-left: $Spacing-L;
+
+    &:last-child {
+      margin-right: $Spacing-L;
+    }
+  }
+
+  @include device(sp) {
+    margin-left: $Spacing-M;
+
+    &:last-child {
+      margin-right: $Spacing-M;
+    }
+  }
+}
