@@ -3,6 +3,7 @@
 .container {
   @include Box-Shadow;
   @include Border-Radius;
+  @include Clickable;
 
   background: $Color-White;
   margin-right: auto;

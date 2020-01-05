@@ -44,6 +44,15 @@ $Spacing-XL: 48px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
+@mixin Clickable {
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
 // Media Queries
 
 // 横幅が 960px 以上のデバイスは PC として、960px 未満のデバイスはスマートフォンとして扱う
