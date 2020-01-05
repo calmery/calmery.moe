@@ -1,13 +1,11 @@
 import * as React from "react";
 import { useState } from "react";
 import { Biography } from "~/components/Biography";
-import { Card } from "~/components/Card";
+import { Booth } from "~/components/Booth";
 import { Caption } from "~/components/Caption";
 import { Fanbox } from "~/components/Fanbox";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
-import { HorizontalScrollView } from "~/components/HorizontalScrollView";
-import { Logo, LogoService } from "~/components/Logo";
 import { LineStickers } from "~/components/LineStickers";
 import styles from "./Top.scss";
 
@@ -44,18 +42,7 @@ export const Top: React.FC = () => {
         <Biography />
         <LineStickers />
         <Fanbox />
-        <Logo service={LogoService.BOOTH} />
-        <HorizontalScrollView className={styles.booth}>
-          {[
-            "images/booth/1.jpg",
-            "images/booth/2.jpg",
-            "images/booth/3.jpg",
-            "images/booth/4.jpg",
-            "images/booth/5.jpg"
-          ].map((url, index) => (
-            <Card className={styles.item} key={index} thumbnail={url} />
-          ))}
-        </HorizontalScrollView>
+        <Booth />
         <Footer />
       </div>
     </React.Fragment>
