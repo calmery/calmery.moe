@@ -12,8 +12,6 @@ interface CssExports {
   'item': string;
   'menu': string;
   'name': string;
-  'sticker': string;
-  'stickers': string;
   'tag': string;
   'tags': string;
   'title': string;
