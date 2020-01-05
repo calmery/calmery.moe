@@ -49,6 +49,8 @@
 }
 
 .article {
+  @include Clickable;
+
   width: 256px;
   min-width: 256px;
 
