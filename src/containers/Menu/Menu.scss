@@ -1,6 +1,6 @@
 @import "../../constants";
 
-.menu {
+.button {
   @include Box-Shadow;
   @include Clickable;
 
@@ -36,13 +36,14 @@
   }
 }
 
-.appContainer {
+.container {
   @include Border-Radius;
   @include Box-Shadow;
+  @include BackDrop-Filter-Blur;
 
   width: 200px;
   height: 98px;
-  background: $Color-White;
+  background: $Color-White-Transparent;
   padding: $Spacing-M;
   position: absolute;
 
