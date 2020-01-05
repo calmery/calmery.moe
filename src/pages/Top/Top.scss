@@ -14,7 +14,6 @@
   }
 }
 
-.articles,
 .booth {
   @include device(pc) {
     padding: $Spacing-L 0 $Spacing-XL 0;
@@ -25,11 +24,11 @@
   }
 }
 
-.article {
+.item {
   @include Clickable;
 
-  width: 256px;
-  min-width: 256px;
+  width: 128px;
+  min-width: 128px;
 
   @include device(pc) {
     margin-left: $Spacing-L;
@@ -52,46 +51,6 @@
 
     &:last-child {
       margin-right: $Spacing-L;
-    }
-  }
-}
-
-.item {
-  @extend .article;
-
-  width: 128px;
-  min-width: 128px;
-}
-
-.title {
-  margin-bottom: $Spacing-S;
-
-  @include device(pc) {
-    @include Typography-L;
-  }
-
-  @include device(sp) {
-    @include Typography-M;
-  }
-}
-
-.description {
-  @include Typography-S;
-  margin-bottom: $Spacing-S;
-}
-
-.tags {
-  @include Typography-XS;
-  color: $Color-Gray;
-  display: flex;
-  justify-content: flex-end;
-
-  .tag {
-    margin-left: $Spacing-S;
-
-    img {
-      margin-right: $Spacing-XS;
-      vertical-align: bottom;
     }
   }
 }

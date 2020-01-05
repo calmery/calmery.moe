@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Biography } from "~/components/Biography";
 import { Card } from "~/components/Card";
 import { Caption } from "~/components/Caption";
+import { Fanbox } from "~/components/Fanbox";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
@@ -42,32 +43,7 @@ export const Top: React.FC = () => {
         <Caption />
         <Biography />
         <LineStickers />
-        <Logo service={LogoService.FANBOX} />
-        <HorizontalScrollView className={styles.articles}>
-          {["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"].map((text, index) => (
-            <Card
-              className={styles.article}
-              key={index}
-              thumbnail="images/ogp.jpg"
-            >
-              <div className={styles.title}>かるめりちゃんスタンプ</div>
-              <div className={styles.description}>
-                イラストはめたねのおくすりさん！めっちゃかわいいイラストが 16
-                個入...
-              </div>
-              <div className={styles.tags}>
-                <div className={styles.tag}>
-                  <img src="images/tag.svg" alt="タグ" />
-                  イラスト
-                </div>
-                <div className={styles.tag}>
-                  <img src="images/tag.svg" alt="タグ" />
-                  イラスト
-                </div>
-              </div>
-            </Card>
-          ))}
-        </HorizontalScrollView>
+        <Fanbox />
         <Logo service={LogoService.BOOTH} />
         <HorizontalScrollView className={styles.booth}>
           {[
