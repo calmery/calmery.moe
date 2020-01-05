@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./FooterProfile.scss";
 
 export const FooterProfile: React.FC = () => (
-  <a href="https://calmery.me" target="_blank" rel="noopener noreferrer">
+  <a href="https://calmery.me">
     <div className={styles.container}>
       <div className={styles.icon}>
         <img src="images/calmery.jpg" alt="プロフィールアイコン" />
