@@ -1,8 +1,15 @@
 @import "../../constants";
 
 .container {
-  width: 100%;
   display: flex;
+
+  @include device(pc) {
+    margin: 0 $Spacing-XL;
+  }
+
+  @include device(sp) {
+    margin: 0 $Spacing-L;
+  }
 
   img {
     margin-left: $Spacing-S;
