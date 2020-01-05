@@ -12,6 +12,6 @@ type LogoProps = {
 
 export const Logo: React.FC<LogoProps> = ({ service }) => (
   <div className={styles.container}>
-    <img src={`images/logo/${service}.svg`} />
+    <img src={`images/logo/${service}.svg`} alt="ロゴ" />
   </div>
 );
