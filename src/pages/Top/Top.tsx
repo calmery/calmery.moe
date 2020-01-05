@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Card, CardDirection } from "~/components/Card";
+import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
-import { ShareButtons } from "~/components/ShareButtons";
 import styles from "./Top.scss";
 
 export const Top: React.FC = () => (
@@ -36,6 +36,6 @@ export const Top: React.FC = () => (
         </Card>
       ))}
     </HorizontalScrollView>
-    <ShareButtons />
+    <Footer />
   </React.Fragment>
 );

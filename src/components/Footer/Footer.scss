@@ -1,0 +1,21 @@
+@import "../../constants";
+
+.container {
+  display: flex;
+
+  @include device(pc) {
+    flex-direction: row;
+    margin: 0 $Spacing-XL;
+  }
+
+  @include device(sp) {
+    flex-direction: column;
+    margin: 0 $Spacing-L;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
