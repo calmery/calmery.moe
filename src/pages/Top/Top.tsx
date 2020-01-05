@@ -7,6 +7,7 @@ import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
+import { LineStickers } from "~/components/LineStickers";
 import styles from "./Top.scss";
 
 export const Top: React.FC = () => {
@@ -40,13 +41,7 @@ export const Top: React.FC = () => {
       <div className={styles.container}>
         <Caption />
         <Biography />
-        <HorizontalScrollView className={styles.stickers}>
-          {["images/stickers/2.jpg", "images/stickers/1.jpg"].map(
-            (url, index) => (
-              <Card className={styles.sticker} key={index} thumbnail={url} />
-            )
-          )}
-        </HorizontalScrollView>
+        <LineStickers />
         <Logo service={LogoService.FANBOX} />
         <HorizontalScrollView className={styles.articles}>
           {["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"].map((text, index) => (

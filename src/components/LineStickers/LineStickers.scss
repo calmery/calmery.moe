@@ -1,0 +1,42 @@
+@import "../../constants";
+
+.stickers {
+  @include device(pc) {
+    padding: $Spacing-L 0 $Spacing-XL 0;
+  }
+
+  @include device(sp) {
+    padding: $Spacing-M 0 $Spacing-XL 0;
+  }
+}
+
+.sticker {
+  @include Clickable;
+
+  width: 128px;
+  min-width: 128px;
+
+  @include device(pc) {
+    margin-left: $Spacing-L;
+
+    &:first-child {
+      margin-left: $Spacing-XL;
+    }
+
+    &:last-child {
+      margin-right: $Spacing-XL;
+    }
+  }
+
+  @include device(sp) {
+    margin-left: $Spacing-M;
+
+    &:first-child {
+      margin-left: $Spacing-L;
+    }
+
+    &:last-child {
+      margin-right: $Spacing-L;
+    }
+  }
+}
