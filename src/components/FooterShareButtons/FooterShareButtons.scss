@@ -11,9 +11,11 @@
     margin-bottom: $Spacing-XL;
   }
 
-  img {
+  a {
     margin-left: $Spacing-S;
+  }
 
+  img {
     &:first-child {
       margin-left: 0;
     }
