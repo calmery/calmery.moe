@@ -1,6 +1,42 @@
 @import "../../constants";
 
-.articles {
+.container {
+  padding: $Spacing-XL 0;
+
+  @include device(pc) {
+    background: url(images/background/pc.jpg) center center / cover no-repeat;
+  }
+
+  @include device(sp) {
+    background: url(images/background/sp.jpg) center center / cover no-repeat;
+  }
+}
+
+.caption {
+  text-align: center;
+  margin: $Spacing-L 0 $Spacing-XL 0;
+
+  @include device(pc) {
+    @include Typography-M;
+  }
+
+  @include device(sp) {
+    @include Typography-S;
+  }
+}
+
+.articles,
+.booth {
+  @include device(pc) {
+    padding: $Spacing-L 0 $Spacing-XL 0;
+  }
+
+  @include device(sp) {
+    padding: $Spacing-M 0 $Spacing-XL 0;
+  }
+}
+
+.stickers {
   @include device(pc) {
     padding: $Spacing-L 0 $Spacing-XL 0;
   }
@@ -12,11 +48,11 @@
 
 .biography {
   @include device(pc) {
-    margin: $Spacing-XL;
+    margin: 0 $Spacing-XL ($Spacing-L + $Spacing-S) $Spacing-XL;
   }
 
   @include device(sp) {
-    margin: $Spacing-XL $Spacing-L;
+    margin: 0 $Spacing-L ($Spacing-L + $Spacing-S) $Spacing-L;
   }
 
   .title {
@@ -67,6 +103,47 @@
 
     &:last-child {
       margin-right: $Spacing-L;
+    }
+  }
+}
+
+.sticker,
+.item {
+  @extend .article;
+
+  width: 128px;
+  min-width: 128px;
+}
+
+.title {
+  margin-bottom: $Spacing-S;
+
+  @include device(pc) {
+    @include Typography-L;
+  }
+
+  @include device(sp) {
+    @include Typography-M;
+  }
+}
+
+.description {
+  @include Typography-S;
+  margin-bottom: $Spacing-S;
+}
+
+.tags {
+  @include Typography-XS;
+  color: $Color-Gray;
+  display: flex;
+  justify-content: flex-end;
+
+  .tag {
+    margin-left: $Spacing-S;
+
+    img {
+      margin-right: $Spacing-XS;
+      vertical-align: bottom;
     }
   }
 }

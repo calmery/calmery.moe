@@ -4,6 +4,15 @@ interface CssExports {
   'article': string;
   'articles': string;
   'biography': string;
+  'booth': string;
+  'caption': string;
+  'container': string;
+  'description': string;
+  'item': string;
+  'sticker': string;
+  'stickers': string;
+  'tag': string;
+  'tags': string;
   'text': string;
   'title': string;
 }
