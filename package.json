@@ -137,7 +137,7 @@
     ]
   },
   "lint-staged": {
-    "**/*.(html|json|md|yml)": [
+    "**/*.(html|json|md|scss|yml)": [
       "npm run lint:static",
       "git add"
     ],
@@ -153,7 +153,7 @@
     "build:default": "NODE_ENV=production webpack",
     "build:win32": "set NODE_ENV=production webpack",
     "lint": "npm-run-all lint:*",
-    "lint:static": "prettier --ignore-path .gitignore --write \"**/*.{html,json,md,scss}\"",
+    "lint:static": "prettier --ignore-path .gitignore --write \"**/*.{html,json,md,scss,yml}\"",
     "lint:typescript": "eslint --ignore-path .gitignore --fix . --ext .ts --ext .tsx",
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000",
     "test": "jest"
