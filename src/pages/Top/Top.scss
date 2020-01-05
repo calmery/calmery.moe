@@ -46,38 +46,6 @@
   }
 }
 
-.biography {
-  @include device(pc) {
-    margin: 0 $Spacing-XL ($Spacing-L + $Spacing-S) $Spacing-XL;
-  }
-
-  @include device(sp) {
-    margin: 0 $Spacing-L ($Spacing-L + $Spacing-S) $Spacing-L;
-  }
-
-  .title {
-    @include device(pc) {
-      @include Typography-L;
-      margin-bottom: $Spacing-M;
-    }
-
-    @include device(sp) {
-      @include Typography-M;
-      margin-bottom: $Spacing-S;
-    }
-  }
-
-  .text {
-    @include device(pc) {
-      @include Typography-M;
-    }
-
-    @include device(sp) {
-      @include Typography-S;
-    }
-  }
-}
-
 .article {
   width: 256px;
   min-width: 256px;
