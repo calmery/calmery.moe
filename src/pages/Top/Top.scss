@@ -4,11 +4,13 @@
   padding: $Spacing-XL 0;
 
   @include device(pc) {
-    background: url(images/background/pc.jpg) center center / cover no-repeat;
+    background: url(images/background/pc.jpg);
+    background-size: cover;
   }
 
   @include device(sp) {
-    background: url(images/background/sp.jpg) center center / cover no-repeat;
+    background: url(images/background/sp.jpg);
+    background-size: cover;
   }
 }
 
