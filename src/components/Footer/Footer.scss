@@ -14,9 +14,16 @@
   }
 }
 
+.profile {
+  flex: 1;
+
+  @include device(pc) {
+    margin-right: $Spacing-XL;
+  }
+}
+
 .row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: auto;
 }

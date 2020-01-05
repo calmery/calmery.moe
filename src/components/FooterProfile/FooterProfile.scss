@@ -10,6 +10,7 @@
   flex: 1;
 
   @include device(pc) {
+    max-width: 541px;
     padding: $Spacing-L;
   }
 

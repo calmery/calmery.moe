@@ -1,13 +1,7 @@
 @import "../../constants";
 
-.stickers {
-  @include device(pc) {
-    padding: $Spacing-L 0 $Spacing-XL 0;
-  }
-
-  @include device(sp) {
-    padding: $Spacing-M 0 $Spacing-XL 0;
-  }
+.container {
+  padding: $Spacing-XL 0;
 }
 
 .sticker {

@@ -3,6 +3,16 @@ import classNames from "classnames";
 import { Card, CardDirection } from "~/components/Card";
 import styles from "./Biography.scss";
 
+const BiographyHelper: React.FC = () => (
+  <React.Fragment>
+    <div className={styles.title}>かるめりちゃんとは？</div>
+    <div className={styles.text}>
+      かるめりちゃんは明るく好奇心旺盛な女の子で名前は愛々璃（あめり）ちゃん！誕生日は
+      3/27 だよ！
+    </div>
+  </React.Fragment>
+);
+
 export const Biography: React.FC = () => (
   <React.Fragment>
     <Card
@@ -10,21 +20,13 @@ export const Biography: React.FC = () => (
       className={classNames(styles.container, styles.pc)}
       thumbnail="images/ogp.jpg"
     >
-      <div className={styles.title}>かるめりちゃんとは？</div>
-      <div className={styles.text}>
-        かるめりちゃんは明るく好奇心旺盛な女の子で名前は愛々璃（あめり）ちゃん！誕生日は
-        3/27 だよ！
-      </div>
+      <BiographyHelper />
     </Card>
     <Card
       className={classNames(styles.container, styles.sp)}
       thumbnail="images/ogp.jpg"
     >
-      <div className={styles.title}>かるめりちゃんとは？</div>
-      <div className={styles.text}>
-        かるめりちゃんは明るく好奇心旺盛な女の子で名前は愛々璃（あめり）ちゃん！誕生日は
-        3/27 だよ！
-      </div>
+      <BiographyHelper />
     </Card>
   </React.Fragment>
 );

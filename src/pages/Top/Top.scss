@@ -1,7 +1,7 @@
 @import "../../constants";
 
 .container {
-  padding-bottom: $Spacing-XL;
+  padding: $Spacing-L 0 $Spacing-XL 0;
 
   @include device(pc) {
     background: url(images/background/pc.jpg);

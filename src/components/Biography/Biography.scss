@@ -18,11 +18,11 @@
   }
 
   @include device(pc) {
-    margin: 0 $Spacing-XL ($Spacing-L + $Spacing-S) $Spacing-XL;
+    margin: 0 $Spacing-XL;
   }
 
   @include device(sp) {
-    margin: 0 $Spacing-L ($Spacing-L + $Spacing-S) $Spacing-L;
+    margin: 0 $Spacing-L;
   }
 
   .title {
