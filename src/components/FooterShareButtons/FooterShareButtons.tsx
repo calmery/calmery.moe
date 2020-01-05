@@ -1,7 +1,7 @@
 import * as React from "react";
-import styles from "./ShareButtons.scss";
+import styles from "./FooterShareButtons.scss";
 
-export const ShareButtons: React.FC = () => (
+export const FooterShareButtons: React.FC = () => (
   <div className={styles.container}>
     <img src="images/share-buttons/twitter.svg" alt="Twitter" />
     <img src="images/share-buttons/line.svg" alt="LINE" />
