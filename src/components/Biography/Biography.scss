@@ -4,6 +4,8 @@
   display: none;
 
   &.pc {
+    max-height: 243px;
+
     @include device(pc) {
       display: flex;
     }
