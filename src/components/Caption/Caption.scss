@@ -2,7 +2,7 @@
 
 .container {
   text-align: center;
-  margin: $Spacing-L 0 $Spacing-XL 0;
+  margin-bottom: $Spacing-XL;
 
   @include device(pc) {
     @include Typography-M;

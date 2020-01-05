@@ -3,10 +3,6 @@
 .container {
   display: flex;
 
-  @include device(pc) {
-    margin-left: $Spacing-L;
-  }
-
   @include device(sp) {
     margin-bottom: $Spacing-XL;
   }

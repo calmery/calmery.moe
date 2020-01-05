@@ -6,7 +6,9 @@ import styles from "./Footer.scss";
 
 export const Footer: React.FC = () => (
   <div className={styles.container}>
-    <FooterProfile />
+    <div className={styles.profile}>
+      <FooterProfile />
+    </div>
     <div className={styles.row}>
       <FooterShareButtons />
       <FooterComment />
