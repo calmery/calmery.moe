@@ -5,6 +5,7 @@
 # Calmery.moe: Moe Moe Kyun
 
 [![GitHub Actions](https://github.com/calmery/calmery.moe/workflows/GitHub%20Actions/badge.svg?branch=develop)](https://github.com/calmery/calmery.moe/actions)
+[![WakaTime](https://wakatime.com/badge/github/calmery/calmery.moe.svg)](https://wakatime.com/badge/github/calmery/calmery.moe)
 
 ## Usage
 
