@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { Biography } from "~/components/Biography";
 import { Card } from "~/components/Card";
+import { Caption } from "~/components/Caption";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
@@ -37,11 +38,7 @@ export const Top: React.FC = () => {
         </div>
       )}
       <div className={styles.container}>
-        <div className={styles.caption}>
-          かわいいものが好き！
-          <br />
-          うちの子、かるめりちゃんのファンサイトです。
-        </div>
+        <Caption />
         <Biography />
         <HorizontalScrollView className={styles.stickers}>
           {["images/stickers/2.jpg", "images/stickers/1.jpg"].map(

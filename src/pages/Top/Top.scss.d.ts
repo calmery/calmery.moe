@@ -7,7 +7,6 @@ interface CssExports {
   'article': string;
   'articles': string;
   'booth': string;
-  'caption': string;
   'container': string;
   'description': string;
   'item': string;
