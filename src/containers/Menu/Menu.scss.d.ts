@@ -2,9 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   'app': string;
-  'appContainer': string;
   'apps': string;
-  'menu': string;
+  'button': string;
+  'container': string;
   'name': string;
   'title': string;
 }

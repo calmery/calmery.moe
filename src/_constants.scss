@@ -25,6 +25,7 @@
 $Color-Black: #3c3c3c;
 $Color-Gray: #787878;
 $Color-White: #ffffff;
+$Color-White-Transparent: rgba(255, 255, 255, 0.84);
 
 // Spacing: Used for `margin` and `padding`.
 
@@ -51,6 +52,10 @@ $Spacing-XL: 48px;
   &:hover {
     transform: scale(1.06);
   }
+}
+
+@mixin BackDrop-Filter-Blur {
+  backdrop-filter: blur(4px);
 }
 
 // Media Queries
