@@ -12,6 +12,13 @@ export const getDocument = async (url: string) => {
   return document;
 };
 
+export const getJson = async (url: string) => {
+  const response = await fetch(url);
+  const json = response.json();
+
+  return json;
+};
+
 export const saveData = (service: CrawlingTargetServices, data: object) =>
   fs.writeFileSync(
     path.resolve(process.cwd(), `public/data/${service}.json`),
