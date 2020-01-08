@@ -1,3 +1,4 @@
 export enum CrawlingTargetServices {
-  BOOTH = "booth"
+  BOOTH = "booth",
+  FANBOX = "fanbox"
 }
