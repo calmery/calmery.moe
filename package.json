@@ -154,6 +154,9 @@
   "name": "react-boilerplate",
   "private": true,
   "scripts": {
+    "crawling": "npm-run-all crawling:*",
+    "crawling:booth": "ts-node scripts/crawlers/booth.ts",
+    "crawling:fanbox": "ts-node scripts/crawlers/fanbox.ts",
     "build": "rimraf build && run-script-os",
     "build:default": "NODE_ENV=production webpack",
     "build:win32": "set NODE_ENV=production webpack",
