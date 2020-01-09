@@ -14,18 +14,12 @@ export const Menu: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.title}>アプリ</div>
           <div className={styles.apps}>
-            <div className={styles.app}>
-              <img src="images/apps/calmery-chan-camera.jpg" alt="かるカメ" />
-              <div className={styles.name}>かるカメ</div>
-            </div>
-            <div className={styles.app}>
-              <img src="images/apps/calmery-chan-camera.jpg" alt="かるカメ" />
-              <div className={styles.name}>かるカメ</div>
-            </div>
-            <div className={styles.app}>
-              <img src="images/apps/calmery-chan-camera.jpg" alt="かるカメ" />
-              <div className={styles.name}>かるカメ</div>
-            </div>
+            <a href="https://camera.calmery.moe">
+              <div className={styles.app}>
+                <img src="images/apps/calmery-chan-camera.jpg" alt="かるカメ" />
+                <div className={styles.name}>かるカメ</div>
+              </div>
+            </a>
           </div>
         </div>
       )}

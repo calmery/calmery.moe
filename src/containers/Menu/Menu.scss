@@ -64,15 +64,18 @@
 
   .apps {
     display: flex;
+
+    a {
+      margin-right: $Spacing-M;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   .app {
     width: 56px;
-    margin-right: $Spacing-M;
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     img {
       @include Border-Radius;
