@@ -5,8 +5,11 @@ import styles from "./LineStickers.scss";
 
 export const LineStickers: React.FC = () => (
   <HorizontalScrollView className={styles.container}>
-    {["images/stickers/2.jpg", "images/stickers/1.jpg"].map((url, index) => (
-      <Card className={styles.sticker} key={index} thumbnail={url} />
-    ))}
+    <a href="https://store.line.me/stickershop/product/9903456/ja">
+      <Card className={styles.sticker} thumbnail="images/stickers/2.jpg" />
+    </a>
+    <a href="https://store.line.me/stickershop/product/6457012/ja">
+      <Card className={styles.sticker} thumbnail="images/stickers/1.jpg" />
+    </a>
   </HorizontalScrollView>
 );
