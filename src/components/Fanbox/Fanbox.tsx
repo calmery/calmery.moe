@@ -3,30 +3,67 @@ import { Card } from "~/components/Card";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
 import styles from "./Fanbox.scss";
+import data from "~/data/fanbox.json";
 
-export const Fanbox: React.FC = () => (
-  <React.Fragment>
-    <Logo service={LogoService.FANBOX} />
-    <HorizontalScrollView className={styles.container}>
-      {["Dummy", "Dummy", "Dummy", "Dummy", "Dummy"].map((text, index) => (
-        <Card className={styles.fanbox} key={index} thumbnail="images/ogp.jpg">
-          <div className={styles.title}>かるめりちゃんスタンプ</div>
-          <div className={styles.description}>
-            イラストはめたねのおくすりさん！めっちゃかわいいイラストが 16
-            個入...
-          </div>
-          <div className={styles.tags}>
-            <div className={styles.tag}>
-              <img src="images/tag.svg" alt="タグ" />
-              イラスト
-            </div>
-            <div className={styles.tag}>
-              <img src="images/tag.svg" alt="タグ" />
-              イラスト
-            </div>
-          </div>
-        </Card>
+type FanboxState = {
+  id: string;
+  title: string;
+  excerpt: string;
+  coverImageUrl: string | null;
+  tags: string[];
+};
+
+const FanboxTags: React.FC<{ tags: string[] }> = ({ tags }) => {
+  if (tags.length === 0) {
+    return (
+      <div className={styles.tags}>
+        <div className={styles.tag}>タグは付いていません</div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.tags}>
+      {tags.map((tag: string, index: number) => (
+        <div className={styles.tag} key={index}>
+          <img src="images/tag.svg" alt="タグ" />
+          {tag}
+        </div>
       ))}
-    </HorizontalScrollView>
-  </React.Fragment>
-);
+    </div>
+  );
+};
+
+export const Fanbox: React.FC = () => {
+  if (!data.length) {
+    return null;
+  }
+
+  return (
+    <React.Fragment>
+      <Logo service={LogoService.FANBOX} />
+      <HorizontalScrollView className={styles.container}>
+        {data.map(
+          ({ id, title, excerpt, coverImageUrl, tags }: FanboxState, index) => (
+            <a
+              href={`https://www.pixiv.net/fanbox/creator/19590898/post/${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+            >
+              <Card
+                className={styles.fanbox}
+                key={index}
+                thumbnail={coverImageUrl || "images/fanbox/default.jpg"}
+              >
+                <div className={styles.title}>{title}</div>
+                <div className={styles.description}>{excerpt || "Dummy"}</div>
+                <FanboxTags tags={tags} />
+              </Card>
+            </a>
+          )
+        )}
+      </HorizontalScrollView>
+    </React.Fragment>
+  );
+};
