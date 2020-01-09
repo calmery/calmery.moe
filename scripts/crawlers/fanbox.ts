@@ -6,34 +6,34 @@ import { CrawlingTargetServices } from "../types";
     "https://www.pixiv.net/ajax/fanbox/creator?userId=19590898"
   );
 
-  const posts = body.post.items.map(
-    ({
-      id,
-      title,
-      coverImageUrl,
-      excerpt,
-      tags,
-      publishedDatetime
-    }: {
-      id: number;
-      title: string;
-      coverImageUrl: string | null;
-      excerpt: string;
-      tags: string[];
-      publishedDatetime: string;
-    }) => ({
-      id,
-      title,
-      coverImageUrl,
-      excerpt,
-      tags,
-      publishedDatetime
-    })
-  );
+  const posts = body.post.items
+    // 全体公開の記事のみを取得する
+    .filter(({ feeRequired }: { feeRequired: number }) => feeRequired === 0)
+    .map(
+      ({
+        id,
+        title,
+        coverImageUrl,
+        excerpt,
+        tags
+      }: {
+        id: number;
+        title: string;
+        coverImageUrl: string | null;
+        excerpt: string;
+        tags: string[];
+      }) => ({
+        id,
+        title,
+        coverImageUrl,
+        excerpt,
+        tags
+      })
+    );
 
   for (let i = 0; i < posts.length; i++) {
     if (posts[i].coverImageUrl !== null) {
-      await saveImage(
+      posts[i].coverImageUrl = await saveImage(
         CrawlingTargetServices.FANBOX,
         posts[i].id,
         posts[i].coverImageUrl
