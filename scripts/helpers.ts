@@ -21,7 +21,7 @@ export const getJson = async (url: string) => {
 
 export const saveData = (service: CrawlingTargetServices, data: object) =>
   fs.writeFileSync(
-    path.resolve(process.cwd(), `public/data/${service}.json`),
+    path.resolve(process.cwd(), `src/data/${service}.json`),
     JSON.stringify(data)
   );
 
@@ -29,12 +29,15 @@ export const saveImage = async (
   service: CrawlingTargetServices,
   id: number,
   imageUrl: string
-) =>
+) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   await require("pixiv-img")(
     imageUrl,
     path.resolve(process.cwd(), `public/images/${service}/${id}.png`)
   );
+
+  return `public/images/${service}/${id}.png`;
+};
 
 export const nodeListToArray = (elements: NodeListOf<Element>): Element[] =>
   [].slice.call(elements);
