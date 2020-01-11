@@ -15,12 +15,14 @@ export const Top: React.FC = () => {
       <Header />
       <Menu />
       <div className={styles.container}>
-        <Caption />
-        <Biography />
-        <LineStickers />
-        <Fanbox />
-        <Booth />
-        <Footer />
+        <div className={styles.contents}>
+          <Caption />
+          <Biography />
+          <LineStickers />
+          <Fanbox />
+          <Booth />
+          <Footer />
+        </div>
       </div>
     </React.Fragment>
   );
