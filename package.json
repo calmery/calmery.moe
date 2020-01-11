@@ -4,7 +4,8 @@
     "classnames": "2.2.6",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-ga": "2.7.0"
+    "react-ga": "2.7.0",
+    "webp-in-css": "0.3.0"
   },
   "devDependencies": {
     "@svgr/webpack": "5.0.1",
@@ -59,7 +60,6 @@
     "ts-loader": "6.2.1",
     "ts-node": "8.6.1",
     "typescript": "3.7.4",
-    "webp-in-css": "0.3.0",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1",
