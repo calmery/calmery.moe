@@ -10,14 +10,6 @@
        url(assets/fonts/Quicksand.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: SmartFontUI;
-  font-display: swap;
-  src: url(assets/fonts/SmartFontUI.woff2) format('woff2'),
-       url(assets/fonts/SmartFontUI.woff) format('woff'),
-       url(assets/fonts/SmartFontUI.ttf) format('truetype');
-}
-
 // Animation
 
 @keyframes fadeIn {
