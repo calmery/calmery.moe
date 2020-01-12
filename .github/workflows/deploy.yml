@@ -9,8 +9,8 @@ jobs:
   deploy:
     strategy:
       matrix:
-        node-version: [12.14.0]
-        npm-version: [6.13.4]
+        node-version: [12.14.1]
+        npm-version: [6.13.6]
         os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
