@@ -66,8 +66,8 @@
     "webpack-merge": "4.2.2"
   },
   "engines": {
-    "node": "12.14.0",
-    "npm": "6.13.4"
+    "node": "12.14.1",
+    "npm": "6.13.6"
   },
   "eslintConfig": {
     "env": {

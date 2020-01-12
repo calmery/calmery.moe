@@ -9,7 +9,7 @@
 
 ## Usage
 
-Install Node.js v12.14.0 and npm 6.13.4.
+Install Node.js v12.14.1 and npm 6.13.6.
 
 ### Commands
 
