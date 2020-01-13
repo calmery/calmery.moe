@@ -1,9 +1,10 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { Card } from "~/components/Card";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
+import { getFanbox } from "~/helpers/api";
 import styles from "./Fanbox.scss";
-import data from "~/data/fanbox.json";
 
 type FanboxState = {
   id: string;
@@ -35,7 +36,27 @@ const FanboxTags: React.FC<{ tags: string[] }> = ({ tags }) => {
 };
 
 export const Fanbox: React.FC = () => {
-  if (!data.length) {
+  const [data, setData] = useState<
+    | {
+        id: string;
+        title: string;
+        excerpt: string;
+        tags: string[];
+        coverImageUrl: string;
+      }[]
+    | null
+  >(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getFanbox();
+      setData(data);
+    };
+
+    getData();
+  }, []);
+
+  if (data === null || data.length === 0) {
     return null;
   }
 
@@ -57,7 +78,9 @@ export const Fanbox: React.FC = () => {
                 thumbnail={coverImageUrl || "images/fanbox/default.jpg"}
               >
                 <div className={styles.title}>{title}</div>
-                <div className={styles.description}>{excerpt || "Dummy"}</div>
+                <div className={styles.description}>
+                  {excerpt || "本文はありません"}
+                </div>
                 <FanboxTags tags={tags} />
               </Card>
             </a>
