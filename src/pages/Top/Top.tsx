@@ -5,7 +5,7 @@ import { Caption } from "~/components/Caption";
 import { Fanbox } from "~/components/Fanbox";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
-import { LineStickers } from "~/components/LineStickers";
+import { LineStickers } from "~/containers/LineStickers";
 import { Menu } from "~/containers/Menu";
 import styles from "./Top.scss";
 
