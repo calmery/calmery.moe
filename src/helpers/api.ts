@@ -41,6 +41,11 @@ export const getBooth = async () => {
 };
 
 export const getFanbox = async () => {
+  // TODO: モックするにしてもデータは別に分けたい
+  if (process.env.NODE_ENV !== "production") {
+    return [];
+  }
+
   const { errors, items } = await getEntries(ContentfulContentType.FANBOX);
 
   if (errors) {
