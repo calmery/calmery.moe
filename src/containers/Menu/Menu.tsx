@@ -7,9 +7,9 @@ export const Menu: React.FC = () => {
 
   return (
     <React.Fragment>
-      <div className={styles.button} onClick={() => setShow(!show)}>
+      <nav className={styles.button} onClick={() => setShow(!show)}>
         <img src="images/menu.svg" alt="メニュー" />
-      </div>
+      </nav>
       {show && (
         <div className={styles.container}>
           <div className={styles.title}>アプリ</div>

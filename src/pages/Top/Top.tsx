@@ -14,16 +14,16 @@ export const Top: React.FC = () => {
     <React.Fragment>
       <Header />
       <Menu />
-      <div className={styles.container}>
-        <div className={styles.contents}>
+      <main className={styles.container}>
+        <article className={styles.contents}>
           <Caption />
           <Biography />
           <LineStickers />
           <Fanbox />
           <Booth />
           <Footer />
-        </div>
-      </div>
+        </article>
+      </main>
     </React.Fragment>
   );
 };

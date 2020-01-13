@@ -5,7 +5,10 @@ export const FooterProfile: React.FC = () => (
   <a href="https://calmery.me">
     <div className={styles.container}>
       <div className={styles.icon}>
-        <img src="images/calmery.jpg" alt="プロフィールアイコン" />
+        <picture>
+          <source srcSet="images/calmery.jpg.webp" type="image/webp" />
+          <img src="images/calmery.jpg" alt="プロフィールアイコン" />
+        </picture>
       </div>
       <div className={styles.biography}>
         <div className={styles.name}>Calmery</div>
