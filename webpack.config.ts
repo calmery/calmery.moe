@@ -178,6 +178,9 @@ export default merge(
       ),
       new DefinePlugin({
         "process.env": JSON.stringify({
+          CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN:
+            process.env.CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN,
+          CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
           NODE_ENV: process.env.NODE_ENV || "development"
         })
       })
