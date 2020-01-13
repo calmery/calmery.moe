@@ -5,16 +5,171 @@
 }
 
 .container {
+  @include background("background.jpg.webp");
+
   width: 100vw;
+  height: calc(100vw / (16 / 9));
+  position: relative;
 
   @include device(sp) {
     @include background("sp.webp");
     height: calc(100vw / (3 / 2));
   }
 
-  @include device(pc) {
-    @include background("pc.webp");
-    height: calc(100vw / (16 / 9));
+  img {
+    vertical-align: bottom;
+  }
+
+  // Clouds
+
+  .c {
+    position: absolute;
+  }
+
+  .c1 {
+    @extend .c;
+
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .c2 {
+    @extend .c;
+
+    width: 16.4%;
+    top: 0;
+    left: 0;
+  }
+
+  .c3 {
+    @extend .c;
+
+    width: 7.6%;
+    top: 16.9%;
+    left: 0;
+  }
+
+  .c4 {
+    @extend .c;
+
+    width: 18.5%;
+    top: 12.2%;
+    left: 36%;
+    right: 0;
+  }
+
+  .c5 {
+    @extend .c;
+
+    width: 24.3%;
+    top: 21.9%;
+    left: 8.4%;
+    right: 0;
+  }
+
+  .c6 {
+    @extend .c;
+
+    width: 22.8%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .c7 {
+    @extend .c;
+
+    width: 22%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .c8 {
+    @extend .c;
+
+    width: 65.5%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .c9 {
+    @extend .c;
+
+    width: 69.6%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .c10 {
+    @extend .c;
+
+    width: 20.3%;
+    top: 15.8%;
+    right: 13.7%;
+  }
+
+  .c11 {
+    @extend .c;
+
+    width: 12.6%;
+    top: 31%;
+    right: 0;
+  }
+
+  .c12 {
+    @extend .c;
+
+    width: 9.2%;
+    top: 7.5%;
+    left: 28.6%;
+  }
+
+  .c13 {
+    @extend .c;
+
+    width: 9.5%;
+    top: 5.4%;
+    right: 29.9%;
+  }
+
+  .c14 {
+    @extend .c;
+
+    width: 11.5%;
+    top: 46.5%;
+    right: 26.3%;
+  }
+
+  .rainbow {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .character {
+    width: 23.9%;
+    bottom: 14.7%;
+    left: 38.1%;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .logo {
+    width: 28.7%;
+    top: 36.6%;
+    left: 35.7%;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -24,14 +179,28 @@
   body.no-webp {
     :local {
       .container {
+        @include background("background.jpg");
+
         @include device(sp) {
           @include background("sp.jpg");
         }
-
-        @include device(pc) {
-          @include background("pc.jpg");
-        }
       }
     }
+  }
+}
+
+.parallaxs,
+.parallax {
+  width: 100%;
+  height: 100%;
+
+  @include device(sp) {
+    display: none;
+  }
+}
+
+.fixed {
+  @include device(sp) {
+    display: none;
   }
 }
