@@ -1,0 +1,42 @@
+<svg width="629" height="295" viewBox="0 0 629 295" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<g opacity="0.7" filter="url(#filter0_d)">
+<ellipse cx="622.186" cy="121.509" rx="26.9826" ry="25.5625" fill="white"/>
+<ellipse cx="528.3" cy="80.1665" rx="28.4028" ry="27.456" fill="white"/>
+<ellipse cx="407.746" cy="116.143" rx="28.4028" ry="27.456" fill="white"/>
+<ellipse cx="359.461" cy="143.442" rx="37.5548" ry="35.8191" fill="white"/>
+<ellipse cx="215.711" cy="167.742" rx="38.0282" ry="35.8191" fill="white"/>
+<ellipse cx="105.413" cy="159.536" rx="38.8171" ry="38.0282" fill="white"/>
+<ellipse cx="165.06" cy="151.174" rx="28.7184" ry="28.7184" fill="white"/>
+<ellipse cx="267.625" cy="195.356" rx="28.7184" ry="28.7184" fill="white"/>
+<ellipse cx="300.13" cy="159.379" rx="27.7716" ry="27.456" fill="white"/>
+<ellipse cx="77.958" cy="204.507" rx="26.5093" ry="26.8249" fill="white"/>
+<ellipse cx="40.0869" cy="229.439" rx="26.5093" ry="26.8249" fill="white"/>
+<ellipse cx="38.5093" cy="272.674" rx="26.5093" ry="26.8249" fill="white"/>
+<ellipse cx="566.012" cy="119.93" rx="33.61" ry="31.5587" fill="white"/>
+<ellipse cx="480.962" cy="50.3438" rx="38.8171" ry="38.3438" fill="white"/>
+<ellipse cx="426.523" cy="82.3753" rx="27.9294" ry="28.0872" fill="white"/>
+<rect x="402.696" y="121.508" width="246.473" height="177.991" fill="white"/>
+<rect x="423.841" y="71.3306" width="120.554" height="72.2693" fill="white"/>
+<rect x="40.0874" y="227.23" width="427.935" height="72.2693" fill="white"/>
+<rect x="327.902" y="135.71" width="108.246" height="115.82" fill="white"/>
+<rect x="90.2656" y="177.683" width="273.298" height="73.8473" fill="white"/>
+<rect x="300.131" y="159.695" width="49.2315" height="27.1404" fill="white"/>
+<rect x="136.341" y="164.113" width="49.2315" height="27.1404" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="0" y="0" width="661.169" height="311.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="6"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<clipPath id="clip0">
+<rect width="629" height="295" fill="white"/>
+</clipPath>
+</defs>
+</svg>
