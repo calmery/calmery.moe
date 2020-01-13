@@ -1,6 +1,22 @@
 import { getEntries, ContentfulContentType } from "./contentful";
 
 export const getBooth = async () => {
+  // TODO: モックするにしてもデータは別に分けたい
+  if (process.env.NODE_ENV !== "production") {
+    return [
+      {
+        id: 1270166,
+        name: "かるめりちゃんステッカー",
+        thumbnailImageUrl: ["images/booth/1270166.png"]
+      },
+      {
+        id: 1714889,
+        name: "かるめりちゃんクリアファイル",
+        thumbnailImageUrl: ["images/booth/1714889.png"]
+      }
+    ];
+  }
+
   const { errors, items } = await getEntries(ContentfulContentType.BOOTH);
 
   if (errors) {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Biography } from "~/components/Biography";
-import { Booth } from "~/components/Booth";
+import { Booth } from "~/containers/Booth";
 import { Caption } from "~/components/Caption";
 import { Fanbox } from "~/components/Fanbox";
 import { Footer } from "~/components/Footer";
