@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { FooterShareButtons } from "./FooterShareButtons";
+import { FooterLinks } from "./FooterLinks";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<FooterShareButtons />, div);
+  ReactDOM.render(<FooterLinks />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

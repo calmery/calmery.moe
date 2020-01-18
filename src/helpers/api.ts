@@ -1,6 +1,12 @@
 import { getEntries, ContentfulContentType } from "./contentful";
 
-export const getBooth = async () => {
+export type BoothItem = {
+  id: number;
+  name: string;
+  thumbnailImageUrl: string[];
+};
+
+export const getBooth = async (): Promise<BoothItem[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
     return [
@@ -23,7 +29,6 @@ export const getBooth = async () => {
     throw errors;
   }
 
-  // TODO: どうやって型を付けるのか調べる
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return items.map(({ fields }: { fields: any }) => ({
     id: fields.id,
@@ -40,7 +45,15 @@ export const getBooth = async () => {
   }));
 };
 
-export const getFanbox = async () => {
+export type FanboxItem = {
+  id: string;
+  title: string;
+  excerpt: string;
+  coverImageUrl: string;
+  tags: string[];
+};
+
+export const getFanbox = async (): Promise<FanboxItem[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
     return [];
@@ -52,7 +65,6 @@ export const getFanbox = async () => {
     throw errors;
   }
 
-  // TODO: どうやって型を付けるのか調べる
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return items.map(({ fields }: { fields: any }) => ({
     id: fields.id,
@@ -63,7 +75,13 @@ export const getFanbox = async () => {
   }));
 };
 
-export const getLine = async () => {
+export type LineStickerItem = {
+  id: number;
+  name: string;
+  thumbnailImageUrl: string;
+};
+
+export const getLine = async (): Promise<LineStickerItem[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
     return [
@@ -86,7 +104,6 @@ export const getLine = async () => {
     throw errors;
   }
 
-  // TODO: どうやって型を付けるのか調べる
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return items.map(({ fields }: { fields: any }) => ({
     id: fields.id,

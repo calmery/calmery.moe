@@ -2,18 +2,11 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { Card } from "~/components/Card";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
-import { getLine } from "~/helpers/api";
+import { getLine, LineStickerItem } from "~/helpers/api";
 import styles from "./LineStickers.scss";
 
 export const LineStickers: React.FC = () => {
-  const [data, setData] = useState<
-    | {
-        id: number;
-        name: string;
-        thumbnailImageUrl: string;
-      }[]
-    | null
-  >(null);
+  const [data, setData] = useState<LineStickerItem[] | null>(null);
 
   useEffect(() => {
     const getData = async () => {

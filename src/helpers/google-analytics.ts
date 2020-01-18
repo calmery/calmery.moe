@@ -1,14 +1,18 @@
 import ReactGA from "react-ga";
 
+ReactGA.initialize("UA-153119606-2", {
+  debug: process.env.NODE_ENV !== "production"
+});
+
 export enum GOOGLE_ANALYTICS {
-  COUNTER = "COUNTER"
+  DUMMY = "DUMMY"
 }
 
 export enum GOOGLE_ANALYTICS_ACTION {
-  COUNTER_INCREMENT = "Action: COUNTER/INCREMENT",
-  COUNTER_DECREMENT = "Action: COUNTER/DECREMENT"
+  DUMMY = "Action: DUMMY"
 }
 
+// TODO: リンクのクリックなどの情報は収集したい
 export const sendToGoogleAnalytics = (
   category: GOOGLE_ANALYTICS,
   action: GOOGLE_ANALYTICS_ACTION,

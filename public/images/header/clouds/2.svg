@@ -1,26 +1,23 @@
-<svg width="195" height="134" viewBox="0 0 195 134" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
-<g filter="url(#filter0_d)">
-<ellipse cx="47.839" cy="67.5418" rx="35.839" ry="31.7625" fill="white"/>
-<ellipse cx="116.12" cy="85.8861" rx="32.442" ry="36.5184" fill="white"/>
-<ellipse cx="89.453" cy="48.5184" rx="32.9515" ry="36.5184" fill="white"/>
-<ellipse cx="133.615" cy="53.2744" rx="21.4015" ry="21.2316" fill="white"/>
-<ellipse cx="162.15" cy="74.5062" rx="21.0618" ry="20.3824" fill="white"/>
-<ellipse cx="67.2023" cy="87.4153" rx="22.2508" ry="24.7986" fill="white"/>
-</g>
-</g>
-<defs>
-<filter id="filter0_d" x="0" y="0" width="195.212" height="134.405" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="6"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-</filter>
-<clipPath id="clip0">
-<rect width="195" height="134" fill="white"/>
-</clipPath>
-</defs>
+<svg width="101" height="70" viewBox="0 0 101 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.7" filter="url(#filter0_d)">
+    <ellipse cx="32.4427" cy="24.4358" rx="12.2654" ry="12.4358" fill="white"/>
+    <ellipse cx="30.7386" cy="45.5593" rx="12.2654" ry="12.4358" fill="white"/>
+    <ellipse cx="75.3715" cy="39.9378" rx="13.2875" ry="13.6282" fill="white"/>
+    <ellipse cx="46.9223" cy="43.0039" rx="11.0729" ry="11.584" fill="white"/>
+    <ellipse cx="59.0175" cy="40.6191" rx="10.5619" ry="10.9026" fill="white"/>
+    <ellipse cx="47.4337" cy="36.8718" rx="10.5619" ry="10.9026" fill="white"/>
+    <ellipse cx="62.2542" cy="32.6127" rx="9.36942" ry="9.71012" fill="white"/>
+    <ellipse cx="21.3694" cy="32.6127" rx="9.36942" ry="9.71012" fill="white"/>
+  </g>
+  <defs>
+    <filter id="filter0_d" x="0" y="0" width="100.659" height="69.9951" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="6"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
 </svg>

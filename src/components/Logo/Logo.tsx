@@ -6,11 +6,9 @@ export enum LogoService {
   FANBOX = "fanbox"
 }
 
-type LogoProps = {
+export const Logo: React.FC<{
   service: LogoService;
-};
-
-export const Logo: React.FC<LogoProps> = ({ service }) => (
+}> = ({ service }) => (
   <div className={styles.container}>
     <img src={`images/logo/${service}.svg`} alt="ロゴ" />
   </div>

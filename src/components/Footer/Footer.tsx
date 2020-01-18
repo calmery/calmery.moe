@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FooterComment } from "~/components/FooterComment";
 import { FooterProfile } from "~/components/FooterProfile";
-import { FooterShareButtons } from "~/components/FooterShareButtons";
+import { FooterLinks } from "~/components/FooterLinks";
 import styles from "./Footer.scss";
 
 export const Footer: React.FC = () => (
@@ -10,7 +10,7 @@ export const Footer: React.FC = () => (
       <FooterProfile />
     </div>
     <div className={styles.row}>
-      <FooterShareButtons />
+      <FooterLinks />
       <FooterComment />
     </div>
   </div>
