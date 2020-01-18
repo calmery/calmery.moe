@@ -1,17 +1,20 @@
-<svg width="219" height="222" viewBox="0 0 219 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="267" height="222" viewBox="0 0 267 222" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <g opacity="0.7" filter="url(#filter0_d)">
-<circle cx="25.8645" cy="49.8645" r="37.8645" fill="white"/>
-<circle cx="108.593" cy="125.593" r="37.8645" fill="white"/>
-<circle cx="169.05" cy="135.139" r="37.8645" fill="white"/>
-<ellipse cx="72.3201" cy="82.6386" rx="29.5916" ry="29.2734" fill="white"/>
-<rect x="-12" y="135" width="219" height="87" fill="white"/>
-<rect x="-12" y="58.4561" width="89.7293" height="114.548" fill="white"/>
-<rect x="-12" y="53.3652" width="33.0917" height="34.3644" fill="white"/>
+<circle cx="73.8645" cy="49.8645" r="37.8645" fill="white"/>
+<circle cx="156.593" cy="125.593" r="37.8645" fill="white"/>
+<circle cx="217.049" cy="135.139" r="37.8645" fill="white"/>
+<ellipse cx="120.32" cy="82.6384" rx="29.5916" ry="29.2734" fill="white"/>
+<circle r="37.8645" transform="matrix(-1 0 0 1 74.0493 49.8645)" fill="white"/>
+<circle r="37.8645" transform="matrix(-1 0 0 1 -8.67955 125.593)" fill="white"/>
+<ellipse rx="29.5916" ry="29.2734" transform="matrix(-1 0 0 1 27.5939 82.6384)" fill="white"/>
+<rect y="135" width="255" height="87" fill="white"/>
+<rect x="21" y="58" width="105" height="115" fill="white"/>
+<rect x="37" y="54" width="32" height="34" fill="white"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d" x="-24" y="0" width="243" height="234" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="-58.5441" y="0" width="325.544" height="234" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset/>
@@ -21,7 +24,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <clipPath id="clip0">
-<rect width="219" height="222" fill="white"/>
+<rect width="267" height="222" fill="white"/>
 </clipPath>
 </defs>
 </svg>

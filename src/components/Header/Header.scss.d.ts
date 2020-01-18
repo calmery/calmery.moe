@@ -18,7 +18,6 @@ interface CssExports {
   'c9': string;
   'character': string;
   'container': string;
-  'fixed': string;
   'logo': string;
   'parallax': string;
   'parallaxs': string;
