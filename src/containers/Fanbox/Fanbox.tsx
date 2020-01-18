@@ -10,7 +10,7 @@ type FanboxState = {
   id: string;
   title: string;
   excerpt: string;
-  coverImageUrl: string | null;
+  coverImageUrl: string;
   tags: string[];
 };
 
@@ -77,7 +77,7 @@ export const Fanbox: React.FC = () => {
                 key={index}
                 thumbnail={[
                   {
-                    url: coverImageUrl || "images/fanbox/default.jpg"
+                    url: coverImageUrl
                   }
                 ]}
               >
