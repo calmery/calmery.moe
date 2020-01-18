@@ -191,6 +191,10 @@
   bottom: 0;
   left: 0;
   right: 0;
+
+  @include device(sp) {
+    display: none;
+  }
 }
 
 // Webp
