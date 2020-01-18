@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": { "*": ["types/*"] },
     "esModuleInterop": true,
-    "lib": ["dom", "ES2015"],
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "resolveJsonModule": true,
     "strict": true,
-    "target": "es5"
+    "target": "es5",
+    "typeRoots": ["node_modules/@types", "types"]
   }
 }

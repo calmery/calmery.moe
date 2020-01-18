@@ -1,0 +1,84 @@
+@import "../../constants";
+
+.container {
+  @include device(pc) {
+    padding: $Spacing-L 0 $Spacing-XL 0;
+  }
+
+  @include device(sp) {
+    padding: $Spacing-M 0 $Spacing-XL 0;
+  }
+
+  a {
+    @include device(pc) {
+      margin-left: $Spacing-L;
+
+      &:first-child {
+        margin-left: $Spacing-XL;
+      }
+
+      &:last-child {
+        margin-right: $Spacing-XL;
+      }
+    }
+
+    @include device(sp) {
+      margin-left: $Spacing-M;
+
+      &:first-child {
+        margin-left: $Spacing-L;
+      }
+
+      &:last-child {
+        margin-right: $Spacing-L;
+      }
+    }
+  }
+}
+
+.fanbox {
+  @include Clickable;
+
+  width: 256px;
+  min-width: 256px;
+}
+
+.title {
+  margin-bottom: $Spacing-S;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @include device(pc) {
+    @include Typography-L;
+  }
+
+  @include device(sp) {
+    @include Typography-M;
+  }
+}
+
+.description {
+  @include Typography-S;
+  margin-bottom: $Spacing-S;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.tags {
+  @include Typography-XS;
+  color: $Color-Gray;
+  display: flex;
+  justify-content: flex-end;
+
+  .tag {
+    margin-left: $Spacing-S;
+
+    img {
+      margin-right: $Spacing-XS;
+      vertical-align: bottom;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../constants";
+
+.container {
+  display: flex;
+
+  @include device(sp) {
+    margin-bottom: $Spacing-XL;
+  }
+
+  a {
+    margin-left: $Spacing-S;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @include device(sp) {
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}

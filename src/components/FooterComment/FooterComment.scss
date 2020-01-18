@@ -1,0 +1,20 @@
+@import "../../constants";
+
+.container {
+  font-family: Quicksand;
+  font-weight: bold;
+
+  @include device(pc) {
+    @include Typography-S;
+    text-align: right;
+  }
+
+  @include device(sp) {
+    @include Typography-XS;
+    text-align: center;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}

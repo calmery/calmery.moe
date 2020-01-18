@@ -1,0 +1,38 @@
+@import "../../constants";
+
+.container {
+  padding: $Spacing-L 0 $Spacing-XL 0;
+
+  @include device(pc) {
+    background: url(images/background/pc.jpg.webp);
+    background-size: cover;
+  }
+
+  @include device(sp) {
+    background: url(images/background/sp.jpg.webp);
+    background-size: cover;
+  }
+}
+
+.contents {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+:global {
+  body.no-webp {
+    :local {
+      .container {
+        @include device(pc) {
+          background: url(images/background/pc.jpg);
+          background-size: cover;
+        }
+
+        @include device(sp) {
+          background: url(images/background/sp.jpg);
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

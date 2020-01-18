@@ -1,0 +1,58 @@
+name: GitHub Actions
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        node-version: [12.14.1]
+        npm-version: [6.13.6]
+        os: [windows-latest, macOS-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i npm@${{ matrix.npm-version }} -g
+      - run: npm ci
+      - run: npm run build
+
+  lint:
+    strategy:
+      matrix:
+        node-version: [12.14.1]
+        npm-version: [6.13.6]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i npm@${{ matrix.npm-version }} -g
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    strategy:
+      matrix:
+        node-version: [12.14.1]
+        npm-version: [6.13.6]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i npm@${{ matrix.npm-version }} -g
+      - run: npm ci
+      - run: npm test

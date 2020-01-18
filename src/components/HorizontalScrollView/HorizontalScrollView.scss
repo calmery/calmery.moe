@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.horizontal {
+  width: fit-content;
+  display: flex;
+}

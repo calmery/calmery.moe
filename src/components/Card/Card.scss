@@ -1,0 +1,37 @@
+@import "../../constants";
+
+.container {
+  @include Border-Radius;
+  @include Box-Shadow;
+
+  overflow: hidden;
+  display: flex;
+  background: $Color-White;
+}
+
+.thumbnail {
+  source,
+  img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
+
+.contents {
+  @include device(pc) {
+    padding: $Spacing-L;
+  }
+
+  @include device(sp) {
+    padding: $Spacing-M;
+  }
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}

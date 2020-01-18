@@ -1,0 +1,14 @@
+@import "../../constants";
+
+.container {
+  text-align: center;
+  margin-bottom: $Spacing-XL;
+
+  @include device(pc) {
+    @include Typography-M;
+  }
+
+  @include device(sp) {
+    @include Typography-S;
+  }
+}

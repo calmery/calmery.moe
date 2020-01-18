@@ -1,0 +1,73 @@
+// Typography
+
+@mixin Typography-XS {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@mixin Typography-S {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin Typography-M {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin Typography-L {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+// Color: Used for `color`, etc.
+
+$Color-Black: #3c3c3c;
+$Color-Gray: #787878;
+$Color-White: #ffffff;
+$Color-White-Transparent: rgba(255, 255, 255, 0.84);
+
+// Spacing: Used for `margin` and `padding`.
+
+$Spacing-XS: 4px;
+$Spacing-S: 8px;
+$Spacing-M: 16px;
+$Spacing-L: 24px;
+$Spacing-XL: 48px;
+
+// Others
+
+@mixin Border-Radius {
+  border-radius: 4px;
+}
+
+@mixin Box-Shadow {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+@mixin Clickable {
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+@mixin BackDrop-Filter-Blur {
+  backdrop-filter: blur(4px);
+}
+
+// Media Queries
+
+// 横幅が 960px 以上のデバイスは PC として、960px 未満のデバイスはスマートフォンとして扱う
+$devices: (
+  "pc": "screen and (min-width: 960px)",
+  "sp": "screen and (max-width: 959px)"
+) !default;
+
+@mixin device($device: pc) {
+  @media #{map-get($devices, $device)} {
+    @content;
+  }
+}
