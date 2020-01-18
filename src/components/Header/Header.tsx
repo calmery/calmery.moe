@@ -53,7 +53,7 @@ const Logo: React.FC = () => (
 
 const Rainbow: React.FC = () => (
   <Parallax depth="0.05">
-    <img src="images/header/rainbow.svg" className={styles.rainbow} alt="虹" />
+    <div className={styles.rainbow} />
   </Parallax>
 );
 

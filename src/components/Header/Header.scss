@@ -12,7 +12,6 @@
   position: relative;
 
   @include device(sp) {
-    @include background("sp.webp");
     height: calc(100vw / (3 / 2));
   }
 
@@ -27,10 +26,6 @@
   position: absolute;
   overflow: hidden;
 
-  @include device(sp) {
-    display: none;
-  }
-
   .parallax {
     width: 100%;
     height: 100%;
@@ -40,10 +35,19 @@
 // Parts
 
 .character {
-  width: 23.9%;
-  bottom: 14.7%;
-  left: 38.1%;
   position: absolute;
+
+  @include device(pc) {
+    width: 23.9%;
+    bottom: 14.7%;
+    left: 38.1%;
+  }
+
+  @include device(sp) {
+    width: 26.6%;
+    bottom: 12.2%;
+    left: 36.6%;
+  }
 
   img {
     width: 100%;
@@ -51,10 +55,19 @@
 }
 
 .logo {
-  width: 28.7%;
-  top: 36.6%;
-  left: 35.7%;
   position: absolute;
+
+  @include device(pc) {
+    width: 28.7%;
+    top: 36.6%;
+    left: 35.7%;
+  }
+
+  @include device(sp) {
+    width: 38.8%;
+    top: 39.2%;
+    left: 30.7%;
+  }
 
   img {
     width: 100%;
@@ -62,6 +75,14 @@
 }
 
 .rainbow {
+  @include device(pc) {
+    @include background("rainbow/pc.svg");
+  }
+
+  @include device(sp) {
+    @include background("rainbow/sp.svg");
+  }
+
   width: 100%;
   top: 0;
   bottom: 0;
@@ -79,107 +100,213 @@
 .cloud-1 {
   @extend .cloud;
 
-  width: 20.5%;
-  top: -12%;
-  left: -4%;
+  @include device(pc) {
+    width: 20.5%;
+    top: -12%;
+    left: -4%;
+  }
+
+  @include device(sp) {
+    width: 21%;
+    top: -11%;
+    left: -4.5%;
+  }
 }
 
 .cloud-2 {
   @extend .cloud;
 
-  width: 10.5%;
-  top: 16.9%;
-  left: -3%;
+  @include device(pc) {
+    width: 10.5%;
+    top: 16.9%;
+    left: -3%;
+  }
+
+  @include device(sp) {
+    width: 10.5%;
+    top: 17.3%;
+    left: -3.6%;
+  }
 }
 
 .cloud-3 {
   @extend .cloud;
 
-  width: 18.5%;
-  top: 12.2%;
-  left: 36%;
-  right: 0;
+  @include device(pc) {
+    width: 18.5%;
+    top: 12.2%;
+    left: 36%;
+    right: 0;
+  }
+
+  @include device(sp) {
+    width: 18.5%;
+    top: 14.8%;
+    left: 34.3%;
+    right: 0;
+  }
 }
 
 .cloud-4 {
   @extend .cloud;
 
-  width: 24.3%;
-  top: 21.9%;
-  left: 8.4%;
-  right: 0;
+  @include device(pc) {
+    width: 24.3%;
+    top: 21.9%;
+    left: 8.4%;
+    right: 0;
+  }
+
+  @include device(sp) {
+    width: 24.4%;
+    top: 26%;
+    left: 6.2%;
+    right: 0;
+  }
 }
 
 .cloud-5 {
   @extend .cloud;
 
-  width: 28%;
-  bottom: 0;
-  left: -5.1%;
+  @include device(pc) {
+    width: 28%;
+    bottom: 0;
+    left: -5.1%;
+  }
+
+  @include device(sp) {
+    width: 27.5%;
+    bottom: 1%;
+    left: -6%;
+  }
 }
 
 .cloud-6 {
   @extend .cloud;
 
-  width: 26%;
-  bottom: 0;
-  right: -3.9%;
+  @include device(pc) {
+    width: 26%;
+    bottom: 0;
+    right: -3.9%;
+  }
+
+  @include device(sp) {
+    width: 26.1%;
+    bottom: 0.5%;
+    right: -2%;
+  }
 }
 
 .cloud-7 {
   @extend .cloud;
 
-  width: 70.1%;
-  bottom: 0;
-  right: -4.9%;
+  @include device(pc) {
+    width: 70.1%;
+    bottom: 0;
+    right: -4.9%;
+  }
+
+  @include device(sp) {
+    width: 70.5%;
+    bottom: 1.2%;
+    right: -6.5%;
+  }
 }
 
 .cloud-8 {
   @extend .cloud;
 
-  width: 74.4%;
-  bottom: 0;
-  left: -5%;
+  @include device(pc) {
+    width: 74.4%;
+    bottom: 0;
+    left: -5%;
+  }
+
+  @include device(sp) {
+    width: 74.7%;
+    bottom: 2.3%;
+    left: -6.3%;
+  }
 }
 
 .cloud-9 {
   @extend .cloud;
 
-  width: 20.3%;
-  top: 15.8%;
-  right: 13.7%;
+  @include device(pc) {
+    width: 20.3%;
+    top: 15.8%;
+    right: 13.7%;
+  }
+
+  @include device(sp) {
+    width: 20.6%;
+    top: 19.5%;
+    right: 10.3%;
+  }
 }
 
 .cloud-10 {
   @extend .cloud;
 
-  width: 16.5%;
-  top: 31%;
-  right: -4%;
+  @include device(pc) {
+    width: 16.5%;
+    top: 31%;
+    right: -4%;
+  }
+
+  @include device(sp) {
+    width: 16.6%;
+    top: 35.3%;
+    right: -5.1%;
+  }
 }
 
 .cloud-11 {
   @extend .cloud;
 
-  width: 9.2%;
-  top: 7.5%;
-  left: 28.6%;
+  @include device(pc) {
+    width: 9.2%;
+    top: 7.5%;
+    left: 28.6%;
+  }
+
+  @include device(sp) {
+    width: 9.2%;
+    top: 10.4%;
+    left: 25.5%;
+  }
 }
 
 .cloud-12 {
   @extend .cloud;
 
-  width: 9.5%;
-  top: 5.4%;
-  right: 29.9%;
+  @include device(pc) {
+    width: 9.5%;
+    top: 5.4%;
+    right: 29.9%;
+  }
+
+  @include device(sp) {
+    width: 9.6%;
+    top: 8.4%;
+    right: 26.9%;
+  }
 }
 
 .cloud-13 {
   @extend .cloud;
 
-  width: 11.5%;
-  top: 46.5%;
-  right: 26.3%;
+  @include device(pc) {
+    width: 11.5%;
+    top: 46.5%;
+    right: 26.3%;
+  }
+
+  @include device(sp) {
+    width: 11.5%;
+    top: 50.6%;
+    right: 24.7%;
+  }
 }
 
 // Border
@@ -191,10 +318,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-
-  @include device(sp) {
-    display: none;
-  }
 }
 
 // Webp
@@ -204,10 +327,6 @@
     :local {
       .container {
         @include background("background.jpg");
-
-        @include device(sp) {
-          @include background("sp.jpg");
-        }
       }
     }
   }
