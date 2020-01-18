@@ -28,7 +28,7 @@ $ npm test
 
 See [Figma](https://www.figma.com/file/sXoA2JhyW67gSIaFvg0ndS/Calmery.moe-Public).
 
-![Design](https://user-images.githubusercontent.com/12670155/72669860-34887280-3a7a-11ea-93b6-43404c682afe.jpg)
+![Design](https://user-images.githubusercontent.com/12670155/71620998-347e1b00-2c10-11ea-91cc-bf64fff0b97d.png)
 
 ### Guidelines
 
