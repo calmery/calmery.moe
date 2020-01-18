@@ -7,6 +7,11 @@ on:
 
 jobs:
   deploy:
+    env:
+      CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN }}
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
     strategy:
       matrix:
         node-version: [12.14.1]
