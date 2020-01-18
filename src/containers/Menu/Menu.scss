@@ -1,37 +1,59 @@
 @import "../../constants";
 
+.buttons {
+  display: flex;
+  position: absolute;
+
+  @include device(pc) {
+    top: $Spacing-XL;
+    right: $Spacing-XL;
+  }
+
+  @include device(sp) {
+    top: $Spacing-L;
+    right: $Spacing-L;
+  }
+}
+
 .button {
   @include Box-Shadow;
   @include Clickable;
 
   background: $Color-White;
   border-radius: 100%;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @include device(pc) {
-    top: $Spacing-XL;
-    right: $Spacing-XL;
     width: 48px;
     height: 48px;
+    margin-left: $Spacing-L;
 
     img {
       width: 16px;
       height: 16px;
+
+      &.device-motion-event {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
   @include device(sp) {
-    top: $Spacing-L;
-    right: $Spacing-L;
     width: 32px;
     height: 32px;
+    margin-left: $Spacing-M;
 
     img {
       width: 12px;
       height: 12px;
+
+      &.device-motion-event {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }
