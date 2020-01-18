@@ -13,21 +13,21 @@ export const Header: React.FC = () => {
   return (
     <div className={styles.container}>
       <div ref={ref} className={styles.parallaxs}>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.05">
           <img
             src="images/header/rainbow.svg"
             className={styles.rainbow}
             alt="虹"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.05">
+        <div className={styles.parallax} data-depth="0.1">
           <img
             src="images/header/clouds/14.svg"
             className={styles.c14}
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.15">
           <img
             src="images/header/clouds/13.svg"
             className={styles.c13}
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.3">
+        <div className={styles.parallax} data-depth="0.15">
           <img
             src="images/header/clouds/11.svg"
             className={styles.c11}
@@ -62,21 +62,21 @@ export const Header: React.FC = () => {
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.3">
           <img
             src="images/header/clouds/8.svg"
             className={styles.c8}
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.15">
           <img
             src="images/header/clouds/7.svg"
             className={styles.c7}
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.3">
           <img
             src="images/header/clouds/6.svg"
             className={styles.c6}
@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.15">
           <img
             src="images/header/clouds/4.svg"
             className={styles.c4}
@@ -104,7 +104,7 @@ export const Header: React.FC = () => {
             alt="雲"
           />
         </div>
-        <div className={styles.parallax} data-depth="0.6">
+        <div className={styles.parallax} data-depth="0.3">
           <img
             src="images/header/clouds/2.svg"
             className={styles.c2}
@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
             <img src="images/header/logo.png" alt="ロゴ" />
           </picture>
         </div>
-        <div className={styles.parallax} data-depth="0.1">
+        <div className={styles.parallax} data-depth="0.05">
           <picture className={styles.character}>
             <source
               srcSet="images/header/character.png.webp"
