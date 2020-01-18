@@ -1,175 +1,199 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+
 import autoprefixer from "autoprefixer";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import * as path from "path";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import {
-  Configuration,
+  DefinePlugin,
   HotModuleReplacementPlugin,
-  DefinePlugin
+  Configuration
 } from "webpack";
 import merge from "webpack-merge";
-import WorkboxWebpackPlugin from "workbox-webpack-plugin";
-import WriteFileWebpackPlugin from "write-file-webpack-plugin";
 
-const { NODE_ENV } = process.env;
+if (process.env.NODE_ENV === undefined) {
+  process.env.NODE_ENV = "development";
+}
 
-const common: Configuration = {
-  entry: path.resolve(__dirname, "src/index.ts"),
-  module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        loader: [
-          NODE_ENV === "production"
-            ? MiniCssExtractPlugin.loader
-            : "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true,
-              url: false
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              ident: "postcss",
-              plugins: [autoprefixer]
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        use: {
-          loader: "elm-webpack-loader",
-          options: {
-            debug: NODE_ENV !== "production",
-            optimize: NODE_ENV === "production",
-            verbose: true
-          }
-        }
-      },
-      {
-        test: /\.ts$/,
-        loader: "ts-loader"
-      }
-    ]
-  },
-  output: {
-    path: path.resolve(__dirname, "build"),
-    filename: NODE_ENV === "production" ? "[contenthash].js" : "index.js"
-  },
-  plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, "src/assets"),
-        to: path.resolve(__dirname, "build/assets")
-      },
-      {
-        from: path.resolve(__dirname, "src/CNAME"),
-        to: path.resolve(__dirname, "build")
-      }
-    ]),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/index.html"),
-      minify: {
-        collapseWhitespace: NODE_ENV === "production"
-      }
-    }),
-    new DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify(NODE_ENV || "development")
-      }
-    })
-  ],
-  resolve: {
-    extensions: [".ts", ".js"]
-  }
-};
+const isEnvProduction = process.env.NODE_ENV === "production";
 
-const development: Configuration = merge(common, {
+const development: Configuration = {
   devtool: "cheap-module-source-map",
   mode: "development",
-  plugins: [new HotModuleReplacementPlugin(), new WriteFileWebpackPlugin()]
-});
+  plugins: [new HotModuleReplacementPlugin()]
+};
 
-const production: Configuration = merge(common, {
-  devtool: "source-map",
+const production: Configuration = {
+  bail: true,
+  devtool: undefined,
   mode: "production",
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-        uglifyOptions: {
-          mangle: true,
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          parse: {
+            ecma: 8
+          },
           compress: {
-            passes: 2,
-            unsafe: true,
-            unsafe_comps: true, // eslint-disable-line @typescript-eslint/camelcase
-            keep_fargs: false, // eslint-disable-line @typescript-eslint/camelcase
-            pure_getters: true, // eslint-disable-line @typescript-eslint/camelcase
+            warnings: false,
+            comparisons: false,
+            inline: 2
+          },
+          mangle: {
+            safari10: true
+          },
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          keep_classnames: false,
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          keep_fnames: false,
+          output: {
+            ecma: 5,
+            // license-webpack-plugin で生成したライセンスファイルに関係するコメントだけは残すようにする
+            comments: /^(.+)[^@]license/i,
             // eslint-disable-next-line @typescript-eslint/camelcase
-            pure_funcs: [
-              "F2",
-              "F3",
-              "F4",
-              "F5",
-              "F6",
-              "F7",
-              "F8",
-              "F9",
-              "A2",
-              "A3",
-              "A4",
-              "A5",
-              "A6",
-              "A7",
-              "A8",
-              "A9"
-            ]
+            ascii_only: true
           }
         }
       })
-    ],
-    splitChunks: {
-      chunks: "all"
-    }
+    ]
   },
   plugins: [
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: {
-        map: {
-          annotation: true,
-          inline: false
-        }
-      }
-    }),
+    new OptimizeCSSAssetsPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[contenthash].css"
+      filename: "[hash].css"
     }),
-    // https://github.com/facebook/create-react-app/blob/caf0a30e38d0cb9bbd2aab733efa0dd1aa6a9cb6/packages/react-scripts/config/webpack.config.js#L609-L621
-    new WorkboxWebpackPlugin.GenerateSW({
-      clientsClaim: true,
-      exclude: [/\.map$/, /CNAME$/],
-      importWorkboxFrom: "cdn",
-      navigateFallback: "/index.html",
-      navigateFallbackBlacklist: [
-        new RegExp("^/_"),
-        new RegExp("/[^/]+\\.[^/]+$")
-      ]
+    new (require("license-webpack-plugin").LicenseWebpackPlugin)({
+      addBanner: true,
+      // package.json の devDependencies に含まれるパッケージは除外する
+      excludedPackageTest: (name: string) =>
+        Object.keys(require("./package.json").devDependencies).includes(name),
+      outputFilename: "bundle.[hash].js.LICENSE",
+      renderBanner: (filename: string) =>
+        `/* For license information please see ${filename} */`
     })
   ]
-});
+};
 
-export default NODE_ENV === "production" ? production : development;
+export default merge(
+  {
+    entry: path.resolve(__dirname, "src/index.tsx"),
+    module: {
+      strictExportPresence: true,
+      rules: [
+        {
+          test: /\.tsx?$/,
+          loader: "ts-loader"
+        },
+        {
+          test: /\.scss$/,
+          loader: [
+            process.env.NODE_ENV === "production"
+              ? MiniCssExtractPlugin.loader
+              : "style-loader",
+            "css-modules-typescript-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                sourceMap: process.env.NODE_ENV !== "production",
+                url: false
+              }
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                ident: "postcss",
+                plugins: [autoprefixer],
+                sourceMap: process.env.NODE_ENV !== "production"
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: process.env.NODE_ENV !== "production"
+              }
+            }
+          ]
+        },
+        {
+          test: [/\.jpe?g$/, /\.png$/],
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]"
+          }
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            "@svgr/webpack",
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[hash].[ext]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    output: {
+      path: path.resolve(__dirname, "build"),
+      pathinfo: !isEnvProduction,
+      filename: isEnvProduction ? "bundle.[hash].js" : "bundle.js",
+      futureEmitAssets: true,
+      devtoolModuleFilenameTemplate: isEnvProduction
+        ? undefined
+        : info => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")
+    },
+    plugins: [
+      new CopyWebpackPlugin([
+        {
+          context: "public/",
+          from: { glob: "**/*" },
+          ignore: ["index.html"]
+        }
+      ]),
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: path.resolve(__dirname, "public/index.html")
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  keepClosingSlash: true
+                }
+              }
+            : undefined
+        )
+      ),
+      new DefinePlugin({
+        "process.env": JSON.stringify({
+          CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN:
+            process.env.CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN,
+          CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+          NODE_ENV: process.env.NODE_ENV || "development"
+        })
+      })
+    ],
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "src")
+      },
+      extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+      modules: ["node_modules"]
+    }
+  },
+  isEnvProduction ? production : development
+);
+
+/* eslint-enable @typescript-eslint/explicit-function-return-type */

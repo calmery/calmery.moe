@@ -1,0 +1,93 @@
+@import "../../constants";
+
+.button {
+  @include Box-Shadow;
+  @include Clickable;
+
+  background: $Color-White;
+  border-radius: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include device(pc) {
+    top: $Spacing-XL;
+    right: $Spacing-XL;
+    width: 48px;
+    height: 48px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @include device(sp) {
+    top: $Spacing-L;
+    right: $Spacing-L;
+    width: 32px;
+    height: 32px;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.container {
+  @include Border-Radius;
+  @include Box-Shadow;
+  @include BackDrop-Filter-Blur;
+
+  width: 200px;
+  height: 98px;
+  background: $Color-White-Transparent;
+  padding: $Spacing-M;
+  position: absolute;
+
+  @include device(pc) {
+    top: $Spacing-XL + 48px + $Spacing-L;
+    right: $Spacing-XL;
+  }
+
+  @include device(sp) {
+    top: $Spacing-L + 32px + $Spacing-M;
+    right: $Spacing-L;
+  }
+
+  .title {
+    @include Typography-S;
+    margin-bottom: $Spacing-S;
+  }
+
+  .apps {
+    display: flex;
+
+    a {
+      margin-right: $Spacing-M;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .app {
+    width: 56px;
+
+    img {
+      @include Border-Radius;
+      width: 54px;
+      height: 54px;
+      border: 1px solid #ffdada;
+    }
+
+    .name {
+      @include Typography-XS;
+      text-align: center;
+      margin-top: $Spacing-XS;
+    }
+  }
+}

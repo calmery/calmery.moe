@@ -1,0 +1,49 @@
+@import "../../constants";
+
+.container {
+  display: none;
+
+  &.pc {
+    max-height: 243px;
+
+    @include device(pc) {
+      display: flex;
+    }
+  }
+
+  &.sp {
+    @include device(sp) {
+      display: flex;
+    }
+  }
+
+  @include device(pc) {
+    margin: 0 $Spacing-XL;
+  }
+
+  @include device(sp) {
+    margin: 0 $Spacing-L;
+  }
+
+  .title {
+    @include device(pc) {
+      @include Typography-L;
+      margin-bottom: $Spacing-M;
+    }
+
+    @include device(sp) {
+      @include Typography-M;
+      margin-bottom: $Spacing-S;
+    }
+  }
+
+  .text {
+    @include device(pc) {
+      @include Typography-M;
+    }
+
+    @include device(sp) {
+      @include Typography-S;
+    }
+  }
+}
