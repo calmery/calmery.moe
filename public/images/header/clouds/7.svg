@@ -1,19 +1,21 @@
-<svg width="211" height="173" viewBox="0 0 211 173" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="249" height="173" viewBox="0 0 249 173" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <g opacity="0.7">
 <g filter="url(#filter0_d)">
-<circle r="37.8644" transform="matrix(-1 0 0 1 193.049 49.8644)" fill="white"/>
-<circle r="37.8644" transform="matrix(-1 0 0 1 110.32 125.593)" fill="white"/>
-<circle r="37.8644" transform="matrix(-1 0 0 1 49.8646 135.139)" fill="white"/>
-<ellipse rx="29.5915" ry="29.2733" transform="matrix(-1 0 0 1 146.594 82.6381)" fill="white"/>
+<circle r="37.8644" transform="matrix(-1 0 0 1 195.049 49.8644)" fill="white"/>
+<circle r="37.8644" transform="matrix(-1 0 0 1 112.32 125.593)" fill="white"/>
+<circle r="37.8644" transform="matrix(-1 0 0 1 51.8646 135.139)" fill="white"/>
+<ellipse rx="29.5915" ry="29.2733" transform="matrix(-1 0 0 1 148.594 82.6376)" fill="white"/>
+<circle cx="277.594" cy="125.593" r="37.8644" fill="white"/>
+<ellipse cx="241.321" cy="82.6376" rx="29.5915" ry="29.2733" fill="white"/>
 </g>
-<rect width="218.914" height="37.8644" transform="matrix(-1 0 0 1 230.914 135.139)" fill="white"/>
-<rect width="89.7292" height="114.548" transform="matrix(-1 0 0 1 230.914 58.4556)" fill="white"/>
-<rect width="33.0916" height="34.3644" transform="matrix(-1 0 0 1 230.914 53.3647)" fill="white"/>
+<rect width="362" height="38" transform="matrix(-1 0 0 1 376 135)" fill="white"/>
+<rect width="109" height="115" transform="matrix(-1 0 0 1 252 58)" fill="white"/>
+<rect width="33.0916" height="34.3644" transform="matrix(-1 0 0 1 232.914 53.3652)" fill="white"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d" x="0" y="0" width="242.913" height="185.003" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="2" y="0" width="385.914" height="185.003" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset/>
@@ -23,7 +25,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <clipPath id="clip0">
-<rect width="211" height="173" fill="white"/>
+<rect width="249" height="173" fill="white"/>
 </clipPath>
 </defs>
 </svg>

@@ -1,31 +1,33 @@
-<svg width="668" height="278" viewBox="0 0 668 278" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="716" height="278" viewBox="0 0 716 278" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <g opacity="0.7" filter="url(#filter0_d)">
-<ellipse cx="19.7295" cy="61.8388" rx="31.7295" ry="34.3608" fill="white"/>
-<ellipse cx="64.6149" cy="100.224" rx="28.3244" ry="32.5034" fill="white"/>
-<ellipse cx="106.87" cy="118.642" rx="26.9314" ry="28.0148" fill="white"/>
-<ellipse cx="248.027" cy="122.667" rx="26.6218" ry="28.0148" fill="white"/>
-<ellipse cx="390.268" cy="76.8518" rx="26.7766" ry="28.0148" fill="white"/>
-<ellipse cx="540.403" cy="115.857" rx="26.7766" ry="28.0148" fill="white"/>
-<ellipse cx="628.937" cy="159.813" rx="26.7766" ry="28.0148" fill="white"/>
-<ellipse cx="594.112" cy="118.332" rx="37.7659" ry="37.9207" fill="white"/>
-<ellipse cx="441.191" cy="49.9207" rx="37.7659" ry="37.9207" fill="white"/>
-<ellipse cx="489.791" cy="85.2102" rx="37.7659" ry="37.9207" fill="white"/>
-<ellipse cx="343.37" cy="105.641" rx="36.2181" ry="32.6582" fill="white"/>
-<ellipse cx="294.616" cy="134.429" rx="31.42" ry="28.0148" fill="white"/>
-<ellipse cx="203.142" cy="103.474" rx="26.6218" ry="28.0148" fill="white"/>
-<ellipse cx="151.136" cy="87.5321" rx="36.5276" ry="34.9799" fill="white"/>
-<rect x="-12" y="159.04" width="667.713" height="28.7887" fill="white"/>
-<rect x="-12" y="122.512" width="614.16" height="65.3164" fill="white"/>
-<rect x="360.087" y="94.6519" width="167.47" height="43.6474" fill="white"/>
-<rect x="393.828" y="72.9829" width="75.5318" height="33.4321" fill="white"/>
-<rect x="-12" y="106.415" width="215.142" height="40.2423" fill="white"/>
-<rect x="-12" y="62.7676" width="53.8628" height="63.7686" fill="white"/>
-<rect x="-12" y="156" width="668" height="122" fill="white"/>
+<ellipse cx="67.7295" cy="61.8385" rx="31.7295" ry="34.3608" fill="white"/>
+<ellipse cx="112.615" cy="100.223" rx="28.3244" ry="32.5034" fill="white"/>
+<ellipse rx="31.7295" ry="34.3608" transform="matrix(-1 0 0 1 68.2098 61.8608)" fill="white"/>
+<ellipse rx="28.3244" ry="32.5034" transform="matrix(-1 0 0 1 23.3244 100.246)" fill="white"/>
+<ellipse cx="154.87" cy="118.642" rx="26.9314" ry="28.0148" fill="white"/>
+<ellipse cx="296.027" cy="122.667" rx="26.6218" ry="28.0148" fill="white"/>
+<ellipse cx="438.268" cy="76.852" rx="26.7766" ry="28.0148" fill="white"/>
+<ellipse cx="588.403" cy="115.857" rx="26.7766" ry="28.0148" fill="white"/>
+<ellipse cx="676.937" cy="159.813" rx="26.7766" ry="28.0148" fill="white"/>
+<ellipse cx="642.112" cy="118.332" rx="37.7659" ry="37.9207" fill="white"/>
+<ellipse cx="489.191" cy="49.9207" rx="37.7659" ry="37.9207" fill="white"/>
+<ellipse cx="537.791" cy="85.2102" rx="37.7659" ry="37.9207" fill="white"/>
+<ellipse cx="391.371" cy="105.641" rx="36.2181" ry="32.6582" fill="white"/>
+<ellipse cx="342.616" cy="134.43" rx="31.42" ry="28.0148" fill="white"/>
+<ellipse cx="251.142" cy="103.474" rx="26.6218" ry="28.0148" fill="white"/>
+<ellipse cx="199.136" cy="87.5321" rx="36.5276" ry="34.9799" fill="white"/>
+<rect x="36" y="159.04" width="667.713" height="28.7887" fill="white"/>
+<rect y="117" width="650" height="71" fill="white"/>
+<rect x="408.087" y="94.6519" width="167.47" height="43.6474" fill="white"/>
+<rect x="441.828" y="72.9827" width="75.5318" height="33.4321" fill="white"/>
+<rect x="36" y="106.415" width="215.142" height="40.2423" fill="white"/>
+<rect x="36" y="78" width="54" height="49" fill="white"/>
+<rect y="156" width="704" height="122" fill="white"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d" x="-24" y="0" width="692" height="290" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="-17" y="0" width="733" height="290" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset/>
@@ -35,7 +37,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <clipPath id="clip0">
-<rect width="668" height="278" fill="white"/>
+<rect width="716" height="278" fill="white"/>
 </clipPath>
 </defs>
 </svg>

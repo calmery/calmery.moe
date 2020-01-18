@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import Parallax from "parallax-js";
 import styles from "./Header.scss";
 
-export const HeaderPC: React.FC = () => {
+export const Header: React.FC = () => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -111,21 +111,24 @@ export const HeaderPC: React.FC = () => {
             alt="雲"
           />
         </div>
+        <div className={styles.parallax} data-depth="0.1">
+          <picture className={styles.logo}>
+            <source srcSet="images/header/logo.png.webp" type="image/webp" />
+            <img src="images/header/logo.png" alt="ロゴ" />
+          </picture>
+        </div>
+        <div className={styles.parallax} data-depth="0.1">
+          <picture className={styles.character}>
+            <source
+              srcSet="images/header/character.png.webp"
+              type="image/webp"
+            />
+            <img src="images/header/character.png" alt="キャラクター" />
+          </picture>
+        </div>
       </div>
 
-      <div className={styles.fixed}>
-        <picture className={styles.character}>
-          <source srcSet="images/header/character.png.webp" type="image/webp" />
-          <img src="images/header/character.png" alt="キャラクター" />
-        </picture>
-        <img src="images/header/clouds/1.svg" className={styles.c1} alt="雲" />
-        <picture className={styles.logo}>
-          <source srcSet="images/header/logo.png.webp" type="image/webp" />
-          <img src="images/header/logo.png" alt="ロゴ" />
-        </picture>
-      </div>
+      <img src="images/header/clouds/1.svg" className={styles.c1} alt="雲" />
     </div>
   );
 };
-
-export const Header: React.FC = () => <HeaderPC />;
