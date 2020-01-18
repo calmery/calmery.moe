@@ -34,12 +34,12 @@ export const Card: React.FC<CardProps> = ({
   >
     {thumbnail && (
       <picture className={styles.thumbnail}>
-        {thumbnail.map(({ type, url }) => {
+        {thumbnail.map(({ type, url }, index) => {
           switch (type) {
             case "webp":
-              return <source srcSet={url} type="image/webp" />;
+              return <source srcSet={url} type="image/webp" key={index} />;
             default:
-              return <img src={url} alt="サムネイル" />;
+              return <img src={url} alt="サムネイル" key={index} />;
           }
         })}
       </picture>
