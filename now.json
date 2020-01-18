@@ -1,0 +1,8 @@
+{
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "env": {
+    "CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN": "@contentful_content_delivery_api_access_token",
+    "CONTENTFUL_SPACE_ID": "@contentful_space_id"
+  },
+  "version": 2
+}
