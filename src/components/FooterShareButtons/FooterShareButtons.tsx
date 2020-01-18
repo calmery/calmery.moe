@@ -18,7 +18,7 @@ export const FooterShareButtons: React.FC = () => (
       <img src="images/share-buttons/line.svg" alt="LINE" />
     </a>
     <a
-      href="https://github.com/calmery/calmery.moe"
+      href="https://github.com/calmery-chan/calmery.moe"
       target="_blank"
       rel="noopener noreferrer"
     >
