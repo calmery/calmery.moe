@@ -68,7 +68,8 @@ export const Header: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div ref={ref} className={styles["parallax-js"]}>
+      {/* メニューから DeviceMoveEvent.requestPermission を実行し、許可された場合に ParallaxJS を実行するために ID を指定している */}
+      <div ref={ref} id="parallax" className={styles["parallax-js"]}>
         <Rainbow />
         <Cloud id="13" depth="0.1" />
         <Cloud id="12" depth="0.15" />
