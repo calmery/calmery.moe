@@ -3,16 +3,8 @@ import { useEffect, useState } from "react";
 import { Card } from "~/components/Card";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
-import { getFanbox } from "~/helpers/api";
+import { getFanbox, FanboxItem } from "~/helpers/api";
 import styles from "./Fanbox.scss";
-
-type FanboxState = {
-  id: string;
-  title: string;
-  excerpt: string;
-  coverImageUrl: string;
-  tags: string[];
-};
 
 const FanboxTags: React.FC<{ tags: string[] }> = ({ tags }) => {
   if (tags.length === 0) {
@@ -36,16 +28,7 @@ const FanboxTags: React.FC<{ tags: string[] }> = ({ tags }) => {
 };
 
 export const Fanbox: React.FC = () => {
-  const [data, setData] = useState<
-    | {
-        id: string;
-        title: string;
-        excerpt: string;
-        tags: string[];
-        coverImageUrl: string;
-      }[]
-    | null
-  >(null);
+  const [data, setData] = useState<FanboxItem[] | null>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -65,7 +48,7 @@ export const Fanbox: React.FC = () => {
       <Logo service={LogoService.FANBOX} />
       <HorizontalScrollView className={styles.container}>
         {data.map(
-          ({ id, title, excerpt, coverImageUrl, tags }: FanboxState, index) => (
+          ({ id, title, excerpt, coverImageUrl, tags }: FanboxItem, index) => (
             <a
               href={`https://www.pixiv.net/fanbox/creator/19590898/post/${id}`}
               target="_blank"

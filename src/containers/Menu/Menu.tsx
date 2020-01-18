@@ -16,7 +16,7 @@ export const Menu: React.FC = () => {
           <div className={styles.apps}>
             <a href="https://camera.calmery.moe">
               <div className={styles.app}>
-                <img src="images/apps/calmery-chan-camera.jpg" alt="かるカメ" />
+                <img src="images/menu/calmery-chan-camera.jpg" alt="かるカメ" />
                 <div className={styles.name}>かるカメ</div>
               </div>
             </a>

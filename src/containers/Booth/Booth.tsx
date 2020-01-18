@@ -3,18 +3,11 @@ import { useEffect, useState } from "react";
 import { Card } from "~/components/Card";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { Logo, LogoService } from "~/components/Logo";
-import { getBooth } from "~/helpers/api";
+import { getBooth, BoothItem } from "~/helpers/api";
 import styles from "./Booth.scss";
 
 export const Booth: React.FC = () => {
-  const [data, setData] = useState<
-    | {
-        id: number;
-        name: string;
-        thumbnailImageUrl: string[];
-      }[]
-    | null
-  >(null);
+  const [data, setData] = useState<BoothItem[] | null>(null);
 
   useEffect(() => {
     const getData = async () => {
