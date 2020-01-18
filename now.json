@@ -1,4 +1,5 @@
 {
+  "alias": "calmery-moe",
   "build": {
     "env": {
       "CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN": "@contentful_content_delivery_api_access_token",
