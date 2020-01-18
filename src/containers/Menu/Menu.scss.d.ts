@@ -4,9 +4,7 @@ interface CssExports {
   'app': string;
   'apps': string;
   'button': string;
-  'buttons': string;
   'container': string;
-  'device-motion-event': string;
   'name': string;
   'title': string;
 }
