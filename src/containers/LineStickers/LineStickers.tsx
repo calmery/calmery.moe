@@ -37,7 +37,14 @@ export const LineStickers: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className={styles.sticker} thumbnail={thumbnailImageUrl} />
+          <Card
+            className={styles.sticker}
+            thumbnail={[
+              {
+                url: thumbnailImageUrl
+              }
+            ]}
+          />
         </a>
       ))}
     </HorizontalScrollView>
