@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 import { Biography } from "~/components/Biography";
 import { Booth } from "~/containers/Booth";
 import { Caption } from "~/components/Caption";
@@ -10,6 +12,10 @@ import { Menu } from "~/containers/Menu";
 import styles from "./Top.scss";
 
 export const Top: React.FC = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <React.Fragment>
       <Header />
