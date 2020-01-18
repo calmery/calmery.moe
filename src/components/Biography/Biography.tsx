@@ -18,13 +18,29 @@ export const Biography: React.FC = () => (
     <Card
       direction={CardDirection.ROW}
       className={classNames(styles.container, styles.pc)}
-      thumbnail="images/ogp.jpg"
+      thumbnail={[
+        {
+          type: "webp",
+          url: "images/biography.jpg.webp"
+        },
+        {
+          url: "images/biography.jpg"
+        }
+      ]}
     >
       <BiographyHelper />
     </Card>
     <Card
       className={classNames(styles.container, styles.sp)}
-      thumbnail="images/ogp.jpg"
+      thumbnail={[
+        {
+          type: "webp",
+          url: "images/biography.jpg.webp"
+        },
+        {
+          url: "images/biography.jpg"
+        }
+      ]}
     >
       <BiographyHelper />
     </Card>

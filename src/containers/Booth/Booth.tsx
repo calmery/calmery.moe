@@ -40,7 +40,14 @@ export const Booth: React.FC = () => {
             rel="noopener noreferrer"
             key={index}
           >
-            <Card className={styles.booth} thumbnail={thumbnailImageUrl[0]} />
+            <Card
+              className={styles.booth}
+              thumbnail={[
+                {
+                  url: thumbnailImageUrl[0]
+                }
+              ]}
+            />
           </a>
         ))}
       </HorizontalScrollView>

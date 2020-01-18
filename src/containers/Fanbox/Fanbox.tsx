@@ -75,7 +75,11 @@ export const Fanbox: React.FC = () => {
               <Card
                 className={styles.fanbox}
                 key={index}
-                thumbnail={coverImageUrl || "images/fanbox/default.jpg"}
+                thumbnail={[
+                  {
+                    url: coverImageUrl || "images/fanbox/default.jpg"
+                  }
+                ]}
               >
                 <div className={styles.title}>{title}</div>
                 <div className={styles.description}>

@@ -10,9 +10,12 @@
 }
 
 .thumbnail {
-  width: 100%;
-  vertical-align: bottom;
-  object-fit: cover;
+  source,
+  img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
 }
 
 .contents {
@@ -31,8 +34,4 @@
 
 .row {
   flex-direction: row;
-
-  .thumbnail {
-    width: 50%;
-  }
 }
