@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { LineStickers } from "./LineStickers";
+import { LineStore } from "./LineStore";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<LineStickers />, div);
+  ReactDOM.render(<LineStore />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

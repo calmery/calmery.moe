@@ -7,7 +7,7 @@ import { Caption } from "~/components/Caption";
 import { Fanbox } from "~/containers/Fanbox";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
-import { LineStickers } from "~/containers/LineStickers";
+import { LineStore } from "~/containers/LineStore";
 import { Menu } from "~/containers/Menu";
 import styles from "./Top.scss";
 
@@ -24,9 +24,9 @@ export const Top: React.FC = () => {
         <article className={styles.contents}>
           <Caption />
           <Biography />
-          <LineStickers />
           <Fanbox />
           <Booth />
+          <LineStore />
           <Footer />
         </article>
       </main>
