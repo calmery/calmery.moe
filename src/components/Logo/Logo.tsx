@@ -3,7 +3,8 @@ import styles from "./Logo.scss";
 
 export enum LogoService {
   BOOTH = "booth",
-  FANBOX = "fanbox"
+  FANBOX = "fanbox",
+  LINE_STORE = "line-store"
 }
 
 export const Logo: React.FC<{

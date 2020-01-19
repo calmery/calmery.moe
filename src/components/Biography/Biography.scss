@@ -19,10 +19,12 @@
 
   @include device(pc) {
     margin: 0 $Spacing-XL;
+    margin-bottom: $Spacing-XL;
   }
 
   @include device(sp) {
     margin: 0 $Spacing-L;
+    margin-bottom: $Spacing-XL;
   }
 
   .title {
