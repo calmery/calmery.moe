@@ -31,12 +31,21 @@ export const Fanbox: React.FC = () => {
   const [data, setData] = useState<FanboxItem[] | null>(null);
 
   useEffect(() => {
+    let unmounted = false;
+
     const getData = async () => {
       const data = await getFanbox();
-      setData(data);
+
+      if (!unmounted) {
+        setData(data);
+      }
     };
 
     getData();
+
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   if (data === null || data.length === 0) {

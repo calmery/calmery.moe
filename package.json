@@ -161,7 +161,7 @@
     "lint:typescript": "eslint --ignore-path .gitignore --fix . --ext .ts --ext .tsx",
     "now-build": "npm run build && mv build dist",
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "version": "0.1.0"
 }

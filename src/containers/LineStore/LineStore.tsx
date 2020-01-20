@@ -10,12 +10,21 @@ export const LineStore: React.FC = () => {
   const [data, setData] = useState<LineStickerItem[] | null>(null);
 
   useEffect(() => {
+    let unmounted = false;
+
     const getData = async () => {
       const data = await getLine();
-      setData(data);
+
+      if (!unmounted) {
+        setData(data);
+      }
     };
 
     getData();
+
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   if (data === null || data.length === 0) {
