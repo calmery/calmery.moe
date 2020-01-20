@@ -10,12 +10,21 @@ export const Booth: React.FC = () => {
   const [data, setData] = useState<BoothItem[] | null>(null);
 
   useEffect(() => {
+    let unmounted = false;
+
     const getData = async () => {
       const data = await getBooth();
-      setData(data);
+
+      if (!unmounted) {
+        setData(data);
+      }
     };
 
     getData();
+
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   if (data === null || data.length === 0) {
