@@ -10,7 +10,7 @@
     "webp-in-css": "0.3.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "5.0.1",
+    "@svgr/webpack": "5.1.0",
     "@types/autoprefixer": "9.6.1",
     "@types/classnames": "2.2.9",
     "@types/copy-webpack-plugin": "5.0.0",
