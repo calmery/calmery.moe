@@ -2,6 +2,7 @@
 
 .container {
   display: flex;
+  justify-content: flex-end;
 
   @include device(sp) {
     margin-bottom: $Spacing-XL;
