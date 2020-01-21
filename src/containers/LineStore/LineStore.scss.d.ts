@@ -2,6 +2,8 @@
 // Please do not change this file!
 interface CssExports {
   'container': string;
+  'horizontal': string;
+  'ryu': string;
   'sticker': string;
 }
 export const cssExports: CssExports;

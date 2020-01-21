@@ -1,6 +1,18 @@
 @import "../../constants";
 
 .container {
+  width: 100%;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.horizontal {
+  width: fit-content;
+  display: flex;
+
   @include device(pc) {
     padding: $Spacing-L 0 $Spacing-XL 0;
   }
@@ -43,4 +55,9 @@
   min-width: 128px;
   box-sizing: border-box;
   padding: $Spacing-XS;
+  opacity: 0;
+}
+
+.ryu {
+  opacity: 1;
 }
