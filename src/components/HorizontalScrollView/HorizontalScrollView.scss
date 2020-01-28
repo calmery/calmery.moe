@@ -1,6 +1,8 @@
 .container {
   width: 100%;
   overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
