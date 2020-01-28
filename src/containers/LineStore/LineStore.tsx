@@ -8,9 +8,9 @@ import styles from "./LineStore.scss";
 
 const useIntersectionObserver = (
   root: Element
-): [React.RefObject<Element>, boolean] => {
+): [React.RefObject<Element>, number] => {
   const ref = useRef<Element>(null);
-  const [isIntersected, setIsIntersected] = useState(false);
+  const [ratio, setRatio] = useState(0);
 
   useEffect(() => {
     if (ref.current === null) {
@@ -19,10 +19,8 @@ const useIntersectionObserver = (
 
     const observer = new IntersectionObserver(
       changes =>
-        changes.forEach(({ isIntersecting }) =>
-          setIsIntersected(isIntersecting)
-        ),
-      { root, rootMargin: "0px -64px" }
+        changes.forEach(({ intersectionRatio }) => setRatio(intersectionRatio)),
+      { root, threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
     );
 
     observer.observe(ref.current);
@@ -30,7 +28,7 @@ const useIntersectionObserver = (
     return () => observer.disconnect();
   }, []);
 
-  return [ref, isIntersected];
+  return [ref, ratio];
 };
 
 const LineSticker: React.FC<{
@@ -38,9 +36,9 @@ const LineSticker: React.FC<{
   id: number;
   root: Element;
 }> = ({ id, thumbnailImageUrl, root }) => {
-  const [ref, isIntersected] = useIntersectionObserver(root) as [
+  const [ref, ratio] = useIntersectionObserver(root) as [
     React.RefObject<HTMLAnchorElement>,
-    boolean
+    number
   ];
 
   return (
@@ -51,9 +49,10 @@ const LineSticker: React.FC<{
       ref={ref}
     >
       <Card
-        className={classNames(styles.sticker, {
-          [styles.ryu]: isIntersected
-        })}
+        className={classNames(styles.sticker)}
+        style={{
+          opacity: ratio
+        }}
         thumbnail={[
           {
             url: thumbnailImageUrl

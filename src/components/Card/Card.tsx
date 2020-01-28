@@ -14,13 +14,17 @@ type CardProps = {
     type?: "webp";
     url: string;
   }[];
-};
+} & React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export const Card: React.FC<CardProps> = ({
   children,
   className,
   direction = CardDirection.COLUMN,
-  thumbnail
+  thumbnail,
+  style
 }) => (
   <div
     className={classNames(
@@ -31,6 +35,7 @@ export const Card: React.FC<CardProps> = ({
       },
       className
     )}
+    style={style}
   >
     {thumbnail && (
       <picture className={styles.thumbnail}>
