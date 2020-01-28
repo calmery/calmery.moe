@@ -35,10 +35,3 @@
     }
   }
 }
-
-.booth {
-  @include Clickable;
-
-  width: 128px;
-  min-width: 128px;
-}
