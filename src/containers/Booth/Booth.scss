@@ -9,7 +9,7 @@
     padding: $Spacing-M 0 $Spacing-XL 0;
   }
 
-  a {
+  .item {
     @include device(pc) {
       margin-left: $Spacing-L;
 
