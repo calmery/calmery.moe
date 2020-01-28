@@ -1,12 +1,12 @@
 import { getEntries, ContentfulContentType } from "./contentful";
 
-export type BoothItem = {
+export type BoothItemData = {
   id: number;
   name: string;
   thumbnailImageUrl: string[];
 };
 
-export const getBooth = async (): Promise<BoothItem[]> => {
+export const getBoothItemData = async (): Promise<BoothItemData[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
     return [
