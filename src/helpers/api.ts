@@ -19,36 +19,6 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
         id: 1714889,
         name: "かるめりちゃんクリアファイル",
         thumbnailImageUrl: ["images/booth/1714889.png"]
-      },
-      {
-        id: 1270166,
-        name: "かるめりちゃんステッカー",
-        thumbnailImageUrl: ["images/booth/1270166.png"]
-      },
-      {
-        id: 1714889,
-        name: "かるめりちゃんクリアファイル",
-        thumbnailImageUrl: ["images/booth/1714889.png"]
-      },
-      {
-        id: 1270166,
-        name: "かるめりちゃんステッカー",
-        thumbnailImageUrl: ["images/booth/1270166.png"]
-      },
-      {
-        id: 1714889,
-        name: "かるめりちゃんクリアファイル",
-        thumbnailImageUrl: ["images/booth/1714889.png"]
-      },
-      {
-        id: 1270166,
-        name: "かるめりちゃんステッカー",
-        thumbnailImageUrl: ["images/booth/1270166.png"]
-      },
-      {
-        id: 1714889,
-        name: "かるめりちゃんクリアファイル",
-        thumbnailImageUrl: ["images/booth/1714889.png"]
       }
     ];
   }
@@ -115,76 +85,6 @@ export const getLineStoreItemData = async (): Promise<LineStoreItemData[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
     return [
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
-      {
-        id: 9903456,
-        name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
-      },
-      {
-        id: 6457012,
-        name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      },
       {
         id: 9903456,
         name: "かるめりちゃん 2",
