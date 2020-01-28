@@ -19,6 +19,36 @@ export const getBooth = async (): Promise<BoothItem[]> => {
         id: 1714889,
         name: "かるめりちゃんクリアファイル",
         thumbnailImageUrl: ["images/booth/1714889.png"]
+      },
+      {
+        id: 1270166,
+        name: "かるめりちゃんステッカー",
+        thumbnailImageUrl: ["images/booth/1270166.png"]
+      },
+      {
+        id: 1714889,
+        name: "かるめりちゃんクリアファイル",
+        thumbnailImageUrl: ["images/booth/1714889.png"]
+      },
+      {
+        id: 1270166,
+        name: "かるめりちゃんステッカー",
+        thumbnailImageUrl: ["images/booth/1270166.png"]
+      },
+      {
+        id: 1714889,
+        name: "かるめりちゃんクリアファイル",
+        thumbnailImageUrl: ["images/booth/1714889.png"]
+      },
+      {
+        id: 1270166,
+        name: "かるめりちゃんステッカー",
+        thumbnailImageUrl: ["images/booth/1270166.png"]
+      },
+      {
+        id: 1714889,
+        name: "かるめりちゃんクリアファイル",
+        thumbnailImageUrl: ["images/booth/1714889.png"]
       }
     ];
   }
