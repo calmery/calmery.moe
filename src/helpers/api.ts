@@ -3,7 +3,7 @@ import { getEntries, ContentfulContentType } from "./contentful";
 export type BoothItemData = {
   id: number;
   name: string;
-  thumbnailImageUrl: string[];
+  thumbnailImageUrls: string[];
 };
 
 export const getBoothItemData = async (): Promise<BoothItemData[]> => {
@@ -13,12 +13,12 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
       {
         id: 1270166,
         name: "かるめりちゃんステッカー",
-        thumbnailImageUrl: ["images/booth/1270166.png"]
+        thumbnailImageUrls: ["images/booth/1270166.png"]
       },
       {
         id: 1714889,
         name: "かるめりちゃんクリアファイル",
-        thumbnailImageUrl: ["images/booth/1714889.png"]
+        thumbnailImageUrls: ["images/booth/1714889.png"]
       }
     ];
   }
@@ -33,7 +33,7 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
   return items.map(({ fields }: { fields: any }) => ({
     id: fields.id,
     name: fields.name,
-    thumbnailImageUrl: fields.thumbnailImageUrl.map(
+    thumbnailImageUrls: fields.thumbnailImageUrls.map(
       ({
         fields: {
           file: { url }

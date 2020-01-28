@@ -4,6 +4,6 @@ import { BoothItem } from "./BoothItem";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<BoothItem id={1} thumbnailImageUrl="" />, div);
+  ReactDOM.render(<BoothItem id={1} name="" thumbnailImageUrls={[]} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
