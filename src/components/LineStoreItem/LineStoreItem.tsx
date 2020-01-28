@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Card } from "~/components/Card";
+import { LineStoreItemData } from "~/helpers/api";
 import styles from "./LineStoreItem.scss";
 
-export const LineStoreItem: React.FC<{
-  thumbnailImageUrl: string;
-  id: number;
-}> = ({ id, thumbnailImageUrl }) => {
+export const LineStoreItem: React.FC<LineStoreItemData> = ({
+  id,
+  thumbnailImageUrl
+}) => {
   return (
     <a
       href={`https://store.line.me/stickershop/product/${id}/ja`}

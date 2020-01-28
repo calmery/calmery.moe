@@ -41,13 +41,13 @@ export const LineStore: React.FC = () => {
         className={styles.container}
       >
         {rootElement &&
-          data.map(({ id, thumbnailImageUrl }, index) => (
+          data.map((props, index) => (
             <HorizontalScrollViewItem
               className={styles.item}
               key={index}
               rootElement={rootElement}
             >
-              <LineStoreItem id={id} thumbnailImageUrl={thumbnailImageUrl} />
+              <LineStoreItem {...props} />
             </HorizontalScrollViewItem>
           ))}
       </HorizontalScrollView>
