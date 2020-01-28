@@ -105,107 +105,109 @@ export const getFanbox = async (): Promise<FanboxItem[]> => {
   }));
 };
 
-export type LineStickerItem = {
+export type LineStoreItemData = {
   id: number;
   name: string;
   thumbnailImageUrl: string;
 };
 
-export const getLine = async (): Promise<LineStickerItem[]> => {
+export const getLineStoreItemData = async (): Promise<LineStoreItemData[]> => {
   // TODO: モックするにしてもデータは別に分けたい
-  return [
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    },
-    {
-      id: 9903456,
-      name: "かるめりちゃん 2",
-      thumbnailImageUrl: "images/stickers/2.jpg"
-    },
-    {
-      id: 6457012,
-      name: "かるめりちゃん",
-      thumbnailImageUrl: "images/stickers/1.jpg"
-    }
-  ];
+  if (process.env.NODE_ENV !== "production") {
+    return [
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      },
+      {
+        id: 9903456,
+        name: "かるめりちゃん 2",
+        thumbnailImageUrl: "images/stickers/2.jpg"
+      },
+      {
+        id: 6457012,
+        name: "かるめりちゃん",
+        thumbnailImageUrl: "images/stickers/1.jpg"
+      }
+    ];
+  }
 
-  // const { errors, items } = await getEntries(ContentfulContentType.LINE);
+  const { errors, items } = await getEntries(ContentfulContentType.LINE);
 
-  // if (errors) {
-  //   throw errors;
-  // }
+  if (errors) {
+    throw errors;
+  }
 
-  // // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // return items.map(({ fields }: { fields: any }) => ({
-  //   id: fields.id,
-  //   name: fields.name,
-  //   thumbnailImageUrl: fields.thumbnailImageUrl.fields.file.url
-  // }));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return items.map(({ fields }: { fields: any }) => ({
+    id: fields.id,
+    name: fields.name,
+    thumbnailImageUrl: fields.thumbnailImageUrl.fields.file.url
+  }));
 };
