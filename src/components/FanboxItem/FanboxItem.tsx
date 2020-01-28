@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Card } from "~/components/Card";
+import { FanboxItemData } from "~/helpers/api";
 import styles from "./FanboxItem.scss";
 
-export const FanboxItem: React.FC<{
-  id: string;
-  coverImageUrl: string;
-  title: string;
-  excerpt: string;
-  tags: string[];
-}> = ({ id, coverImageUrl, title, excerpt, tags }) => (
+export const FanboxItem: React.FC<FanboxItemData> = ({
+  id,
+  coverImageUrl,
+  title,
+  excerpt,
+  tags
+}) => (
   <a
     href={`https://www.pixiv.net/fanbox/creator/19590898/post/${id}`}
     target="_blank"
