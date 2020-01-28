@@ -41,13 +41,13 @@ export const Booth: React.FC = () => {
         className={styles.container}
       >
         {rootElement &&
-          data.map(({ id, thumbnailImageUrl }, index) => (
+          data.map((props, index) => (
             <HorizontalScrollViewItem
               className={styles.item}
               key={index}
               rootElement={rootElement}
             >
-              <BoothItem id={id} thumbnailImageUrl={thumbnailImageUrl[0]} />
+              <BoothItem {...props} />
             </HorizontalScrollViewItem>
           ))}
       </HorizontalScrollView>
