@@ -1,0 +1,10 @@
+@import "../../constants";
+
+.container {
+  @include Clickable;
+
+  width: 128px;
+  min-width: 128px;
+  box-sizing: border-box;
+  padding: $Spacing-XS;
+}

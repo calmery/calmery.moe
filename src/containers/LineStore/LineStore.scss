@@ -1,18 +1,6 @@
 @import "../../constants";
 
 .container {
-  width: 100%;
-  overflow: scroll;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.horizontal {
-  width: fit-content;
-  display: flex;
-
   @include device(pc) {
     padding: $Spacing-L 0 $Spacing-XL 0;
   }
@@ -21,7 +9,7 @@
     padding: $Spacing-M 0 $Spacing-XL 0;
   }
 
-  a {
+  .item {
     @include device(pc) {
       margin-left: $Spacing-L;
 
@@ -46,13 +34,4 @@
       }
     }
   }
-}
-
-.sticker {
-  @include Clickable;
-
-  width: 128px;
-  min-width: 128px;
-  box-sizing: border-box;
-  padding: $Spacing-XS;
 }
