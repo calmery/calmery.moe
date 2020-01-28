@@ -5,9 +5,9 @@ import styles from "./HorizontalScrollViewItem.scss";
 
 export const HorizontalScrollViewItem: React.FC<{
   className?: string;
-  rootRefCurrent?: Element;
-}> = ({ className, children, rootRefCurrent }) => {
-  const [ref, opacity] = useIntersectionObserver(rootRefCurrent) as [
+  rootElement?: Element;
+}> = ({ className, children, rootElement }) => {
+  const [ref, opacity] = useIntersectionObserver(rootElement) as [
     React.RefObject<HTMLDivElement>,
     number
   ];

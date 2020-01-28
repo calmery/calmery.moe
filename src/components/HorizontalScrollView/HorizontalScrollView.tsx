@@ -4,9 +4,9 @@ import styles from "./HorizontalScrollView.scss";
 
 export const HorizontalScrollView: React.FC<{
   className?: string;
-  rootRef?: React.RefObject<HTMLDivElement>;
-}> = ({ children, className, rootRef }) => (
-  <div className={styles.container} ref={rootRef}>
+  rootElement?: (instance: HTMLDivElement | null) => void;
+}> = ({ children, className, rootElement }) => (
+  <div className={styles.container} ref={rootElement}>
     <div className={classNames(styles.horizontal, className)}>{children}</div>
   </div>
 );

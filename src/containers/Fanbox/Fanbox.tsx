@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { FanboxItem } from "~/components/FanboxItem";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
 import { HorizontalScrollViewItem } from "~/containers/HorizontalScrollViewItem";
@@ -9,7 +9,7 @@ import styles from "./Fanbox.scss";
 
 export const Fanbox: React.FC = () => {
   const [data, setData] = useState<FanboxItemData[]>([]);
-  const ref = useRef<HTMLDivElement>(null);
+  const [rootElement, setRootElement] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let unmounted = false;
@@ -29,32 +29,27 @@ export const Fanbox: React.FC = () => {
     };
   }, []);
 
+  if (!data.length) {
+    return null;
+  }
+
   return (
     <React.Fragment>
       <Logo service={LogoService.FANBOX} />
-      <HorizontalScrollView rootRef={ref} className={styles.container}>
-        {ref.current &&
-          data.map(
-            (
-              { id, title, excerpt, coverImageUrl, tags }: FanboxItemData,
-              index
-            ) => (
-              <HorizontalScrollViewItem
-                className={styles.item}
-                key={index}
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                rootRefCurrent={ref.current!}
-              >
-                <FanboxItem
-                  id={id}
-                  title={title}
-                  excerpt={excerpt}
-                  coverImageUrl={coverImageUrl}
-                  tags={tags}
-                />
-              </HorizontalScrollViewItem>
-            )
-          )}
+      <HorizontalScrollView
+        rootElement={element => setRootElement(element)}
+        className={styles.container}
+      >
+        {rootElement &&
+          data.map((props, index) => (
+            <HorizontalScrollViewItem
+              className={styles.item}
+              key={index}
+              rootElement={rootElement}
+            >
+              <FanboxItem {...props} />
+            </HorizontalScrollViewItem>
+          ))}
       </HorizontalScrollView>
     </React.Fragment>
   );
