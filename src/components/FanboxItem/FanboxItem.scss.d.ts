@@ -3,8 +3,6 @@
 interface CssExports {
   'container': string;
   'description': string;
-  'fanbox': string;
-  'item': string;
   'tag': string;
   'tags': string;
   'title': string;

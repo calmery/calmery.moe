@@ -45,7 +45,7 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
   }));
 };
 
-export type FanboxItem = {
+export type FanboxItemData = {
   id: string;
   title: string;
   excerpt: string;
@@ -53,10 +53,39 @@ export type FanboxItem = {
   tags: string[];
 };
 
-export const getFanbox = async (): Promise<FanboxItem[]> => {
+export const getFanboxItemData = async (): Promise<FanboxItemData[]> => {
   // TODO: モックするにしてもデータは別に分けたい
   if (process.env.NODE_ENV !== "production") {
-    return [];
+    return [
+      {
+        id: "1",
+        title: "Title",
+        excerpt: "Excerpt",
+        coverImageUrl: "images/ogp.jpg",
+        tags: []
+      },
+      {
+        id: "1",
+        title: "Title",
+        excerpt: "Excerpt",
+        coverImageUrl: "images/ogp.jpg",
+        tags: []
+      },
+      {
+        id: "1",
+        title: "Title",
+        excerpt: "Excerpt",
+        coverImageUrl: "images/ogp.jpg",
+        tags: []
+      },
+      {
+        id: "1",
+        title: "Title",
+        excerpt: "Excerpt",
+        coverImageUrl: "images/ogp.jpg",
+        tags: []
+      }
+    ];
   }
 
   const { errors, items } = await getEntries(ContentfulContentType.FANBOX);

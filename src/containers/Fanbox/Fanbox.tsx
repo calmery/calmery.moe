@@ -1,40 +1,21 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
-import { Card } from "~/components/Card";
+import { useEffect, useRef, useState } from "react";
+import { FanboxItem } from "~/components/FanboxItem";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
+import { HorizontalScrollViewItem } from "~/containers/HorizontalScrollViewItem";
 import { Logo, LogoService } from "~/components/Logo";
-import { getFanbox, FanboxItem } from "~/helpers/api";
+import { getFanboxItemData, FanboxItemData } from "~/helpers/api";
 import styles from "./Fanbox.scss";
 
-const FanboxTags: React.FC<{ tags: string[] }> = ({ tags }) => {
-  if (tags.length === 0) {
-    return (
-      <div className={styles.tags}>
-        <div className={styles.tag}>タグは付いていません</div>
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.tags}>
-      {tags.map((tag: string, index: number) => (
-        <div className={styles.tag} key={index}>
-          <img src="images/tag.svg" alt="タグ" />
-          {tag}
-        </div>
-      ))}
-    </div>
-  );
-};
-
 export const Fanbox: React.FC = () => {
-  const [data, setData] = useState<FanboxItem[] | null>(null);
+  const [data, setData] = useState<FanboxItemData[]>([]);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let unmounted = false;
 
     const getData = async () => {
-      const data = await getFanbox();
+      const data = await getFanboxItemData();
 
       if (!unmounted) {
         setData(data);
@@ -48,40 +29,32 @@ export const Fanbox: React.FC = () => {
     };
   }, []);
 
-  if (data === null || data.length === 0) {
-    return null;
-  }
-
   return (
     <React.Fragment>
       <Logo service={LogoService.FANBOX} />
-      <HorizontalScrollView className={styles.container}>
-        {data.map(
-          ({ id, title, excerpt, coverImageUrl, tags }: FanboxItem, index) => (
-            <a
-              href={`https://www.pixiv.net/fanbox/creator/19590898/post/${id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-            >
-              <Card
-                className={styles.fanbox}
+      <HorizontalScrollView rootRef={ref} className={styles.container}>
+        {ref.current &&
+          data.map(
+            (
+              { id, title, excerpt, coverImageUrl, tags }: FanboxItemData,
+              index
+            ) => (
+              <HorizontalScrollViewItem
+                className={styles.item}
                 key={index}
-                thumbnail={[
-                  {
-                    url: coverImageUrl
-                  }
-                ]}
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                rootRefCurrent={ref.current!}
               >
-                <div className={styles.title}>{title}</div>
-                <div className={styles.description}>
-                  {excerpt || "本文はありません"}
-                </div>
-                <FanboxTags tags={tags} />
-              </Card>
-            </a>
-          )
-        )}
+                <FanboxItem
+                  id={id}
+                  title={title}
+                  excerpt={excerpt}
+                  coverImageUrl={coverImageUrl}
+                  tags={tags}
+                />
+              </HorizontalScrollViewItem>
+            )
+          )}
       </HorizontalScrollView>
     </React.Fragment>
   );
