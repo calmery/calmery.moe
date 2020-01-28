@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { LineStoreItem } from "~/components/LineStoreItem";
 import { Logo, LogoService } from "~/components/Logo";
 import { HorizontalScrollView } from "~/components/HorizontalScrollView";
@@ -9,7 +9,7 @@ import styles from "./LineStore.scss";
 
 export const LineStore: React.FC = () => {
   const [data, setData] = useState<LineStoreItemData[]>([]);
-  const ref = useRef<HTMLDivElement>(null);
+  const [rootElement, setRootElement] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let unmounted = false;
@@ -29,17 +29,23 @@ export const LineStore: React.FC = () => {
     };
   }, []);
 
+  if (!data.length) {
+    return null;
+  }
+
   return (
     <React.Fragment>
       <Logo service={LogoService.LINE_STORE} />
-      <HorizontalScrollView rootRef={ref} className={styles.container}>
-        {ref.current &&
+      <HorizontalScrollView
+        rootElement={element => setRootElement(element)}
+        className={styles.container}
+      >
+        {rootElement &&
           data.map(({ id, thumbnailImageUrl }, index) => (
             <HorizontalScrollViewItem
               className={styles.item}
               key={index}
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              rootRefCurrent={ref.current!}
+              rootElement={rootElement}
             >
               <LineStoreItem id={id} thumbnailImageUrl={thumbnailImageUrl} />
             </HorizontalScrollViewItem>
