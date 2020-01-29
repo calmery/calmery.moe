@@ -6,6 +6,12 @@ body {
   margin: 0;
   color: $Color-Black;
   font-family: SmartFontUI;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 a {

@@ -1,7 +1,5 @@
 import * as React from "react";
-import classNames from "classnames";
 import { useIntersectionObserver } from "~/helpers/use-intersection-observer";
-import styles from "./HorizontalScrollViewItem.scss";
 
 export const HorizontalScrollViewItem: React.FC<{
   className?: string;
@@ -13,11 +11,7 @@ export const HorizontalScrollViewItem: React.FC<{
   ];
 
   return (
-    <div
-      ref={ref}
-      className={classNames(styles.container, className)}
-      style={{ opacity }}
-    >
+    <div ref={ref} className={className} style={{ opacity }}>
       {children}
     </div>
   );
