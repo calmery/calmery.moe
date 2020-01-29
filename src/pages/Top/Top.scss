@@ -3,6 +3,9 @@
 .container {
   padding: $Spacing-L 0 $Spacing-XL 0;
 
+  // IE 11
+  display: block;
+
   @include device(pc) {
     background: url(images/background/pc.jpg.webp);
     background-size: cover;

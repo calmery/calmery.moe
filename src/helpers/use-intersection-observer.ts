@@ -6,7 +6,7 @@ export const useIntersectionObserver = (
   const ref = useRef<Element>(null);
   const [ratio, setRatio] = useState(0);
 
-  if (!root) {
+  if (!root || window.IntersectionObserver === undefined) {
     return [ref, 1];
   }
 

@@ -10,6 +10,9 @@
 }
 
 .thumbnail {
+  // IE 11
+  height: 100%;
+
   source,
   img {
     width: 100%;

@@ -10,7 +10,8 @@ import TerserPlugin from "terser-webpack-plugin";
 import {
   DefinePlugin,
   HotModuleReplacementPlugin,
-  Configuration
+  Configuration,
+  ProvidePlugin
 } from "webpack";
 import merge from "webpack-merge";
 
@@ -183,6 +184,9 @@ export default merge(
           CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
           NODE_ENV: process.env.NODE_ENV || "development"
         })
+      }),
+      new ProvidePlugin({
+        Promise: "es6-promise"
       })
     ],
     resolve: {
