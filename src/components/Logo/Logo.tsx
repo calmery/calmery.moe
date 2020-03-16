@@ -2,6 +2,7 @@ import * as React from "react";
 import styles from "./Logo.scss";
 
 export enum LogoService {
+  BACKERS = "backers",
   BOOTH = "booth",
   FANBOX = "fanbox",
   LINE_STORE = "line-store"
