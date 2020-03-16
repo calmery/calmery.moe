@@ -40,16 +40,34 @@ export const Backers = () => {
         rootElement={element => setRootElement(element)}
         className={styles.container}
       >
-        {rootElement &&
-          data.map((props, index) => (
+        {rootElement && (
+          <>
+            {data.map((props, index) => (
+              <HorizontalScrollViewItem
+                className={styles.item}
+                key={index}
+                rootElement={rootElement}
+              >
+                <Backer {...props} />
+              </HorizontalScrollViewItem>
+            ))}
             <HorizontalScrollViewItem
               className={styles.item}
-              key={index}
+              key={data.length}
               rootElement={rootElement}
             >
-              <Backer {...props} />
+              <a
+                href="https://www.pixiv.net/fanbox/creator/47060008"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles["become-a-backer"]}>
+                  <img src="/images/plus.svg" />
+                </div>
+              </a>
             </HorizontalScrollViewItem>
-          ))}
+          </>
+        )}
       </HorizontalScrollView>
     </React.Fragment>
   );
