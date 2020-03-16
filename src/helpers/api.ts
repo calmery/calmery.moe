@@ -1,5 +1,37 @@
 import { getEntries, ContentfulContentType } from "./contentful";
 
+export type BackerItemData = {
+  iconUrl: string;
+  plan: 100 | 300 | 500;
+  url: string;
+};
+
+export const getBackerItemData = async (): Promise<BackerItemData[]> => {
+  // TODO: モックするにしてもデータは別に分けたい
+  if (process.env.NODE_ENV !== "production") {
+    return [
+      {
+        iconUrl: "/images/calmery.jpg",
+        plan: 500,
+        url: "https://pixiv.me/calmery"
+      }
+    ];
+  }
+
+  const { errors, items } = await getEntries(ContentfulContentType.BACKERS);
+
+  if (errors) {
+    throw errors;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return items.map(({ fields }: { fields: any }) => ({
+    iconUrl: fields.iconUrl,
+    plan: fields.plan,
+    url: fields.url
+  }));
+};
+
 export type BoothItemData = {
   id: number;
   name: string;

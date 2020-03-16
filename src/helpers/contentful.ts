@@ -4,6 +4,7 @@ const space = process.env.CONTENTFUL_SPACE_ID;
 const accessToken = process.env.CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN;
 
 export enum ContentfulContentType {
+  BACKERS = "backer",
   BOOTH = "booth",
   FANBOX = "fanbox",
   LINE = "line"
