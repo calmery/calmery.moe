@@ -26,7 +26,15 @@ export const getBackerItemData = async (): Promise<BackerItemData[]> => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return items.map(({ fields }: { fields: any }) => ({
-    iconUrl: fields.iconUrl,
+    iconUrl: fields.iconUrl.map(
+      ({
+        fields: {
+          file: { url }
+        }
+      }: {
+        fields: { file: { url: string } };
+      }) => url
+    )[0],
     plan: fields.plan,
     url: fields.url
   }));
