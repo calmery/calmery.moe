@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect } from "react";
 import ReactGA from "react-ga";
 import { Biography } from "~/components/Biography";
+import { Backers } from "~/containers/Backers";
 import { Booth } from "~/containers/Booth";
 import { Caption } from "~/components/Caption";
 import { Fanbox } from "~/containers/Fanbox";
@@ -27,6 +28,7 @@ export const Top: React.FC = () => {
           <Fanbox />
           <Booth />
           <LineStore />
+          <Backers />
           <Footer />
         </article>
       </main>
