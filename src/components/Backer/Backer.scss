@@ -1,0 +1,27 @@
+@import "../../constants";
+
+.container {
+  @include Clickable;
+  width: 46px;
+  height: 50px;
+  position: relative;
+}
+
+.icon {
+  @include Box-Shadow;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 100%;
+  top: 4px;
+  left: 0;
+  position: absolute;
+}
+
+.crown {
+  top: 0;
+  right: 4px;
+  position: absolute;
+  transform: rotateZ(22.5deg);
+}
