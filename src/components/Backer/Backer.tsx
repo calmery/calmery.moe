@@ -1,9 +1,8 @@
 import * as React from "react";
+import { BackerItemData } from "~/helpers/api";
 import styles from "./Backer.scss";
 
-type FanboxPlan = 100 | 300 | 500;
-
-const Crown = ({ plan }: { plan: FanboxPlan }) => {
+const Crown = ({ plan }: Pick<BackerItemData, "plan">) => {
   switch (plan) {
     case 500:
       return <img src="/images/backers/500.svg" className={styles.crown} />;
@@ -16,13 +15,7 @@ const Crown = ({ plan }: { plan: FanboxPlan }) => {
   }
 };
 
-type BackerProps = {
-  iconUrl: string;
-  plan: FanboxPlan;
-  url: string;
-};
-
-export const Backer: React.SFC<BackerProps> = ({ iconUrl, plan, url }) => {
+export const Backer: React.SFC<BackerItemData> = ({ iconUrl, plan, url }) => {
   return (
     <div className={styles.container}>
       <a href={url} target="_blank" rel="noopener noreferrer">
