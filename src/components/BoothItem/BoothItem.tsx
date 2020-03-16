@@ -8,7 +8,7 @@ export const BoothItem: React.FC<BoothItemData> = ({
   thumbnailImageUrls
 }) => (
   <a
-    href={`https://calmery.booth.pm/items/${id}`}
+    href={`https://calmery-chan.booth.pm/items/${id}`}
     target="_blank"
     rel="noopener noreferrer"
   >
