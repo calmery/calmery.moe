@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@sentry/browser": "5.14.2",
+    "@sentry/browser": "5.15.1",
     "classnames": "2.2.6",
     "contentful": "7.14.0",
     "parallax-js": "3.1.0",
