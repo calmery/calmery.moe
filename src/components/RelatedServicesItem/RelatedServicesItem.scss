@@ -1,0 +1,24 @@
+@import "../../constants";
+
+.container {
+  @include Clickable;
+  @include Border-Radius;
+  @include Box-Shadow;
+
+  width: 170px;
+  height: 96px;
+  display: flex;
+  background: $Color-White;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    @include device(pc) {
+      width: 170px - $Spacing-L * 2;
+    }
+
+    @include device(sp) {
+      height: 96px - $Spacing-M * 2;
+    }
+  }
+}
