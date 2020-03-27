@@ -28,7 +28,7 @@ $ npm test
 
 See [Figma](https://www.figma.com/file/sXoA2JhyW67gSIaFvg0ndS/Calmery.moe-Public). Background vector created by [freepik](https://www.freepik.com/free-photos-vectors/background).
 
-![Design](https://user-images.githubusercontent.com/12670155/72746470-86093c80-3bf5-11ea-947d-116113f13bb9.jpg)
+![Design](https://user-images.githubusercontent.com/12670155/77790075-80255100-70a7-11ea-98c9-d5f3e0bab027.jpg)
 
 ### Guidelines
 
