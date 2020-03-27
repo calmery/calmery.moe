@@ -10,6 +10,7 @@ import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { LineStore } from "~/containers/LineStore";
 import { Menu } from "~/containers/Menu";
+import { RelatedServices } from "~/containers/RelatedServices";
 import styles from "./Top.scss";
 
 export const Top: React.FC = () => {
@@ -25,6 +26,7 @@ export const Top: React.FC = () => {
         <article className={styles.contents}>
           <Caption />
           <Biography />
+          <RelatedServices />
           <Fanbox />
           <Booth />
           <LineStore />
