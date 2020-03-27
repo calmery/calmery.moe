@@ -11,8 +11,9 @@
   background: $Color-White;
   align-items: center;
   justify-content: center;
+  position: relative;
 
-  img {
+  .logo {
     @include device(pc) {
       width: 170px - $Spacing-L * 2;
     }
@@ -20,5 +21,11 @@
     @include device(sp) {
       height: 96px - $Spacing-M * 2;
     }
+  }
+
+  .badge {
+    bottom: $Spacing-M;
+    right: $Spacing-M;
+    position: absolute;
   }
 }

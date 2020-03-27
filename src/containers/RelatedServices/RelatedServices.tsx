@@ -34,6 +34,7 @@ export const RelatedServices: React.FC = () => {
               <RelatedServicesItem
                 logoUrl="/images/related-services/develop.camera.calmery.moe.svg"
                 url="https://develop.camera.calmery.moe"
+                underDevelopment
               />
             </HorizontalScrollViewItem>
           </>
