@@ -1,6 +1,6 @@
 import ReactGA from "react-ga";
 
-ReactGA.initialize("UA-153119606-2", {
+ReactGA.initialize("UA-163144493-1", {
   debug: process.env.NODE_ENV !== "production"
 });
 
