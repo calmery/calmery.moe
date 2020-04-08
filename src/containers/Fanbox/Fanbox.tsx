@@ -37,7 +37,7 @@ export const Fanbox: React.FC = () => {
     <React.Fragment>
       <Logo service={LogoService.FANBOX} />
       <HorizontalScrollView
-        rootElement={element => setRootElement(element)}
+        rootElement={(element) => setRootElement(element)}
         className={styles.container}
       >
         {rootElement &&

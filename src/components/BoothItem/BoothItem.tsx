@@ -5,7 +5,7 @@ import styles from "./BoothItem.scss";
 
 export const BoothItem: React.FC<BoothItemData> = ({
   id,
-  thumbnailImageUrls
+  thumbnailImageUrls,
 }) => (
   <a
     href={`https://calmery.booth.pm/items/${id}`}
@@ -16,8 +16,8 @@ export const BoothItem: React.FC<BoothItemData> = ({
       className={styles.container}
       thumbnail={[
         {
-          url: thumbnailImageUrls[0]
-        }
+          url: thumbnailImageUrls[0],
+        },
       ]}
     />
   </a>

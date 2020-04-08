@@ -7,7 +7,7 @@ export enum ContentfulContentType {
   BACKERS = "backer",
   BOOTH = "booth",
   FANBOX = "fanbox",
-  LINE = "line"
+  LINE = "line",
 }
 
 export const getEntries = async (contentType: ContentfulContentType) => {
@@ -19,7 +19,7 @@ export const getEntries = async (contentType: ContentfulContentType) => {
 
   const client = contentful.createClient({
     space,
-    accessToken
+    accessToken,
   });
 
   // eslint-disable-next-line @typescript-eslint/camelcase

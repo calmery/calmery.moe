@@ -37,7 +37,7 @@ export const Booth: React.FC = () => {
     <React.Fragment>
       <Logo service={LogoService.BOOTH} />
       <HorizontalScrollView
-        rootElement={element => setRootElement(element)}
+        rootElement={(element) => setRootElement(element)}
         className={styles.container}
       >
         {rootElement &&

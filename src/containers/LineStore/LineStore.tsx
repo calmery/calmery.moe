@@ -37,7 +37,7 @@ export const LineStore: React.FC = () => {
     <React.Fragment>
       <Logo service={LogoService.LINE_STORE} />
       <HorizontalScrollView
-        rootElement={element => setRootElement(element)}
+        rootElement={(element) => setRootElement(element)}
         className={styles.container}
       >
         {rootElement &&

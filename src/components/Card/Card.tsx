@@ -4,7 +4,7 @@ import styles from "./Card.scss";
 
 export enum CardDirection {
   COLUMN,
-  ROW
+  ROW,
 }
 
 type CardProps = {
@@ -24,14 +24,14 @@ export const Card: React.FC<CardProps> = ({
   className,
   direction = CardDirection.COLUMN,
   thumbnail,
-  style
+  style,
 }) => (
   <div
     className={classNames(
       styles.container,
       {
         [styles.column]: direction === CardDirection.COLUMN,
-        [styles.row]: direction === CardDirection.ROW
+        [styles.row]: direction === CardDirection.ROW,
       },
       className
     )}

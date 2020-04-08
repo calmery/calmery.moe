@@ -8,7 +8,7 @@ export const FanboxItem: React.FC<FanboxItemData> = ({
   coverImageUrl,
   title,
   excerpt,
-  tags
+  tags,
 }) => (
   <a
     href={`https://www.pixiv.net/fanbox/creator/19590898/post/${id}`}
@@ -19,8 +19,8 @@ export const FanboxItem: React.FC<FanboxItemData> = ({
       className={styles.container}
       thumbnail={[
         {
-          url: coverImageUrl
-        }
+          url: coverImageUrl,
+        },
       ]}
     >
       <div className={styles.title}>{title}</div>

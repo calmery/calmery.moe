@@ -13,11 +13,11 @@ export const Biography: React.FC = () => (
         thumbnail={[
           {
             type: "webp",
-            url: "images/biography.jpg.webp"
+            url: "images/biography.jpg.webp",
           },
           {
-            url: "images/biography.jpg"
-          }
+            url: "images/biography.jpg",
+          },
         ]}
       >
         <div className={styles.title}>かるめりちゃんとは？</div>
