@@ -57,7 +57,7 @@ export const Backers = () => {
               rootElement={rootElement}
             >
               <a
-                href="https://www.pixiv.net/fanbox/creator/47060008"
+                href="https://www.pixiv.net/fanbox/creator/19590898"
                 target="_blank"
                 rel="noopener noreferrer"
               >
