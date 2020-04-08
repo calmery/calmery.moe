@@ -17,27 +17,15 @@ export const RelatedServices: React.FC = () => {
         className={styles.container}
       >
         {rootElement && (
-          <>
-            <HorizontalScrollViewItem
-              className={styles.item}
-              rootElement={rootElement}
-            >
-              <RelatedServicesItem
-                logoUrl="/images/related-services/camera.calmery.moe.svg"
-                url="https://camera.calmery.moe"
-              />
-            </HorizontalScrollViewItem>
-            <HorizontalScrollViewItem
-              className={styles.item}
-              rootElement={rootElement}
-            >
-              <RelatedServicesItem
-                logoUrl="/images/related-services/develop.camera.calmery.moe.svg"
-                url="https://develop.camera.calmery.moe"
-                underDevelopment
-              />
-            </HorizontalScrollViewItem>
-          </>
+          <HorizontalScrollViewItem
+            className={styles.item}
+            rootElement={rootElement}
+          >
+            <RelatedServicesItem
+              logoUrl="/images/related-services/camera.calmery.moe.svg"
+              url="https://camera.calmery.moe"
+            />
+          </HorizontalScrollViewItem>
         )}
       </HorizontalScrollView>
     </React.Fragment>
