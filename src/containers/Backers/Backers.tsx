@@ -37,7 +37,7 @@ export const Backers = () => {
     <React.Fragment>
       <Logo service={LogoService.BACKERS} />
       <HorizontalScrollView
-        rootElement={element => setRootElement(element)}
+        rootElement={(element) => setRootElement(element)}
         className={styles.container}
       >
         {rootElement && (

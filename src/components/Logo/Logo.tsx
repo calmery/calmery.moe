@@ -6,7 +6,7 @@ export enum LogoService {
   BOOTH = "booth",
   FANBOX = "fanbox",
   LINE_STORE = "line-store",
-  RELATED_SERVICES = "related-services"
+  RELATED_SERVICES = "related-services",
 }
 
 export const Logo: React.FC<{

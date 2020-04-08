@@ -5,7 +5,7 @@ import styles from "./LineStoreItem.scss";
 
 export const LineStoreItem: React.FC<LineStoreItemData> = ({
   id,
-  thumbnailImageUrl
+  thumbnailImageUrl,
 }) => {
   return (
     <a
@@ -17,8 +17,8 @@ export const LineStoreItem: React.FC<LineStoreItemData> = ({
         className={styles.container}
         thumbnail={[
           {
-            url: thumbnailImageUrl
-          }
+            url: thumbnailImageUrl,
+          },
         ]}
       />
     </a>

@@ -13,7 +13,7 @@ export const RelatedServices: React.FC = () => {
     <React.Fragment>
       <Logo service={LogoService.RELATED_SERVICES} />
       <HorizontalScrollView
-        rootElement={element => setRootElement(element)}
+        rootElement={(element) => setRootElement(element)}
         className={styles.container}
       >
         {rootElement && (

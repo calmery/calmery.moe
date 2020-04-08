@@ -63,7 +63,7 @@ $Spacing-XL: 48px;
 // 横幅が 960px 以上のデバイスは PC として、960px 未満のデバイスはスマートフォンとして扱う
 $devices: (
   "pc": "screen and (min-width: 960px)",
-  "sp": "screen and (max-width: 959px)"
+  "sp": "screen and (max-width: 959px)",
 ) !default;
 
 @mixin device($device: pc) {

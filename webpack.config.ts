@@ -11,7 +11,7 @@ import {
   DefinePlugin,
   HotModuleReplacementPlugin,
   Configuration,
-  ProvidePlugin
+  ProvidePlugin,
 } from "webpack";
 import merge from "webpack-merge";
 
@@ -24,7 +24,7 @@ const isEnvProduction = process.env.NODE_ENV === "production";
 const development: Configuration = {
   devtool: "cheap-module-source-map",
   mode: "development",
-  plugins: [new HotModuleReplacementPlugin()]
+  plugins: [new HotModuleReplacementPlugin()],
 };
 
 const production: Configuration = {
@@ -38,15 +38,15 @@ const production: Configuration = {
         extractComments: false,
         terserOptions: {
           parse: {
-            ecma: 8
+            ecma: 8,
           },
           compress: {
             warnings: false,
             comparisons: false,
-            inline: 2
+            inline: 2,
           },
           mangle: {
-            safari10: true
+            safari10: true,
           },
           // eslint-disable-next-line @typescript-eslint/camelcase
           keep_classnames: false,
@@ -57,16 +57,16 @@ const production: Configuration = {
             // license-webpack-plugin で生成したライセンスファイルに関係するコメントだけは残すようにする
             comments: /^(.+)[^@]license/i,
             // eslint-disable-next-line @typescript-eslint/camelcase
-            ascii_only: true
-          }
-        }
-      })
-    ]
+            ascii_only: true,
+          },
+        },
+      }),
+    ],
   },
   plugins: [
     new OptimizeCSSAssetsPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[hash].css"
+      filename: "[hash].css",
     }),
     new (require("license-webpack-plugin").LicenseWebpackPlugin)({
       addBanner: true,
@@ -75,9 +75,9 @@ const production: Configuration = {
         Object.keys(require("./package.json").devDependencies).includes(name),
       outputFilename: "bundle.[hash].js.LICENSE",
       renderBanner: (filename: string) =>
-        `/* For license information please see ${filename} */`
-    })
-  ]
+        `/* For license information please see ${filename} */`,
+    }),
+  ],
 };
 
 export default merge(
@@ -88,7 +88,7 @@ export default merge(
       rules: [
         {
           test: /\.tsx?$/,
-          loader: "ts-loader"
+          loader: "ts-loader",
         },
         {
           test: /\.scss$/,
@@ -102,31 +102,31 @@ export default merge(
               options: {
                 modules: true,
                 sourceMap: process.env.NODE_ENV !== "production",
-                url: false
-              }
+                url: false,
+              },
             },
             {
               loader: "postcss-loader",
               options: {
                 ident: "postcss",
                 plugins: [autoprefixer],
-                sourceMap: process.env.NODE_ENV !== "production"
-              }
+                sourceMap: process.env.NODE_ENV !== "production",
+              },
             },
             {
               loader: "sass-loader",
               options: {
-                sourceMap: process.env.NODE_ENV !== "production"
-              }
-            }
-          ]
+                sourceMap: process.env.NODE_ENV !== "production",
+              },
+            },
+          ],
         },
         {
           test: [/\.jpe?g$/, /\.png$/],
           loader: "file-loader",
           options: {
-            name: "[name].[hash].[ext]"
-          }
+            name: "[name].[hash].[ext]",
+          },
         },
         {
           test: /\.svg$/,
@@ -135,12 +135,12 @@ export default merge(
             {
               loader: "file-loader",
               options: {
-                name: "[name].[hash].[ext]"
-              }
-            }
-          ]
-        }
-      ]
+                name: "[name].[hash].[ext]",
+              },
+            },
+          ],
+        },
+      ],
     },
     output: {
       path: path.resolve(__dirname, "build"),
@@ -149,30 +149,30 @@ export default merge(
       futureEmitAssets: true,
       devtoolModuleFilenameTemplate: isEnvProduction
         ? undefined
-        : info => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")
+        : (info) => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
     },
     plugins: [
       new CopyWebpackPlugin([
         {
           context: "public/",
           from: { glob: "**/*" },
-          ignore: ["index.html"]
-        }
+          ignore: ["index.html"],
+        },
       ]),
       new HtmlWebpackPlugin(
         Object.assign(
           {},
           {
             inject: true,
-            template: path.resolve(__dirname, "public/index.html")
+            template: path.resolve(__dirname, "public/index.html"),
           },
           isEnvProduction
             ? {
                 minify: {
                   removeComments: true,
                   collapseWhitespace: true,
-                  keepClosingSlash: true
-                }
+                  keepClosingSlash: true,
+                },
               }
             : undefined
         )
@@ -182,20 +182,20 @@ export default merge(
           CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN:
             process.env.CONTENTFUL_CONTENT_DELIVERY_API_ACCESS_TOKEN,
           CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-          NODE_ENV: process.env.NODE_ENV || "development"
-        })
+          NODE_ENV: process.env.NODE_ENV || "development",
+        }),
       }),
       new ProvidePlugin({
-        Promise: "es6-promise"
-      })
+        Promise: "es6-promise",
+      }),
     ],
     resolve: {
       alias: {
-        "~": path.resolve(__dirname, "src")
+        "~": path.resolve(__dirname, "src"),
       },
       extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
-      modules: ["node_modules"]
-    }
+      modules: ["node_modules"],
+    },
   },
   isEnvProduction ? production : development
 );

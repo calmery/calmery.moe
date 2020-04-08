@@ -10,7 +10,7 @@ type RelatedServicesItemProps = {
 export const RelatedServicesItem: React.FC<RelatedServicesItemProps> = ({
   logoUrl,
   url,
-  underDevelopment = false
+  underDevelopment = false,
 }) => (
   <a href={url} target="_blank" rel="noopener noreferrer">
     <div className={styles.container}>

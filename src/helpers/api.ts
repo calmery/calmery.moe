@@ -13,8 +13,8 @@ export const getBackerItemData = async (): Promise<BackerItemData[]> => {
       {
         iconUrl: "/images/calmery.jpg",
         plan: 500,
-        url: "https://pixiv.me/calmery"
-      }
+        url: "https://pixiv.me/calmery",
+      },
     ];
   }
 
@@ -29,14 +29,14 @@ export const getBackerItemData = async (): Promise<BackerItemData[]> => {
     iconUrl: fields.iconUrl.map(
       ({
         fields: {
-          file: { url }
-        }
+          file: { url },
+        },
       }: {
         fields: { file: { url: string } };
       }) => url
     )[0],
     plan: fields.plan,
-    url: fields.url
+    url: fields.url,
   }));
 };
 
@@ -53,13 +53,13 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
       {
         id: 1270166,
         name: "かるめりちゃんステッカー",
-        thumbnailImageUrls: ["images/booth/1270166.png"]
+        thumbnailImageUrls: ["images/booth/1270166.png"],
       },
       {
         id: 1714889,
         name: "かるめりちゃんクリアファイル",
-        thumbnailImageUrls: ["images/booth/1714889.png"]
-      }
+        thumbnailImageUrls: ["images/booth/1714889.png"],
+      },
     ];
   }
 
@@ -76,12 +76,12 @@ export const getBoothItemData = async (): Promise<BoothItemData[]> => {
     thumbnailImageUrls: fields.thumbnailImageUrls.map(
       ({
         fields: {
-          file: { url }
-        }
+          file: { url },
+        },
       }: {
         fields: { file: { url: string } };
       }) => url
-    )
+    ),
   }));
 };
 
@@ -102,29 +102,29 @@ export const getFanboxItemData = async (): Promise<FanboxItemData[]> => {
         title: "Title",
         excerpt: "Excerpt",
         coverImageUrl: "images/ogp.jpg",
-        tags: []
+        tags: [],
       },
       {
         id: "1",
         title: "Title",
         excerpt: "Excerpt",
         coverImageUrl: "images/ogp.jpg",
-        tags: []
+        tags: [],
       },
       {
         id: "1",
         title: "Title",
         excerpt: "Excerpt",
         coverImageUrl: "images/ogp.jpg",
-        tags: []
+        tags: [],
       },
       {
         id: "1",
         title: "Title",
         excerpt: "Excerpt",
         coverImageUrl: "images/ogp.jpg",
-        tags: []
-      }
+        tags: [],
+      },
     ];
   }
 
@@ -140,7 +140,7 @@ export const getFanboxItemData = async (): Promise<FanboxItemData[]> => {
     title: fields.title,
     excerpt: fields.excerpt,
     tags: fields.tags,
-    coverImageUrl: fields.coverImageUrl.fields.file.url
+    coverImageUrl: fields.coverImageUrl.fields.file.url,
   }));
 };
 
@@ -157,13 +157,13 @@ export const getLineStoreItemData = async (): Promise<LineStoreItemData[]> => {
       {
         id: 9903456,
         name: "かるめりちゃん 2",
-        thumbnailImageUrl: "images/stickers/2.jpg"
+        thumbnailImageUrl: "images/stickers/2.jpg",
       },
       {
         id: 6457012,
         name: "かるめりちゃん",
-        thumbnailImageUrl: "images/stickers/1.jpg"
-      }
+        thumbnailImageUrl: "images/stickers/1.jpg",
+      },
     ];
   }
 
@@ -177,6 +177,6 @@ export const getLineStoreItemData = async (): Promise<LineStoreItemData[]> => {
   return items.map(({ fields }: { fields: any }) => ({
     id: fields.id,
     name: fields.name,
-    thumbnailImageUrl: fields.thumbnailImageUrl.fields.file.url
+    thumbnailImageUrl: fields.thumbnailImageUrl.fields.file.url,
   }));
 };
