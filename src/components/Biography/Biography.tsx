@@ -22,8 +22,8 @@ export const Biography: React.FC = () => (
       >
         <div className={styles.title}>かるめりちゃんとは？</div>
         <div className={styles.text}>
-          かるめりちゃんは明るく好奇心旺盛な女の子で名前は愛々璃（あめり）ちゃん！誕生日は
-          3/27 だよ！
+          白咲 愛々璃（あめり）。写真を撮ることが好きな女の子で 17 歳、高校 2
+          年生。気配り上手でお世話好きだがちょっとあがり症な一面も。休みの日はよく妹と出かけている。
         </div>
       </Card>
     ))}
