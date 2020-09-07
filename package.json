@@ -28,7 +28,7 @@
     "@typescript-eslint/parser": "4.0.1",
     "autoprefixer": "9.8.6",
     "copy-webpack-plugin": "6.1.0",
-    "css-loader": "4.2.2",
+    "css-loader": "3.6.0",
     "css-modules-typescript-loader": "4.0.0",
     "es6-promise": "4.2.8",
     "eslint": "7.8.1",
