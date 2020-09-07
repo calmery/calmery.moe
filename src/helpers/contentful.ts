@@ -22,6 +22,5 @@ export const getEntries = async (contentType: ContentfulContentType) => {
     accessToken,
   });
 
-  // eslint-disable-next-line @typescript-eslint/camelcase
   return await client.getEntries({ content_type: contentType });
 };

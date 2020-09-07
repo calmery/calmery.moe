@@ -48,15 +48,12 @@ const production: Configuration = {
           mangle: {
             safari10: true,
           },
-          // eslint-disable-next-line @typescript-eslint/camelcase
           keep_classnames: false,
-          // eslint-disable-next-line @typescript-eslint/camelcase
           keep_fnames: false,
           output: {
             ecma: 5,
             // license-webpack-plugin で生成したライセンスファイルに関係するコメントだけは残すようにする
             comments: /^(.+)[^@]license/i,
-            // eslint-disable-next-line @typescript-eslint/camelcase
             ascii_only: true,
           },
         },
@@ -68,10 +65,12 @@ const production: Configuration = {
     new MiniCssExtractPlugin({
       filename: "[hash].css",
     }),
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     new (require("license-webpack-plugin").LicenseWebpackPlugin)({
       addBanner: true,
       // package.json の devDependencies に含まれるパッケージは除外する
       excludedPackageTest: (name: string) =>
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         Object.keys(require("./package.json").devDependencies).includes(name),
       outputFilename: "bundle.[hash].js.LICENSE",
       renderBanner: (filename: string) =>
@@ -152,13 +151,17 @@ export default merge(
         : (info) => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
     },
     plugins: [
-      new CopyWebpackPlugin([
-        {
-          context: "public/",
-          from: { glob: "**/*" },
-          ignore: ["index.html"],
-        },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            context: "public/",
+            from: "**/*",
+            globOptions: {
+              ignore: ["index.html"],
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin(
         Object.assign(
           {},
